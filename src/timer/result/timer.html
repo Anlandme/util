@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>ä»£ç è¦†ç›–ç‡æŠ¥å‘Š</title>
+   <link rel="stylesheet" href="../../TEST/html/css/coverage.css">
+</head>
+
+<body class="coverage-page">
+<h1>TEST.C è¦†ç›–ç‡</h1>
+<table rules="cols" >
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Source:../timer/timer.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Graph:timer.gcno</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Data:timer.gcda</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Runs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Programs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    1:</td><td class="code">/******************************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    2:</td><td class="code">        (c) COPYRIGHT 2017-  by D.C.P  Co.,Ltd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    3:</td><td class="code">                          All rights reserved.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    4:</td><td class="code">@file: timer.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    5:</td><td class="code">@brief: ¶¨Ê±Æ÷µÄÉè¼ÆÖ÷ÒªÊÇ»ùÓÚPOSIX¶¨Ê±Æ÷¿ª·¢Éè¼Æ£¬Ö÷ÒªÊÇ¶ÔÓÚÒ»Ğ©½á¹¹ÌåµÄ°ü×°,Ê¹Ê¹ÓÃÆğÀ´¸ü¼Ó±ã½İ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    6:</td><td class="code">        ÓĞÒ»¸ö±ØĞë×¢ÒâµÄÊÇ±àÒëÊ±ºòĞèÒª¼Ó -lrt²ÅÄÜ³¤³É±àÒë</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    7:</td><td class="code">@attention£º ±¾Ä£¿é¹ØÁªÍâ²¿ÎÄ¼şºÍÄ£¿é util/utildef.h,utilinc.h errÄ£¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    8:</td><td class="code">@author   D.C.P 			                                                 </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    9:</td><td class="code">@version  0.0.0.1                                                               </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   10:</td><td class="code">@date     2017/03/02</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   11:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   12:</td><td class="code">  Change History :                                                              </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   13:</td><td class="code">                 | <Date>      | <Version> | <Author> | <Description>                     </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   14:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   15:</td><td class="code">  @todo          | 2017/08/07  | 0.0.0.1   | D.C.P    | ´´½¨ÎÄ¼ş            </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   16:</td><td class="code">******************************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   17:</td><td class="code">#include ".././util/util_inc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   18:</td><td class="code">#include "timer.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   19:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   20:</td><td class="code">* @brief ´ò¿ª¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   21:</td><td class="code">* @param [in]  timer   ´ø³õÊ¼»¯µÄ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   22:</td><td class="code">* @param [in]  event   ¶¨Ê±Æ÷ÊÂ¼ş</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   23:</td><td class="code">* @retval TIMER_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   24:</td><td class="code">* @retval TIMER_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   25:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   26:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° timer_open è¢«è°ƒç”¨ 7 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        7:</td>   <td class="line">   27:</td><td class="code">timer_open(Timer_t *timer, timerEvent_t *event)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   28:</td><td class="code">{</td></tr>
+<tr><td class="sum">        7:</td>   <td class="line">   29:</td><td class="code">    if(PARAMISNULL(timer)||PARAMISNULL(event))  RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 71% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 29%
+ åˆ†æ”¯ 2 é€šè¿‡ 20% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 80%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   30:</td><td class="code">    pthread_attr_t attr;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   31:</td><td class="code">    struct sigevent sigEvent;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   32:</td><td class="code">    sigEvent.sigev_notify = event->timerNotify;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   33:</td><td class="code">    sigEvent.sigev_signo = event->timerSignal;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   34:</td><td class="code">    memcpy(&sigEvent.sigev_value, &event->signalValue, sizeof(sigEvent.sigev_value));</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   35:</td><td class="code">    sigEvent.sigev_notify_function = event->callbackFunc;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   36:</td><td class="code">    //³õÊ¼»¯timer</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   37:</td><td class="code">    timer->stack = NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   38:</td><td class="code">    //Èç¹ûĞÅºÅ´¦ÀíÎª´´½¨Ïß³Ì</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   39:</td><td class="code">    if( event->timerNotify == TIMER_NOTIFY_CALLBACK ){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   40:</td><td class="code">        pthread_attr_init(&attr);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   41:</td><td class="code">        timer->stack = timer_malloc(TIMER_STACK_SIZE);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   42:</td><td class="code">        pthread_attr_setstack(&attr, timer->stack, TIMER_STACK_SIZE);     //ÉèÖÃÏß³ÌÏß³ÌÕ»µØÖ·ºÍ´óĞ¡</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   43:</td><td class="code">        sigEvent.sigev_notify_attributes = &attr;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   44:</td><td class="code">        pthread_attr_destroy(&attr);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   45:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   46:</td><td class="code"></td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   47:</td><td class="code">    return  timer_create(event->clock, &sigEvent, &timer->timerid);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   48:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   49:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   50:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   51:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   52:</td><td class="code">* @brief ¿ªÊ¼¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   53:</td><td class="code">* @param [in]  timer  ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   54:</td><td class="code">* @param [in]  mode ¶¨Ê±Æ÷Ä£Ê½</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   55:</td><td class="code"> - TIMER_MODE_NORMAL  Õı³£Ä£Ê½</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   56:</td><td class="code"> - TIMER_MODE_ABSTIME Ä£Ê½±íÏÖÎªÊ±¼äÖ±µ½ÏÂÒ»´Î³¬Ê±±»Éè¶¨µÄ¾ø¶ÔÊ±¼äºÍÓëtimer_clockÏàÁªµÄÊ±ÖÓÖµµÄ²îÖµ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   57:</td><td class="code">* @param [in]  period ¶¨Ê±Æ÷ÖÜÆÚ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   58:</td><td class="code"> - TIMER_ONCE Ò»´ÎĞÔ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   59:</td><td class="code"> - TIMER_LOOP     Ñ­»·¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   60:</td><td class="code">* @param [in]  times  ¶¨Ê±Æ÷Ê±¼ä</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   61:</td><td class="code">* @retval TIMER_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   62:</td><td class="code">* @retval TIMER_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   63:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   64:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° timer_start è¢«è°ƒç”¨ 7 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 94%
+</td></tr>
+<tr><td class="sum">        7:</td>   <td class="line">   65:</td><td class="code">timer_start(Timer_t timer, int_t mode, int_t period, struct timespec *times)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   66:</td><td class="code">{</td></tr>
+<tr><td class="sum">        7:</td>   <td class="line">   67:</td><td class="code">    if(PARAMISNULL(times)) RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 14% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 86%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   68:</td><td class="code">    if(period != TIMER_ONCE && TIMER_LOOP != period) RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 83% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 17%
+ åˆ†æ”¯ 2 é€šè¿‡ 20% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 80%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">   69:</td><td class="code">    if(mode != TIMER_MODE_NORMAL && TIMER_MODE_ABSTIME != mode) RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 20% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 80%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   70:</td><td class="code">    struct itimerspec value;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   71:</td><td class="code">    if(TIMER_ONCE == period){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   72:</td><td class="code">        value.it_interval.tv_sec = 0;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   73:</td><td class="code">        value.it_interval.tv_nsec = 0;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   74:</td><td class="code">    }else if(TIMER_LOOP == period){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   75:</td><td class="code">        value.it_interval = *times;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   76:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   77:</td><td class="code"></td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   78:</td><td class="code">    value.it_value = *times;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">   79:</td><td class="code">    return timer_settime(timer.timerid, mode, &value, NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   80:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   81:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   82:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   83:</td><td class="code">* @brief Í£Ö¹¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   84:</td><td class="code">* @param [in]  timer ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   85:</td><td class="code">* @retval TIMER_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   86:</td><td class="code">* @retval TIMER_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   87:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   88:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° timer_stop è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   89:</td><td class="code">timer_stop(Timer_t timer)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   90:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   91:</td><td class="code">    struct itimerspec value;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   92:</td><td class="code">    value.it_value.tv_sec =0;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   93:</td><td class="code">    value.it_value.tv_nsec =0;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   94:</td><td class="code">    value.it_interval = value.it_value;  </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   95:</td><td class="code">    //Í£Ö¹timer ÉèÖÃ:new_value->it_valueµÄµÄÖµÎª0(ÃëºÍÄÉÃë¶¼Îª0)</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   96:</td><td class="code">    return timer_settime(timer.timerid, 0, &value, NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   97:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   98:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   99:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  100:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  101:</td><td class="code">* @brief É¾³ı¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  102:</td><td class="code">* @param [in]  timer ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  103:</td><td class="code">* @retval TIMER_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  104:</td><td class="code">* @retval TIMER_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  105:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  106:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° timer_close è¢«è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 75%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  107:</td><td class="code">timer_close(Timer_t *timer)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  108:</td><td class="code">{</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  109:</td><td class="code">    if(PARAMISNULL(timer))  RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  110:</td><td class="code">    if(timer->stack != NULL ) timer_free(timer->stack);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  111:</td><td class="code">    return timer_delete(timer->timerid);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  112:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  113:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  114:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  115:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  116:</td><td class="code">* @brief »ñµÃ¶¨Ê±Æ÷ÖÜÆÚÊ±¼äºÍÊ£ÓàÊ±¼ä</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  117:</td><td class="code">* @param [in]  timer ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  118:</td><td class="code">* @param [out]  period ÖÜÆÚÊ±¼ä</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  119:</td><td class="code">* @param [out]  remain Ê£ÓàÊ±¼ä</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  120:</td><td class="code">* @retval TIMER_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  121:</td><td class="code">* @retval TIMER_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  122:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  123:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° timer_get_time è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 89%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  124:</td><td class="code">timer_get_time(Timer_t timer, struct timespec *period, struct timespec *remain)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  125:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  126:</td><td class="code">    if(PARAMISNULL(period)||PARAMISNULL(remain)) RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 67% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 33%
+ åˆ†æ”¯ 2 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 50%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  127:</td><td class="code">    struct itimerspec value;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  128:</td><td class="code">    if(TIMER_SUCC != timer_gettime(timer.timerid, &value)){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  129:</td><td class="code">        return TIMER_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  130:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  131:</td><td class="code">    period->tv_sec  = value.it_interval.tv_sec;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  132:</td><td class="code">    period->tv_nsec = value.it_interval.tv_nsec;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  133:</td><td class="code">    remain->tv_sec  = value.it_value.tv_sec;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  134:</td><td class="code">    remain->tv_nsec = value.it_value.tv_nsec;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  135:</td><td class="code">    return TIMER_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  136:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  137:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  138:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  139:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  140:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  141:</td><td class="code">* @brief »ñµÃ¶¨Ê±Æ÷³¬Ê±´ÎÊı Èç¹û³¬ÏŞÔËĞĞµÄ´ÎÊıµÈÓÚ»ò´óÓÚDELAYTIMER_MAX£¬Ôò´Ëµ÷ÓÃ»á ·µ»ØDELAYTIMER_MAX¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  142:</td><td class="code">* @param [in]  timer ¶¨Ê±Æ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  143:</td><td class="code">* @param [in]  overSum ³¬Ê±´ÎÊı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  144:</td><td class="code">* @retval TIMER_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  145:</td><td class="code">* @retval TIMER_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  146:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  147:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° timer_overrun è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 88%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  148:</td><td class="code">timer_overrun(Timer_t timer, int_t *overSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  149:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  150:</td><td class="code">    if(PARAMISNULL(overSum)) RETURN_ERR(ERR_PARA, TIMER_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  151:</td><td class="code">    if(TIMER_FAIL == (*overSum = timer_getoverrun(timer.timerid))){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  152:</td><td class="code">        return TIMER_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  153:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  154:</td><td class="code">    return TIMER_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  155:</td><td class="code">}</td></tr>
+</table>
+</body>
+
+   <script type="text/javascript" src="../../TEST/html/js/buildCoverage.js"></script>
+</html>

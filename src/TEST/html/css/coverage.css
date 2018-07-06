@@ -1,0 +1,81 @@
+
+/*  ÍøÒ³ÎÄ×ÖÅÅ°æ   */
+h1{
+    color:#fbc02d;
+    font-family:STKaiti,KaiTi,serif;
+    text-align:center;
+}
+
+table{font-size: 16px;}
+td{color:#fbc02d;}
+
+
+.sum-head,.sum{
+    text-align:right;
+    background:rgba(105,105,105,0.4);
+    padding: 0px 10px 0px 10px;
+}
+
+.line-head,.line{
+    text-align:right;
+    background:rgba(105,105,105,0.4);
+    padding: 0px 10px 0px 20px;
+}
+
+.code{
+    text-align:left;
+    white-space:pre;
+    padding: 0px 10px 0px 40px;
+}
+
+.sum-head,.line-head{
+    color:#008080;
+    white-space : nowrap;
+    font-size: 16px;
+    font-family:STKaiti,KaiTi,serif;
+}
+
+.sum,.line,.code{
+    font-size: 14px;
+    font-family:"Courier New",monospace;
+}
+
+
+.comment{
+    display:'';
+}
+
+.detail{
+    color:#fbc02d;
+    white-space:pre;
+    text-align:left;
+    position:relative;
+    font-size: 14px;
+    font-family:STKaiti,KaiTi,serif;
+    width:50vw;
+    padding: 5px 5px 5px 5px;
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.3);
+    background:rgba(20,20,20,0.4);
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    border-radius:5px;
+    -webkit-animation:move 0.8s; /* Safari and Chrome */
+    -moz-animation:move 0.8s;
+    -ms-animation:move 0.8s;
+    -o-animation:move 0.8s;
+	animation:move 0.8s;
+}
+@-webkit-keyframes move{from {top:20px;}to {top:0px;}}
+@-moz-keyframes move{from {top:20px;}to {top:0px;}}
+@-ms-keyframes move{from {top:20px;}to {top:0px;}}
+@-o-keyframes move{from {top:20px;}to {top:0px;}}
+@keyframes move{from {top:20px;}to {top:0px;}}
+
+
+.coverage-page{
+    position:relative;
+    background: #141F26;
+    padding: 20px 5px 20px 5px;
+}

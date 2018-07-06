@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>ä»£ç è¦†ç›–ç‡æŠ¥å‘Š</title>
+   <link rel="stylesheet" href="../../TEST/html/css/coverage.css">
+</head>
+
+<body class="coverage-page">
+<h1>TEST.C è¦†ç›–ç‡</h1>
+<table rules="cols" >
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Source:../thread/thread.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Graph:thread.gcno</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Data:thread.gcda</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Runs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Programs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    1:</td><td class="code">/******************************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    2:</td><td class="code">        (c) COPYRIGHT 2017-  by D.C.P  Co.,Ltd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    3:</td><td class="code">                          All rights reserved.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    4:</td><td class="code">@file: thread.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    5:</td><td class="code">@brief: </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    6:</td><td class="code">@attention£º ±¾Ä£¿é¹ØÁªÍâ²¿ÎÄ¼şºÍÄ£¿é util/utildef.h,utilinc.h errÄ£¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    7:</td><td class="code">@author   D.C.P 			                                                 </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    8:</td><td class="code">@version  0.0.0.1                                                               </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    9:</td><td class="code">@date     2017/03/02</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   10:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   11:</td><td class="code">  Change History :                                                              </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   12:</td><td class="code">                 | <Date>      | <Version> | <Author> | <Description>                     </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   13:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   14:</td><td class="code">  @todo          | 2017/08/07  | 0.0.0.1   | D.C.P    | ´´½¨ÎÄ¼ş            </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   15:</td><td class="code">******************************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   16:</td><td class="code">#include ".././util/util_inc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   17:</td><td class="code">#include "thread.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   18:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   19:</td><td class="code">/**  @brief thread ¹ÜÀí½á¹¹Ìå */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   20:</td><td class="code">ThreadManage manager;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   21:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   22:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   23:</td><td class="code">* @brief ĞŞ¸ÄÏß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   24:</td><td class="code">* @param [in]  flag   Ïß³ÌÊôĞÔ±êÖ¾ @see thread_attr_flag</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   25:</td><td class="code">* @param [out] tattr   Ïß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   26:</td><td class="code">* @param [out] attr    Íâ²¿Ê¹ÓÃµÄÏß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   27:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   28:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   29:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   30:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _thread_set_attr è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 35%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   31:</td><td class="code">_thread_set_attr(const int_t flag,pthread_attr_t  *tattr, const threadAttr_t  *attr)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   32:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   33:</td><td class="code">    if(ATTR_DETACH_STATE&flag)        CHECK_FAIL(pthread_attr_setdetachstate(tattr,  attr->detachState));      //ÉèÖÃÏß³Ì·ÖÀë×´Ì¬</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   34:</td><td class="code">    if(ATTR_INHERIT_SCHEDULE&flag)    CHECK_FAIL(pthread_attr_setinheritsched(tattr, attr->inheritSchedule));  //ÉèÖÃÏß³Ì¼Ì³ĞĞÔ</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   35:</td><td class="code">    if(ATTR_SCHEDULE_POLICY&flag)     CHECK_FAIL(pthread_attr_setschedpolicy(tattr,  attr->schedulePolicy));   //ÉèÖÃÏß³Ìµ÷¶È²ßÂÔ</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   36:</td><td class="code">    if(ATTR_SCHEDULE_PARAM&flag)      CHECK_FAIL(pthread_attr_setschedparam(tattr,   &attr->schedParam));      //ÉèÖÃÏß³Ìµ÷¶È²ÎÊı</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   37:</td><td class="code">    if(ATTR_SCOPE&flag)               CHECK_FAIL(pthread_attr_setscope(tattr,        attr->scope));            //ÉèÖÃÏß³Ì×÷ÓÃÓò</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   38:</td><td class="code">    if(ATTR_GUARD_SIZE&flag)          CHECK_FAIL(pthread_attr_setguardsize(tattr,    attr->guardSize));        //ÉèÖÃÏß³ÌÕ»Ä©Î²µÄ¾¯½ä»º³åÇø´óĞ¡</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   39:</td><td class="code">    if(ATTR_STACK_ADDR_AND_SIZE&flag) CHECK_FAIL(pthread_attr_setstack(tattr,        attr->stackAddr, attr->stackSize)); //ÉèÖÃÏß³ÌÏß³ÌÕ»µØÖ·¡¡Ïß³ÌÕ»´óĞ¡</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 9 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   40:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   41:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   42:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   43:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   44:</td><td class="code">* @brief Ä¬ÈÏÏß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   45:</td><td class="code">* @param [out] tattr   Ïß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   46:</td><td class="code">* @param [out] attr    Íâ²¿Ê¹ÓÃµÄÏß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   47:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   48:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   49:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   50:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _thread_default_set_attr è¢«è°ƒç”¨ 10 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 33%
+</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">   51:</td><td class="code">_thread_default_set_attr(pthread_attr_t  *tattr, threadAttr_t  *attr)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   52:</td><td class="code">{</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">   53:</td><td class="code">    void *stack = thread_malloc(DEFAULT_STACK_SIZE);</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">   54:</td><td class="code">    CHECK_FAIL(pthread_attr_setstack(tattr, stack, DEFAULT_STACK_SIZE));              //ÉèÖÃÏß³ÌÏß³ÌÕ»µØÖ· Ïß³ÌÕ»´óĞ¡</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">   55:</td><td class="code">    attr->stackAddr = stack;</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">   56:</td><td class="code">    attr->stackSize = DEFAULT_STACK_SIZE;</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">   57:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   58:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   59:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   60:</td><td class="code">* @brief »ñµÃÏß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   61:</td><td class="code">* @param [in]  flag   Ïß³ÌÊôĞÔ±êÖ¾ @see thread_attr_flag</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   62:</td><td class="code">* @param [out] attr Ïß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   63:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   64:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   65:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   66:</td><td class="code">/*int_t</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   67:</td><td class="code">thread_get_attr(const int_t flag, threadAttr_t  *attr)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   68:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   69:</td><td class="code">    if(PARAMISNULL(attr))  RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   70:</td><td class="code">    if(ATTR_DETACH_STATE|flag)     pthread_attr_getdetachstate(attr,  &(attr->detachState));     //»ñµÃÏß³Ì·ÖÀë×´Ì¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   71:</td><td class="code">    if(ATTR_INHERIT_SCHEDULE|flag) pthread_attr_getinheritsched(attr, &(attr->inheritSchedule)); //»ñµÃÏß³Ì¼Ì³ĞĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   72:</td><td class="code">    if(ATTR_SCHEDULE_POLICY|flag)  pthread_attr_getschedpolicy(attr,  &(attr->schedulePolicy));  //»ñµÃÏß³Ìµ÷¶È²ßÂÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   73:</td><td class="code">    if(ATTR_SCHEDULE_PARAM|flag)   pthread_attr_getschedparam(attr,   &(attr->schedParam));      //»ñµÃÏß³Ìµ÷¶È²ÎÊı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   74:</td><td class="code">    if(ATTR_SCOPE|flag)            pthread_attr_getscope(attr,        &(attr->scope));           //»ñµÃÏß³Ì×÷ÓÃÓò</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   75:</td><td class="code">    if(ATTR_STACK_ADDR|flag)       pthread_attr_getstackaddr(attr,    &(attr->stackAddr));       //»ñµÃÏß³ÌÕ»µØÖ·</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   76:</td><td class="code">    if(ATTR_STACK_SIZE|flag)       pthread_attr_getstacksize(attr,    &(attr->stackSize));       //»ñµÃÏß³ÌÕ»´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   77:</td><td class="code">    if(ATTR_GUARD_SIZE|flag)       pthread_attr_getguardsize(attr,    &(attr->guardSize));       //»ñµÃÏß³ÌÕ»Ä©Î²µÄ¾¯½ä»º³åÇø´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   78:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   79:</td><td class="code">}*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   80:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   81:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   82:</td><td class="code">* @brief Ïß³Ì¼ÓÈëÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   83:</td><td class="code">* @param [out] thread  Ïß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   84:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   85:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   86:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   87:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _thread_add_node è¢«è°ƒç”¨ 11 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 50%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">   88:</td><td class="code">_thread_add_node(Thread *thread)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   89:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   90:</td><td class="code">    //¼ÓËø</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   91:</td><td class="code">	//³õÊ¼»¯½Úµã</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">   92:</td><td class="code">	list_node_init(&thread->Node);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   93:</td><td class="code">	//½«socket½ÚµãÌí¼Óµ½Á´±í</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">   94:</td><td class="code">    pthread_mutex_lock(&manager.mutex);  </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">   95:</td><td class="code">	CHECK_FAIL(list_insert_node(INSERT_TO_HEAD, &manager.threadList, &thread->Node));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">   96:</td><td class="code">    pthread_mutex_unlock(&manager.mutex); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">   97:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   98:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   99:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  100:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  101:</td><td class="code">* @brief Ïß³ÌÒÆ³ı³öÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  102:</td><td class="code">* @param [out] thread  Ïß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  103:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  104:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  105:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  106:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _thread_delete_node è¢«è°ƒç”¨ 11 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 57%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  107:</td><td class="code">_thread_delete_node(Thread *thread)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  108:</td><td class="code">{</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  109:</td><td class="code">    pthread_mutex_lock(&manager.mutex);  </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  110:</td><td class="code">    CHECK_FAIL(list_delete_node(&manager.threadList, &thread->Node));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  111:</td><td class="code">    pthread_mutex_unlock(&manager.mutex); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  112:</td><td class="code">    if(thread->attr.autoInit == 1) thread_free(thread->attr.stackAddr);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 91% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 9%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  113:</td><td class="code">    thread_free(thread);</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  114:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  115:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  116:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  117:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  118:</td><td class="code">* @brief Ïß³ÌÔÚÁ´±íÖĞ²éÕÒ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  119:</td><td class="code">* @param [out] id  Ïß³Ìid</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  120:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  121:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  122:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  123:</td><td class="code">Thread *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _thread_find_node è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 75%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  124:</td><td class="code">_thread_find_node(pthread_t id)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  125:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  126:</td><td class="code">    list_node_t * tmp;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  127:</td><td class="code">    Thread *node=NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  128:</td><td class="code">    //Ë³Ê±Õë±éÀú½Úµã</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  129:</td><td class="code">    tmp = list_get_head_node(&manager.threadList); </td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  130:</td><td class="code">    if(tmp == NULL) return THREAD_NULL; </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  131:</td><td class="code">    do{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  132:</td><td class="code">        node = list_takeout_struct(tmp, Thread, Node);</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  133:</td><td class="code">        if(pthread_equal(id,node->id)) return node;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 67% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 33%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  134:</td><td class="code">        tmp = list_get_prev_node(tmp);</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  135:</td><td class="code">    }while(tmp != list_get_head_node(&manager.threadList));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  136:</td><td class="code">    return THREAD_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  137:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  138:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  139:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  140:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  141:</td><td class="code">* @brief ´´½¨Ò»¸öÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  142:</td><td class="code">* @param [out] thread          Ïß³ÌºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  143:</td><td class="code">* @param [out] module          Ä£¿éÀàĞÍ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  144:</td><td class="code">* @param [in]  attr            Ïß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  145:</td><td class="code">* @param [in]  start_routine   Ïß³Ìº¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  146:</td><td class="code">* @param [in]  arg             Ïß³Ìº¯Êı²ÎÊı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  147:</td><td class="code">* @retval ·µ»ØÏß³Ì  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  148:</td><td class="code">* @retval THREAD_NULL ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  149:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  150:</td><td class="code">Thread *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_create è¢«è°ƒç”¨ 13 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 73%
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  151:</td><td class="code">thread_create(u32_t module,</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  152:</td><td class="code">              threadAttr_t  *attr, </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  153:</td><td class="code">              void *(*startRoutine)(void *), </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  154:</td><td class="code">              void  * arg)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  155:</td><td class="code">{</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  156:</td><td class="code">    if(PARAMISNULL(startRoutine)) RETURN_ERR(ERR_PARA, THREAD_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 15% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 85%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  157:</td><td class="code">    if(module >= MOD_BUTT) RETURN_ERR(ERR_PARA, THREAD_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  158:</td><td class="code">    //Ïß³Ì¹ÜÀí³õÊ¼»¯</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  159:</td><td class="code">	if (MNANGE_IS_INITIALIZED != manager.InitFlag){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 9% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 91%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  160:</td><td class="code">		manager.InitFlag = MNANGE_IS_INITIALIZED;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  161:</td><td class="code">		list_init(&manager.threadList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  162:</td><td class="code">        pthread_mutex_init(&manager.mutex, NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  163:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  164:</td><td class="code">    Thread *thread;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  165:</td><td class="code">    pthread_attr_t  tattr;</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  166:</td><td class="code">    if(THREAD_SUCC != pthread_attr_init(&tattr)) RETURN_ERR(ERR_PARA, THREAD_NULL); //³õÊ¼»¯</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  167:</td><td class="code">    thread = thread_malloc(sizeof(Thread));//³õÊ¼»¯Ïß³Ì½á¹¹Ìå</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  168:</td><td class="code">    //ÅäÖÃÏß³ÌÊôĞÔ</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  169:</td><td class="code">    if(attr != NULL){//³õÊ¼»¯ÊôĞÔ</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 9% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 91%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  170:</td><td class="code">        if( THREAD_SUCC != _thread_set_attr(attr->flag, &tattr, attr)) goto create_fault;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  171:</td><td class="code">        thread->attr = *attr;//copy ÊôĞÔ</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  172:</td><td class="code">        thread->attr.autoInit =0;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  173:</td><td class="code">    }else{</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  174:</td><td class="code">        _thread_default_set_attr(&tattr, &thread->attr);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  175:</td><td class="code">        thread->attr.autoInit =1;</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  176:</td><td class="code">        thread->attr.detachState =THREAD_JOINABLE;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  177:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  178:</td><td class="code">    //´´½¨Ïß³Ì</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  179:</td><td class="code">    if( THREAD_SUCC != pthread_create(&thread->id, &tattr, startRoutine, arg)){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  180:</td><td class="code">        goto create_fault;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  181:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  182:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  183:</td><td class="code">    //½«Ïß³Ì¼ÓÈëÏß³Ì¶ÓÁĞ</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  184:</td><td class="code">    thread->tid = gettid();</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  185:</td><td class="code">    thread->module = module;</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  186:</td><td class="code">    _thread_add_node(thread);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  187:</td><td class="code">    pthread_attr_destroy(&tattr);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  188:</td><td class="code">    return thread;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  189:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  190:</td><td class="code">    create_fault:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  191:</td><td class="code">        pthread_attr_destroy(&tattr);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  192:</td><td class="code">        thread_free(thread);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  193:</td><td class="code">        thread = NULL;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  194:</td><td class="code">        return THREAD_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  195:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  196:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  197:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  198:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  199:</td><td class="code">* @brief »ñµÃ±¾ÉíÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  200:</td><td class="code">* @retval ·µ»Ø±¾ÉíÏß³ÌĞÅÏ¢  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  201:</td><td class="code">* @retval THREAD_NULL     ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  202:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  203:</td><td class="code">Thread *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_self è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  204:</td><td class="code">thread_self(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  205:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  206:</td><td class="code">    pthread_t id = pthread_self();</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  207:</td><td class="code">    pthread_mutex_lock(&manager.mutex);  </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  208:</td><td class="code">    Thread * node = _thread_find_node(id);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  209:</td><td class="code">    pthread_mutex_unlock(&manager.mutex); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  210:</td><td class="code">     return node;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  211:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  212:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  213:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  214:</td><td class="code">* @brief Á½¸öÏß³ÌÏàµÈ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  215:</td><td class="code">* @param [in] one  Ò»¸öÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  216:</td><td class="code">* @param [in] another  ÁíÒ»¸öÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  217:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾ÏàµÈ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  218:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾²»µÈ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  219:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  220:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_equal è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 56%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  221:</td><td class="code">thread_equal(Thread* const one, Thread* const another)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  222:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  223:</td><td class="code">    if(PARAMISNULL(one)||PARAMISNULL(another)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  224:</td><td class="code">    if(pthread_equal(one->id,another->id) ) return THREAD_SUCC;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  225:</td><td class="code">    return THREAD_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  226:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  227:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  228:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  229:</td><td class="code">* @brief ÔÚ¶àÏß³Ì±à³Ì»·¾³ÏÂ,º¯Êıµ÷ÓÃ»á³öÏÖÔÚ¶à¸öÏß³ÌÖĞ£¬initRoutine()º¯Êı½öÖ´ĞĞÒ»´Î</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  230:</td><td class="code">* @param [in] state ÉèÖÃ±¾Ïß³Ì¶ÔCancelĞÅºÅµÄ·´Ó¦ ²»ÅäÖÃÉèÖÃÎª-1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  231:</td><td class="code"> - PTHREAD_CANCEL_ENABLE   ÊÕµ½ĞÅºÅºóÉèÎªCANCLED×´Ì¬(Ä¬ÈÏ)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  232:</td><td class="code"> - PTHREAD_CANCEL_DISABLE ºöÂÔCANCELĞÅºÅ¼ÌĞøÔËĞĞ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  233:</td><td class="code">* @param [in] type ÉèÖÃ±¾Ïß³ÌÈ¡Ïû¶¯×÷µÄÖ´ĞĞÊ±»ú ²»ÅäÖÃÉèÖÃÎª-1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  234:</td><td class="code"> - PTHREAD_CANCEL_DEFERRED    ½öµ±Cancel×´Ì¬ÎªPTHREAD_CANCEL_ENABLEÊ±ÓĞĞ§,ÊÕµ½ĞÅºÅºó¼ÌĞøÔËĞĞÖÁÏÂÒ»¸öÈ¡ÏûµãÔÙÍË³ö </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  235:</td><td class="code"> - PTHREAD_CANCEL_ASYNCHRONOUS ½öµ±Cancel×´Ì¬ÎªPTHREAD_CANCEL_ENABLEÊ±ÓĞĞ§,Á¢¼´Ö´ĞĞÈ¡Ïû¶¯×÷£¨ÍË³ö£©</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  236:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  237:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  238:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  239:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_cancel_set è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 42%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  240:</td><td class="code">thread_cancel_set(int_t state, int_t type)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  241:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  242:</td><td class="code">    if(PTHREAD_CANCEL_ENABLE != state || PTHREAD_CANCEL_DISABLE != state) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 67% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 33%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  243:</td><td class="code">    if(PTHREAD_CANCEL_DEFERRED != type || PTHREAD_CANCEL_ASYNCHRONOUS != type) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  244:</td><td class="code">    pthread_setcanceltype(type, NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  245:</td><td class="code">    pthread_setcancelstate(state, NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  246:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  247:</td><td class="code">} </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  248:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  249:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  250:</td><td class="code">* @brief ÉèÖÃÏß³ÌÈ¡Ïûµã</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  251:</td><td class="code">* @param [out] exited  ±»ÍË³öµÄÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  252:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  253:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  254:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  255:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_cancel_point è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 50%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  256:</td><td class="code">thread_cancel_point(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  257:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  258:</td><td class="code">    pthread_testcancel();</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  259:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  260:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  261:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  262:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  263:</td><td class="code">* @brief ·¢ËÍCANCELĞÅºÅÏûÏ¢ÍË³öÄ³¸öÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  264:</td><td class="code">* @attention£º Ïß³Ì½ÓÊÕµ½CANCELĞÅºÅµÄÈ±Ê¡´¦ÀíÊÇ¼ÌĞøÔËĞĞÖÁÈ¡Ïûµã£¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  265:</td><td class="code">               pthreads±ê×¼Ö¸¶¨ÁË¼¸¸öÈ¡Ïûµã£¬ÆäÖĞ°üÀ¨£º</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  266:</td><td class="code">                   (1)Í¨¹ıthread_cancel_pointµ÷ÓÃÒÔ±à³Ì·½Ê½½¨Á¢Ïß³ÌÈ¡Ïûµã¡£ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  267:</td><td class="code">                   (2)Ïß³ÌµÈ´ıpthread_cond_wait»òpthread_cond_timewait()ÖĞµÄÌØ¶¨Ìõ¼ş¡£ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  268:</td><td class="code">                   (3)±»sigwait(2)×èÈûµÄº¯Êı </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  269:</td><td class="code">                   (4)Ò»Ğ©±ê×¼µÄ¿âµ÷ÓÃ¡£Í¨³££¬ÕâĞ©µ÷ÓÃ°üÀ¨Ïß³Ì¿É»ùÓÚ×èÈûµÄº¯Êı¡£ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  270:</td><td class="code">* @param [out] exited  ±»ÍË³öµÄÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  271:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  272:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  273:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  274:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_cancel_some è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 80%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  275:</td><td class="code">thread_cancel_some(Thread *exited)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  276:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  277:</td><td class="code">    if(PARAMISNULL(exited)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  278:</td><td class="code">    if(THREAD_SUCC == pthread_cancel(exited->id)){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  279:</td><td class="code">       if( exited->attr.detachState == THREAD_DETACHED )  _thread_delete_node(exited);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  280:</td><td class="code">       return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  281:</td><td class="code">    }</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  282:</td><td class="code">    return THREAD_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  283:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  284:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  285:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  286:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  287:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  288:</td><td class="code">* @brief ±¾ÉíÏß³ÌÍË³ö</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  289:</td><td class="code">* @attention£º Ïß³ÌÍË³öºó£¬²¢²»»áÊÍ·ÅÏß³Ì×ÊÔ´</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  290:</td><td class="code">* @param [out] retval  Ïß³ÌÍË³ö·µ»ØÖµ thread_join½ÓÊÕÕâ¸öÖµ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  291:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  292:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  293:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  294:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_exit_self è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 88%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  295:</td><td class="code">thread_exit_self( void * retval)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  296:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  297:</td><td class="code">    pthread_t id = pthread_self();</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  298:</td><td class="code">    pthread_mutex_lock(&manager.mutex);  </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  299:</td><td class="code">    Thread * node = _thread_find_node(id);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  300:</td><td class="code">    pthread_mutex_unlock(&manager.mutex); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  301:</td><td class="code">    if( node != NULL && node->attr.detachState == THREAD_DETACHED ) _thread_delete_node(node);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 100%
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  302:</td><td class="code">    pthread_exit(retval);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  303:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  304:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  305:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  306:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  307:</td><td class="code">* @brief Á¬½ÓÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  308:</td><td class="code">* @attention£º ÔÚÈÎºÎÒ»¸öÊ±¼äµãÉÏ£¬Ïß³ÌÊÇ¿É½áºÏµÄ£¨joinable£©»òÕßÊÇ·ÖÀëµÄ£¨detached£©¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  309:</td><td class="code">               Ò»¸ö¿É½áºÏµÄÏß³ÌÄÜ¹»±»ÆäËûÏß³ÌÊÕ»ØÆä×ÊÔ´ºÍÉ±ËÀ¡£ÔÚ±»ÆäËûÏß³Ì»ØÊÕÖ®Ç°£¬ËüµÄ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  310:</td><td class="code">               ´æ´¢Æ÷×ÊÔ´£¨ÀıÈçÕ»£©ÊÇ²»ÊÍ·ÅµÄ¡£Ïà·´£¬Ò»¸ö·ÖÀëµÄÏß³ÌÊÇ²»ÄÜ±»ÆäËûÏß³Ì»ØÊÕ»ò</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  311:</td><td class="code">               É±ËÀµÄ£¬ËüµÄ´æ´¢Æ÷×ÊÔ´ÔÚËüÖÕÖ¹Ê±ÓÉÏµÍ³×Ô¶¯ÊÍ·Å¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  312:</td><td class="code">* @param [in] thread  Ïß³ÌºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  313:</td><td class="code">* @param [out] retval  Ïß³ÌÍË³ö·µ»ØÖµ thread_exit_self·¢ËÍÕâ¸öÖµ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  314:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  315:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  316:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  317:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_join è¢«è°ƒç”¨ 12 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 57%
+</td></tr>
+<tr><td class="sum">       12:</td>   <td class="line">  318:</td><td class="code">thread_join(Thread *thread, void **retval)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  319:</td><td class="code">{</td></tr>
+<tr><td class="sum">       12:</td>   <td class="line">  320:</td><td class="code">    if(PARAMISNULL(thread)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 8% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 92%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  321:</td><td class="code">    CHECK_FAIL(pthread_join(thread->id, retval));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  322:</td><td class="code">    _thread_delete_node(thread);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  323:</td><td class="code">    return THREAD_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  324:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  325:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  326:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  327:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  328:</td><td class="code">* @brief ·ÖÀëÏß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  329:</td><td class="code">* @attention£º ÔÚÈÎºÎÒ»¸öÊ±¼äµãÉÏ£¬Ïß³ÌÊÇ¿É½áºÏµÄ£¨joinable£©»òÕßÊÇ·ÖÀëµÄ£¨detached£©¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  330:</td><td class="code">               Ò»¸ö¿É½áºÏµÄÏß³ÌÄÜ¹»±»ÆäËûÏß³ÌÊÕ»ØÆä×ÊÔ´ºÍÉ±ËÀ¡£ÔÚ±»ÆäËûÏß³Ì»ØÊÕÖ®Ç°£¬ËüµÄ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  331:</td><td class="code">               ´æ´¢Æ÷×ÊÔ´£¨ÀıÈçÕ»£©ÊÇ²»ÊÍ·ÅµÄ¡£Ïà·´£¬Ò»¸ö·ÖÀëµÄÏß³ÌÊÇ²»ÄÜ±»ÆäËûÏß³Ì»ØÊÕ»ò</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  332:</td><td class="code">               É±ËÀµÄ£¬ËüµÄ´æ´¢Æ÷×ÊÔ´ÔÚËüÖÕÖ¹Ê±ÓÉÏµÍ³×Ô¶¯ÊÍ·Å¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  333:</td><td class="code">               ·ÖÀëºó£¬²»ĞèÒªthread_joinÊÍ·Å×ÊÔ´£¬ÏµÍ³»á×Ô¶¯ÊÍ·Å×ÊÔ´</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  334:</td><td class="code">* @param [in] thread  Ïß³ÌºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  335:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  336:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  337:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  338:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_detach è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 67%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  339:</td><td class="code">thread_detach(Thread *thread)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  340:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  341:</td><td class="code">    if(PARAMISNULL(thread)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  342:</td><td class="code">    thread->attr.detachState = THREAD_DETACHED;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  343:</td><td class="code">    return pthread_detach(thread->id);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  344:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  345:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  346:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  347:</td><td class="code">* @brief ÔÚ¶àÏß³Ì±à³Ì»·¾³ÏÂ,º¯Êıµ÷ÓÃ»á³öÏÖÔÚ¶à¸öÏß³ÌÖĞ£¬initRoutine()º¯Êı½öÖ´ĞĞÒ»´Î</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  348:</td><td class="code">* @param [in] onceControl ¿ØÖÆ±äÁ¿ ±ØĞëÊ¹ÓÃPTHREAD_ONCE_INITºê¾²Ì¬µØ³õÊ¼»¯¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  349:</td><td class="code">* @param [in] initRoutine ³õÊ¼»¯º¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  350:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  351:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  352:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  353:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_once è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 57%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  354:</td><td class="code">thread_once(pthread_once_t *onceControl, void (*initRoutine) (void))</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  355:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  356:</td><td class="code">    if(PARAMISNULL(onceControl)||PARAMISNULL(initRoutine)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  357:</td><td class="code">    return pthread_once(onceControl, initRoutine);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  358:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  359:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  360:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  361:</td><td class="code">* @brief Ïß³Ì¾Ö²¿Êı¾İ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  362:</td><td class="code">* @param [in] key ¾Ö²¿Êı¾İkey</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  363:</td><td class="code">* @param [in] clean ÏÖÔÚ½áÊø¶Ô¾Ö²¿Êı¾İÇåÀíº¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  364:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  365:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  366:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  367:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_localdata_create è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  368:</td><td class="code">thread_localdata_create(pthread_key_t *key, void (*clean)(void*))</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  369:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  370:</td><td class="code">    if(PARAMISNULL(key)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  371:</td><td class="code">    return pthread_key_create(key, clean);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  372:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  373:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  374:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  375:</td><td class="code">* @brief ÉèÖÃÏß³Ì¾Ö²¿Êı¾İ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  376:</td><td class="code">* @param [in] key ¾Ö²¿Êı¾İkey</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  377:</td><td class="code">* @param [in] value ¾Ö²¿Êı¾İ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  378:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  379:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  380:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  381:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_set_localdata è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  382:</td><td class="code">thread_set_localdata(pthread_key_t key, const void *value)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  383:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  384:</td><td class="code">    return pthread_setspecific(key, value);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  385:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  386:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  387:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  388:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  389:</td><td class="code">* @brief »ñµÃÏß³Ì¾Ö²¿Êı¾İ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  390:</td><td class="code">* @param [in] key ¾Ö²¿Êı¾İkey</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  391:</td><td class="code">* @param [in] value ¾Ö²¿Êı¾İµØÖ·</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  392:</td><td class="code">* @retval ·µ»ØÖµµØÖ·   ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  393:</td><td class="code">* @retval THREAD_FAIL ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  394:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  395:</td><td class="code">void *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_get_localdata è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  396:</td><td class="code">thread_get_localdata(pthread_key_t key)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  397:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  398:</td><td class="code">    return pthread_getspecific(key);//µ±Ã»ÓĞsetpecificÊ±ºò£¬Ö±½Ó·µ»Ø¿ÕÖ¸Õë</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  399:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  400:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  401:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  402:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  403:</td><td class="code">* @brief É¾³ıÏß³Ì¾Ö²¿Êı¾İ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  404:</td><td class="code">* @param [in] key ¾Ö²¿Êı¾İkey</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  405:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  406:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  407:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  408:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_delete_localdata è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  409:</td><td class="code">thread_delete_localdata(pthread_key_t key)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  410:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  411:</td><td class="code">    return pthread_key_delete(key);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  412:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  413:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  414:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  415:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  416:</td><td class="code">* @brief ·¢ËÍĞÅºÅµ½Ä³¸öÏß³Ì SIGSTOP SIGKILL ¶¼»á×÷ÓÃ½ø³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  417:</td><td class="code">* @param [in] thread  Ïß³Ì</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  418:</td><td class="code">* @param [in] sig  ĞÅºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  419:</td><td class="code">* @retval THREAD_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  420:</td><td class="code">* @retval THREAD_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  421:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  422:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° thread_signal è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 67%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  423:</td><td class="code">thread_signal(Thread *thread, int sig)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  424:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  425:</td><td class="code">    if(PARAMISNULL(thread)) RETURN_ERR(ERR_PARA, THREAD_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  426:</td><td class="code">    return pthread_kill(thread->id, sig);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  427:</td><td class="code">}</td></tr>
+</table>
+</body>
+
+   <script type="text/javascript" src="../../TEST/html/js/buildCoverage.js"></script>
+</html>

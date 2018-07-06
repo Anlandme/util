@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>ä»£ç è¦†ç›–ç‡æŠ¥å‘Š</title>
+   <link rel="stylesheet" href="../../TEST/html/css/coverage.css">
+</head>
+
+<body class="coverage-page">
+<h1>TEST.C è¦†ç›–ç‡</h1>
+<table rules="cols" >
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Source:../halloc/system_layer.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Graph:system_layer.gcno</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Data:system_layer.gcda</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Runs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Programs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    1:</td><td class="code">/******************************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    2:</td><td class="code">        (c) COPYRIGHT 2017-  by D.C.P  Co.,Ltd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    3:</td><td class="code">                          All rights reserved.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    4:</td><td class="code">@file: system_layer.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    5:</td><td class="code">@brief: ÏµÍ³²ãÉÏÖ÷ÒªÊÇÏòÏµÍ³ÉêÇëÄÚ´æÒ³£¬ÒÔ¼°¹ÜÀí¿ÕÏĞÄÚ´æÒ³£¬ºÍÏò×ÊÔ´¹ÜÀí²ã»ØÊÕ·¢ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    6:</td><td class="code">        »ØÄÚ´æ³ØºÍ·¢·ÅÄÚ´æÒ³Ê¹ÓÃ¡£±¾²ãÖ÷ÒªËÄ¸öº¯Êı£¬ºÍÁ½¸ö±»ÉÏ²ãµ÷ÓÃº¯Êı£¬»¹ÓĞ³õÊ¼»¯ºÍ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    7:</td><td class="code">        ÊÍ·ÅslayerÄÚ´æ¹ÜÀíº¯Êı£¬Ò»¹²°Ë¸öÖ÷Òª²¿·Ö¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    8:</td><td class="code">        µÚÒ»¸ö²¿·Ö£º´¦Àí¼ôÖ½Ëã·¨º¯Êı£¬Ö÷ÒªÊÇ¶ÔÓÚÒ³µÄ²Ã¼ô²Ù×÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    9:</td><td class="code">        µÚ¶ş¸ö²¿·Ö£º´¦ÀíËéÖ½Ëã·¨º¯Êı£¬Ö÷ÒªÊÇ¶ÔÓÚ´óÒ³µÄ²Ù×÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   10:</td><td class="code">        µÚÈı¸ö²¿·Ö£ºÒ³½á¹¹ÌåÉêÇëºÍÊÍ·Å</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   11:</td><td class="code">        µÚËÄ¸ö²¿·Ö£ºÄÚ´æ¿é½á¹¹ÌåÉêÇë</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   12:</td><td class="code">        µÚÎå¸ö²¿·Ö£ºÉÏ²ãµ÷ÓÃµÄÉêÇëÒ³º¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   13:</td><td class="code">        µÚÁù¸ö²¿·Ö£ºÉÏ²ãµ÷ÓÃµÄÊÍ·ÅÒ³º¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   14:</td><td class="code">        µÚÆß¸ö²¿·Ö£ºhalloc³õÊ¼»¯º¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   15:</td><td class="code">        µÚ°Ë¸ö²¿·Ö£ºhalloc´İ»Ùº¯Êı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   16:</td><td class="code">@attention£º ±¾Ä£¿é¹ØÁªÍâ²¿ÎÄ¼şºÍÄ£¿é util/utildef.h,utilinc.h errÄ£¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   17:</td><td class="code">@author   D.C.P 			                                                 </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   18:</td><td class="code">@version  0.0.0.1                                                               </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   19:</td><td class="code">@date     2017/03/02</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   20:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   21:</td><td class="code">  Change History :                                                              </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   22:</td><td class="code">                 | <Date>      | <Version> | <Author> | <Description>                     </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   23:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   24:</td><td class="code">  @todo          | 2017/12/18  | 0.0.0.1   | D.C.P    | ´´½¨ÎÄ¼ş            </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   25:</td><td class="code">******************************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   26:</td><td class="code">#include ".././util/util_inc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   27:</td><td class="code">#include "halloc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   28:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   29:</td><td class="code">/**  @brief ÄÚ´æ³Ø¹ÜÀíÆ÷ */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   30:</td><td class="code">mempool_t Pool;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   31:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   32:</td><td class="code">/**  @brief ÏĞÖÃÄÚ´æÒ³¹ÜÀí*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   33:</td><td class="code">freepages_t FreeTable;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   34:</td><td class="code">/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   35:</td><td class="code">*   Name£ºÏµÍ³²ãº¯½Ó¿Úºê</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   36:</td><td class="code">*   Desc£º¿ÉÒÔ±»ÄÚ²¿ºÍÍâ²¿µ÷ÓÃµÄ½Ó¿Úºê</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   37:</td><td class="code">******************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   38:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   39:</td><td class="code">* @brief ËéÖ½</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   40:</td><td class="code">* @param [in]  newPage  ĞÂÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   41:</td><td class="code">* @param [in]  tatterAddr  ĞÂÒ³µØÖ·</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   42:</td><td class="code">* @param [in]  newpageSize ĞÂÒ³´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   43:</td><td class="code">* @param [in]  pageSize    ´ıÇĞ¸îÒ³´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   44:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   45:</td><td class="code">#define _slayer_tatter_page(newPage, tatterAddr, newpageSize, pagesize)\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   46:</td><td class="code">do{\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   47:</td><td class="code">    int_t tatterSize= pagesize < newpageSize?pagesize:newpageSize;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   48:</td><td class="code">	newPage->headAddr   = tatterAddr;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   49:</td><td class="code">	newPage->pageSize   = tatterSize;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   50:</td><td class="code">	newPage->unusedSize = tatterSize;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   51:</td><td class="code">	CHECK_FF(_slayer_recover_page(newPage));\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   52:</td><td class="code">	if(pagesize < newpageSize) return HALLOC_SUCC;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   53:</td><td class="code">	CHECK_NF(newPage = _slayer_get_page());\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   54:</td><td class="code">	tatterAddr = MEM_OFFSET(tatterAddr, newpageSize*KB);\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   55:</td><td class="code">	pagesize = pagesize - newpageSize;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   56:</td><td class="code">}while(0)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   57:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   58:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   59:</td><td class="code">* @brief ³õÊ¼»¯ÄÚ´æ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   60:</td><td class="code">* @param [in]  block  ÄÚ´æ¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   61:</td><td class="code">* @param [in]  addr  ÄÚ´æµØÖ·</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   62:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   63:</td><td class="code">#define _mem_init(block, addr)\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   64:</td><td class="code">do{\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   65:</td><td class="code">    checkinfo_t * info = (checkinfo_t *)addr;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   66:</td><td class="code">    info->headcheck = CHECKCODE;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   67:</td><td class="code">    info->block = block;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   68:</td><td class="code">	info->tailcheck = CHECKCODE;\</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   69:</td><td class="code">}while(0)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   70:</td><td class="code">/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   71:</td><td class="code">*   Name£ºµ×²ãº¯½Ó¿Úºê</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   72:</td><td class="code">*   Desc£º¿ÉÒÔ±»ÄÚ²¿ºÍÍâ²¿µ÷ÓÃµÄ½Ó¿Úºê</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   73:</td><td class="code">******************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   74:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   75:</td><td class="code">* @brief Ïòµ×²ãÉêÇëÄÚ´æ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   76:</td><td class="code">* @param [in]  size     ÄÚ´æ´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   77:</td><td class="code">* @retval ·µ»ØÄÚ´æÊ×µØÖ· ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   78:</td><td class="code">* @retval HALLOC_NULL   ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   79:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   80:</td><td class="code">void *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° blayer_malloc è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 60%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   81:</td><td class="code">blayer_malloc(uint size)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   82:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   83:</td><td class="code">	void *memory;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   84:</td><td class="code">	if( size > Pool.baseMem.used) {</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   85:</td><td class="code">		halloc_log("not memory could malloc\n");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   86:</td><td class="code">		return HALLOC_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   87:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   88:</td><td class="code">	memory = Pool.baseMem.unusedAddr;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   89:</td><td class="code">	Pool.baseMem.unusedAddr = MEM_OFFSET(Pool.baseMem.unusedAddr ,size);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   90:</td><td class="code">	Pool.baseMem.used = Pool.baseMem.used - size;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   91:</td><td class="code">	return memory;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   92:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   93:</td><td class="code">/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   94:</td><td class="code">*   Name£ºÏµÍ³²ãº¯½Ó¿Ú</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   95:</td><td class="code">*   Desc£º¿ÉÒÔ±»ÄÚ²¿ºÍÍâ²¿µ÷ÓÃµÄ½Ó¿Ú</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   96:</td><td class="code">******************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   97:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   98:</td><td class="code">* @brief »ñµÃÈ«²¿ÄÚ´æµÄÍ·µØÖ·</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   99:</td><td class="code">* @retval ·µ»ØÄÚ´æÊ×µØÖ· ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  100:</td><td class="code">* @retval HALLOC_NULL   ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  101:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  102:</td><td class="code">void *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_get_headaddr è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  103:</td><td class="code">slayer_get_headaddr(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  104:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  105:</td><td class="code">	return Pool.baseMem.headAddr;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  106:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  107:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  108:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  109:</td><td class="code">* @brief ³õÊ¼»¯ÄÚ´æ¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  110:</td><td class="code">* @param [in]  block    ÄÚ´æ¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  111:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  112:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  113:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  114:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_init_block è¢«è°ƒç”¨ 144 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  115:</td><td class="code">_slayer_init_block(block_t *block)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  116:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  117:</td><td class="code">	/* ¹«¹²²ÎÊı */</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  118:</td><td class="code">	block->blockSize= 0;			   // ÄÚ´æ¿é´óĞ¡</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  119:</td><td class="code">    block->headAddr = NULL;            // µØÖ·Í·</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  120:</td><td class="code">    block->lease    = 0;        	   // ÄÚ´æ¿é×âÓÃÊ±¼ä ×âÁŞËã·¨Ê¹ÓÃ</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  121:</td><td class="code">    block->color    = BLOCK_WHITE;     // ÂÌÉ«-µÈ´ı±»»ØÊÕ »ÆÉ«-·ÖÅä²ãÊ¹ÓÃ ºìÉ«-Íâ²¿Ä£¿éÊ¹ÓÃ °×É«-ÎŞÈËÊ¹ÓÃ</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  122:</td><td class="code">	block->type     = MEM_NONE;		   // ÄÚ´æ¿éÀàĞÍ</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  123:</td><td class="code">    list_node_init(&block->blockNode); // ÄÚ´æ¿é½Úµã Î»ÓÚÆäËûÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  124:</td><td class="code">    /* ×ÊÔ´¹ÜÀí²ãÊ¹ÓÃ²ÎÊı */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  125:</td><td class="code">    /* ×ÊÔ´·ÖÅä²ãÊ¹ÓÃ²ÎÊı */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  126:</td><td class="code">    /* ÄÚ´æĞ¹Â©Ê¹ÓÃ */</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  127:</td><td class="code">	block->checkSign = 0;			   // Ğ¹Â©¼ì²é±ê¼Ç</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  128:</td><td class="code">	list_node_init(&block->blackNode); // ºÚÃûµ¥½Úµã</td></tr>
+<tr><td class="sum">      144:</td>   <td class="line">  129:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  130:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  131:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  132:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  133:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  134:</td><td class="code">* @brief ³õÊ¼»¯ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  135:</td><td class="code">* @param [in]  page      ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  136:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  137:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  138:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  139:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_init_page è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  140:</td><td class="code">_slayer_init_page(page_t * page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  141:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  142:</td><td class="code">    /* ¹«¹²²ÎÊı */</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  143:</td><td class="code">	page->brotherflag= 0;			  // ¸ç¸ç±êÖ¾</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  144:</td><td class="code">	page->usedflag   = NON_USED;	  // Ê¹ÓÃ±êÖ¾</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  145:</td><td class="code">    page->mallocpage = MALLOC_INIT;   // mallocÉêÇëÒ³</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  146:</td><td class="code">    page->unusedAddr = NULL;          // Ö¸ÏòÎ´±»Ê¹ÓÃµÄµØÖ·</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  147:</td><td class="code">    page->headAddr   = NULL;          // µØÖ·Í·</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  148:</td><td class="code">    list_node_init(&page->pageNode);  // Ò³½Úµã</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  149:</td><td class="code">    /* ÏµÍ³²ãÊ¹ÓÃ²ÎÊı */</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  150:</td><td class="code">    page->pageSize   = 0;          		// Ö½ÕÅ´óĞ¡</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  151:</td><td class="code">    page->unusedSize = 0;        		// Î´±»Ê¹ÓÃµÄ´óĞ¡ µ¥Î»×Ö½Ú</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  152:</td><td class="code">    page->brother    = NULL;         	// ÁíÒ»ÕÅ²Ã¼ô´¦ÀíµÄĞÖµÜÖ½ÕÅ </td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  153:</td><td class="code">    list_node_init(&page->destroyNode);  // Ïú»Ù½Úµã Ïú»ÙÄÚ´æ³ØÊ¹ÓÃ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  154:</td><td class="code">    /* ×ÊÔ´¹ÜÀí²ãÊ¹ÓÃ²ÎÊı */</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  155:</td><td class="code">    page->maxTime    = 0;         // µ±Ç°Õ¼ÓÃÊ±¼ä×î³¤µÄÄÚ´æ¿éÊ±¼äÖµ </td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  156:</td><td class="code">	page->freeBlocks = 0;		  // ÏĞÖÃÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  157:</td><td class="code">	pthread_mutex_init(&page->lock,NULL); //Ò³Ëø</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  158:</td><td class="code">    list_init(&page->blocksList); // ÄÚ´æ¿éÁ´±í </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  159:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  160:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  161:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  162:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  163:</td><td class="code">* @brief ½âÎö³öpage_t »òÕß block_t</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  164:</td><td class="code">* @param [in]  stack     pabÕ»</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  165:</td><td class="code">* @param [in]  pageSum   ÄÚ´æÒ³ÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  166:</td><td class="code">* @param [in]  blockSum  ÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  167:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  168:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  169:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  170:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_parse_pad è¢«è°ƒç”¨ 5 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 58%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  171:</td><td class="code">_slayer_parse_pad(pabStack_t * stack, uint_t *mallocSize, uint_t pageSum, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  172:</td><td class="code">{</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  173:</td><td class="code">	int_t index = 0;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  174:</td><td class="code">	</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  175:</td><td class="code">	if(1 == pageSum){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 40% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 60%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  176:</td><td class="code">		page_t *page = (page_t *)stack->stackSP;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  177:</td><td class="code">		_slayer_init_page(page);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  178:</td><td class="code">		CHECK_FF(stack_push(&Pool.pageAndBlock.freePageStack, &page->pageNode));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  179:</td><td class="code">	}else if(0 != blockSum){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  180:</td><td class="code">		block_t *block = (block_t *)stack->stackSP;//»ñÈ¡µØÖ·ÖĞµÚÒ»¸öÄÚ´æ¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  181:</td><td class="code">		list_head_t list; //´æ´¢?ĞÂµÄÄÚ´æ¿éµÄÁ´±í</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  182:</td><td class="code">		list_init(&list);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       75:</td>   <td class="line">  183:</td><td class="code">		for(index=0; index<blockSum; index++) {//³õÊ¼»¯ÄÚ´æ¿éºó·Åµ½Á´±íÖĞ</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 96%
+ åˆ†æ”¯ 1 é€šè¿‡ 4% (fallthrough)
+</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  184:</td><td class="code">			_slayer_init_block(&block[index]);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  185:</td><td class="code">			list_node_init(&block[index].node);</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  186:</td><td class="code">			CHECK_FF(list_insert_node(INSERT_TO_HEAD, &list, &block[index].node));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  187:</td><td class="code">		}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  188:</td><td class="code">		//½«»ñµÃµÄËùÓĞÁ´±í·ÅÈëµ½ÏĞÖÃÄÚ´æ¿éÕ»µ±ÖĞ</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  189:</td><td class="code">		CHECK_FF(stack_push_list(&Pool.pageAndBlock.freeBlockStack, &list, blockSum));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  190:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  191:</td><td class="code">	stack->stackSP = MEM_OFFSET(stack->stackSP ,*mallocSize);</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  192:</td><td class="code">	stack->used    = stack->used + blockSum*sizeof(block_t) + pageSum*sizeof(page_t);</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  193:</td><td class="code">	*mallocSize    = *mallocSize - blockSum*sizeof(block_t)- pageSum*sizeof(page_t);</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  194:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  195:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  196:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  197:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  198:</td><td class="code">* @brief ÏòÄÚºË»ñÈ¡ÄÚ´æ ÓÃÓÚPABÕ»»ñÈ¡8kb´óĞ¡Õ»</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  199:</td><td class="code">* @retval ·µ»ØĞÂÕ»  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  200:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  201:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  202:</td><td class="code">pabStack_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_malloc_stack è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 50%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  203:</td><td class="code">_slayer_malloc_stack(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  204:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  205:</td><td class="code">	pabStack_t *stack = NULL; //padÕ»½á¹¹ÌåÖ¸Õë</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  206:</td><td class="code">	stack = (pabStack_t *)malloc(PAB_STACK_SIZE);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  207:</td><td class="code">	stack->stackSP = MEM_OFFSET(stack, sizeof(pabStack_t));</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  208:</td><td class="code">	stack->used    = sizeof(pabStack_t);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  209:</td><td class="code">	list_node_init(&stack->PABnode);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  210:</td><td class="code">	CHECK_FG(list_insert_node(INSERT_TO_HEAD, &Pool.pageAndBlock.PABStackList, &(stack->PABnode)),insert_fail);//²åÈë½Úµã</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  211:</td><td class="code">	return stack;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  212:</td><td class="code">	insert_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  213:</td><td class="code">		free(stack);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  214:</td><td class="code">		return HALLOC_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  215:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  216:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  217:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  218:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  219:</td><td class="code">* @brief ÏòpageAndBlockÕ»»ñÈ¡page »òÕß block</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  220:</td><td class="code">* @param [in]  pageSum   ÄÚ´æÒ³ÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  221:</td><td class="code">* @param [in]  blockSum  ÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  222:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  223:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  224:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  225:</td><td class="code">#define stack_block_sum(used) (PAB_STACK_SIZE-used)/sizeof(block_t) //µ±Ç°Õ»¿É»ñÈ¡blockÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  226:</td><td class="code">#define stack_page_sum(used) (PAB_STACK_SIZE-used)/sizeof(page_t) //µ±Ç°Õ»¿É»ñÈ¡pageÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  227:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_malloc_pab è¢«è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 63%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  228:</td><td class="code">_slayer_malloc_pab(uint_t pageSum, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  229:</td><td class="code">{</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  230:</td><td class="code">	uint_t mallocSize  = sizeof(page_t)*pageSum + sizeof(block_t)*blockSum;//ÉêÇëÄÚ´æµÄ´óĞ¡ ÒòÎªÆäÖĞÒ»¸öÎª0£¬ËùÒÔ¿ÉÒÔ¼ÆËãÁíÒ»¸öÖµ</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  231:</td><td class="code">	uint_t curBlock	   = blockSum; //blockÊıÁ¿</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  232:</td><td class="code">	uint_t mallocBlock = 0; //ÉêÇëblockÊıÁ¿</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  233:</td><td class="code">    pabStack_t *stack  = NULL; //pabÕ»½á¹¹ÌåÖ¸Õë</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  234:</td><td class="code">    list_node_t *tmp   = NULL; //ÄÚ´æ¿éÁ´±íµÄ½Úµã</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  235:</td><td class="code">    stack_head_t *list = &Pool.pageAndBlock.PABStackList; //pabÕ»Á´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  236:</td><td class="code">	//»ñÈ¡ÄÚ´æ¿é»òÕßÄÚ´æÒ³½á¹¹Ìå</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  237:</td><td class="code">	if( stack_get_current_member(list) != 0 ){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 75% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 25%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  238:</td><td class="code">		tmp = list_get_head_node(list); </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  239:</td><td class="code">		do{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  240:</td><td class="code">			stack = list_takeout_struct(tmp, pabStack_t, PABnode);</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  241:</td><td class="code">			if(stack_block_sum(stack->used)!=0 && stack_page_sum(stack->used)!=0){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  242:</td><td class="code">				if( 0 != blockSum ) {</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 67% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 33%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  243:</td><td class="code">					//¼ÆËã³öµ±Ç°»¹ÓĞÏòÄÚ²¿ÉêÇëµÄÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  244:</td><td class="code">					mallocBlock = stack_block_sum(stack->used) >= curBlock?curBlock:stack_block_sum(stack->used);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  245:</td><td class="code">					curBlock = curBlock - mallocBlock;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  246:</td><td class="code">				}</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  247:</td><td class="code">				CHECK_FL(_slayer_parse_pad(stack, &mallocSize, pageSum, mallocBlock));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  248:</td><td class="code">			}</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  249:</td><td class="code">			if(0 == mallocSize) goto malloc_succ;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 67% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 33%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  250:</td><td class="code">			tmp = list_get_next_node(tmp);</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  251:</td><td class="code">		}while(tmp != list_get_head_node(list));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0%
+ åˆ†æ”¯ 1 é€šè¿‡ 100% (fallthrough)
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  252:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  253:</td><td class="code">	//Èç¹ûÃ»ÓĞÔòÉêÇëĞÂµÄÕ»</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  254:</td><td class="code">	mallocBlock = curBlock;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  255:</td><td class="code">	CHECK_NF(stack = _slayer_malloc_stack());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  256:</td><td class="code">	CHECK_FF(_slayer_parse_pad(stack, &mallocSize, pageSum, mallocBlock));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  257:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  258:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  259:</td><td class="code">	malloc_succ:</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  260:</td><td class="code">		return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  261:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  262:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  263:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  264:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  265:</td><td class="code">* @brief ³õÊ¼»¯ÄÚ´æ¿éÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  266:</td><td class="code">* @param [in]  list     ÄÚ´æ¿éÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  267:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  268:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  269:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  270:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_init_block_list è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  271:</td><td class="code">_slayer_init_block_list(page_t * page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  272:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  273:</td><td class="code">    block_t *block     = NULL;	//»ñÈ¡ÄÚ´æ¿éÖ¸Õë</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  274:</td><td class="code">    list_node_t *tmp   = NULL; //ÄÚ´æ¿éÁ´±íµÄ½Úµã</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  275:</td><td class="code">    stack_head_t *list = &page->blocksList; //ÄÚ´æ¿éÁ´±í</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  276:</td><td class="code">	void *offsetAddr   = page->headAddr; //ÄÚ´æ¿éÎ»ÒÆµØÖ·</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  277:</td><td class="code">	int_t offset 	   = (page->pageSize*KB)/stack_get_current_member(&page->blocksList); //¼ÆËãÃ¿´ÎÆ«ÒÆ¾àÀë</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  278:</td><td class="code">    //Ë³Ê±Õë±éÀúÄÚ´æ¿é²¢³õÊ¼»¯</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  279:</td><td class="code">    tmp = list_get_head_node(list); </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  280:</td><td class="code">    do{</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  281:</td><td class="code">        block = list_takeout_struct(tmp, block_t, node);</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  282:</td><td class="code">        _slayer_init_block(block);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  283:</td><td class="code">		block->headAddr = offsetAddr;</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  284:</td><td class="code">		block->blockSize= offset;</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  285:</td><td class="code">		block->page = page;</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  286:</td><td class="code">		_mem_init(block, offsetAddr);</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  287:</td><td class="code">		offsetAddr = MEM_OFFSET(offsetAddr ,offset); //µØÖ·Æ«ÒÆ</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  288:</td><td class="code">        tmp = list_get_next_node(tmp);</td></tr>
+<tr><td class="sum">       72:</td>   <td class="line">  289:</td><td class="code">    }while(tmp != list_get_head_node(list));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 97%
+ åˆ†æ”¯ 1 é€šè¿‡ 3% (fallthrough)
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  290:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  291:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  292:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  293:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  294:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  295:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  296:</td><td class="code">* @brief »ñ¹é»¹ÄÚ´æ¿éÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  297:</td><td class="code">* @param [in]  page      ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  298:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  299:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  300:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  301:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_return_block_list è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  302:</td><td class="code">_slayer_return_block_list(page_t * page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  303:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  304:</td><td class="code">	uint_t number =stack_get_current_member(&page->blocksList);//ÄÚ´æ¿éÕ»ÉÏÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  305:</td><td class="code">	CHECK_FF(stack_push_list(&Pool.pageAndBlock.freeBlockStack, &page->blocksList, number));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  306:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  307:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  308:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  309:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  310:</td><td class="code">* @brief »ñÈ¡ÄÚ´æ¿éÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  311:</td><td class="code">* @param [in]  page      ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  312:</td><td class="code">* @param [in]  blockSum  ÄÚ´æÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  313:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  314:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  315:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  316:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_get_block_list è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 42%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  317:</td><td class="code">_slayer_get_block_list(page_t * page, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  318:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  319:</td><td class="code">	if(0 == blockSum) goto success;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  320:</td><td class="code">	uint_t number   = stack_get_current_member(&Pool.pageAndBlock.freeBlockStack);//ÏĞÖÃÄÚ´æ¿éÕ»ÉÏÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  321:</td><td class="code">	stack_head_t list;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  322:</td><td class="code">	list_init(&list);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  323:</td><td class="code">	if( number < blockSum ) CHECK_FF(_slayer_malloc_pab(0,blockSum-number));//ĞèÒªÏòPABStackListÕ»ÄÚ»ñÈ¡Ê£ÏÂµÄÄÚ´æ¿é</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 3 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 4 é€šè¿‡ 100%
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  324:</td><td class="code">	//»ñÈ¡ÄÚ´æ¿éµ½ÄÚ´æÒ³ÖĞ±ù³õÊ¼»¯</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  325:</td><td class="code">	CHECK_FF(stack_pop_list(&Pool.pageAndBlock.freeBlockStack, &list, blockSum));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  326:</td><td class="code">	CHECK_FG(stack_push_list(&page->blocksList, &list, blockSum), list_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  327:</td><td class="code">	_slayer_init_block_list(page);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  328:</td><td class="code">	//½«ÄÚ´æ¿éµØÖ·³õÊ¼»¯</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  329:</td><td class="code">	success:</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  330:</td><td class="code">		page->freeBlocks = blockSum;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  331:</td><td class="code">		return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  332:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  333:</td><td class="code">	list_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  334:</td><td class="code">		CHECK_FF(stack_push_list(&Pool.pageAndBlock.freeBlockStack, &list, blockSum));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  335:</td><td class="code">		return HALLOC_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  336:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  337:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  338:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  339:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  340:</td><td class="code">* @brief »ñÈ¡¾²Ì¬ÄÚ´æ¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  341:</td><td class="code">* @param [in]  page      ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  342:</td><td class="code">* @param [in]  blockSize ÄÚ´æ¿é´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  343:</td><td class="code">* @retval ·µ»ØÄÚ´æ¿é    ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  344:</td><td class="code">* @retval HALLOC_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  345:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  346:</td><td class="code">block_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_get_static_block è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  347:</td><td class="code">slayer_get_static_block(page_t * page, uint_t blockSize)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  348:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  349:</td><td class="code">	if(HALLOC_NULL == page|| 0 == blockSize) RETURN_ERR(ERR_PARA, HALLOC_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  350:</td><td class="code">	if( page->unusedSize < blockSize ) RETURN_ERR(ERR_PARA, HALLOC_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  351:</td><td class="code">	uint_t number      = stack_get_current_member(&Pool.pageAndBlock.freeBlockStack);//ÏĞÖÃÄÚ´æ¿éÕ»ÉÏÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  352:</td><td class="code">    block_t *block     = NULL;	//»ñÈ¡ÄÚ´æ¿éÖ¸Õë</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  353:</td><td class="code">    list_node_t *tmp   = NULL; //ÄÚ´æ¿éÁ´±íµÄ½Úµã</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  354:</td><td class="code">	void *offsetAddr   = page->unusedAddr; //ÄÚ´æ¿éÎ»ÒÆµØÖ·</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  355:</td><td class="code">	int_t offset 	   = blockSize; //¼ÆËãÃ¿´ÎÆ«ÒÆ¾àÀë</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  356:</td><td class="code"></td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  357:</td><td class="code">	if( number == 0 ) CHECK_FN(_slayer_malloc_pab(0,1));//ĞèÒªÏòPABStackListÕ»ÄÚ»ñÈ¡Ê£ÏÂµÄÄÚ´æ¿é</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  358:</td><td class="code">	CHECK_NN(tmp = stack_pop(&Pool.pageAndBlock.freeBlockStack));//³öÕ»</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  359:</td><td class="code">	//ÄÚ´æ¿é³õÊ¼»¯</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  360:</td><td class="code">	block = list_takeout_struct(tmp, block_t, node);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  361:</td><td class="code">    _slayer_init_block(block);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  362:</td><td class="code">	block->headAddr = offsetAddr;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  363:</td><td class="code">	block->blockSize= offset;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  364:</td><td class="code">	block->page = page;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  365:</td><td class="code">	_mem_init(block, offsetAddr);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  366:</td><td class="code">	page->unusedAddr = MEM_OFFSET(offsetAddr ,offset); //µØÖ·Æ«ÒÆ</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  367:</td><td class="code">	CHECK_FG(stack_push(&page->blocksList, tmp), list_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  368:</td><td class="code">	page->freeBlocks++;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  369:</td><td class="code">	return block;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  370:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  371:</td><td class="code">	list_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  372:</td><td class="code">		CHECK_FN(stack_push(&Pool.pageAndBlock.freeBlockStack, tmp));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  373:</td><td class="code">		return HALLOC_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  374:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  375:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  376:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  377:</td><td class="code">* @brief »ñ¹é»¹Ò»¸öÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  378:</td><td class="code">* @param [in]  page     ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  379:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  380:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  381:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  382:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_return_page è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  383:</td><td class="code">_slayer_return_page(page_t *page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  384:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  385:</td><td class="code">	CHECK_FF(stack_push(&Pool.pageAndBlock.freePageStack, &page->pageNode));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  386:</td><td class="code">	_slayer_init_page(page);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  387:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  388:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  389:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  390:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  391:</td><td class="code">* @brief »ØÊÕÒ»¸öÄÚ´æÒ³µ½¿ÕÏĞÁ´±í</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  392:</td><td class="code">* @param [in]  page     ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  393:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  394:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  395:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  396:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_recover_page è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  397:</td><td class="code">_slayer_recover_page(page_t *page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  398:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  399:</td><td class="code">    /* ¹«¹²²ÎÊı */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  400:</td><td class="code">	page->usedflag   = NON_USED;	  // Ê¹ÓÃ±êÖ¾</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  401:</td><td class="code">    page->mallocpage = MALLOC_INIT;   // mallocÉêÇëÒ³</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  402:</td><td class="code">    page->unusedAddr = page->headAddr;// Ö¸ÏòÎ´±»Ê¹ÓÃµÄµØÖ·</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  403:</td><td class="code">    /* ÏµÍ³²ãÊ¹ÓÃ²ÎÊı */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  404:</td><td class="code">    page->unusedSize = page->pageSize;// Î´±»Ê¹ÓÃµÄ´óĞ¡ µ¥Î»×Ö½Ú</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  405:</td><td class="code">    page->brother    = NULL;          // ÁíÒ»ÕÅ²Ã¼ô´¦ÀíµÄĞÖµÜÖ½ÕÅ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  406:</td><td class="code">    /* ×ÊÔ´¹ÜÀí²ãÊ¹ÓÃ²ÎÊı */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  407:</td><td class="code">    page->maxTime    = 0;         // µ±Ç°Õ¼ÓÃÊ±¼ä×î³¤µÄÄÚ´æ¿éÊ±¼äÖµ </td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  408:</td><td class="code">	if( 0 != stack_get_current_member(&page->blocksList)) CHECK_FF(_slayer_return_block_list(page));//¹é»¹ÄÚ´æ¿éÁ´±í</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 4 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 5 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 6 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  409:</td><td class="code">    list_init(&page->blocksList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  410:</td><td class="code">	//½«ÄÚ´æÒ³·Å»Øµ½Ò³±í</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  411:</td><td class="code">	CHECK_FF(stack_push(&FreeTable.pagesTable[page->pageSize].freePagesList, &page->pageNode));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  412:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  413:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  414:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  415:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  416:</td><td class="code">* @brief »ñÈ¡Ò»¸öÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  417:</td><td class="code">* @retval »ñµÃÄÚ´æÒ³    ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  418:</td><td class="code">* @retval HALLOC_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  419:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  420:</td><td class="code">page_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_get_page è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 50%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  421:</td><td class="code">_slayer_get_page(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  422:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  423:</td><td class="code">	stack_node_t *node = NULL;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  424:</td><td class="code">	if(stack_get_current_member(&Pool.pageAndBlock.freePageStack) == 0){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  425:</td><td class="code">		CHECK_FN(_slayer_malloc_pab(1,0));//»ñÈ¡Ò»¸öÄÚ´æÒ³</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  426:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  427:</td><td class="code">	CHECK_NN(node = stack_pop(&Pool.pageAndBlock.freePageStack));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  428:</td><td class="code">	return list_takeout_struct(node, page_t, pageNode);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  429:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  430:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  431:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  432:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  433:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  434:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  435:</td><td class="code">* @brief ÏòÄÚºË»ñÈ¡ÄÚ´æ ÓÃÓÚÄÚ´æµÄÉêÇë</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  436:</td><td class="code">* @param [in]  pageSize Ò³´óĞ¡£¨kb£©</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  437:</td><td class="code">* @param [in]  blockSum   ÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  438:</td><td class="code">* @retval »ñµÃÄÚ´æÒ³    ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  439:</td><td class="code">* @retval HALLOC_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  440:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  441:</td><td class="code">page_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_malloc è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 38%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  442:</td><td class="code">_slayer_malloc(uint_t pageSize, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  443:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  444:</td><td class="code">	page_t *page = NULL;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  445:</td><td class="code">	CHECK_NN(page = _slayer_get_page());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  446:</td><td class="code">	CHECK_NG(page->headAddr = blayer_malloc(pageSize*KB), malloc_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  447:</td><td class="code">	//Íê³ÉÒ³²ÎÊı¸³Öµ</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  448:</td><td class="code">	page->unusedAddr = page->headAddr;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  449:</td><td class="code">	page->pageSize   = pageSize;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  450:</td><td class="code">	page->unusedSize = pageSize;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  451:</td><td class="code">	page->mallocpage = MALLOC_FROM_SYSTEM;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  452:</td><td class="code">	//½«ÄÚ´æ¼ÓÈë´İ»ÙÁ´±í</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  453:</td><td class="code">	CHECK_FG(list_insert_node(INSERT_TO_HEAD, &Pool.destroyHeadList, &page->destroyNode), list_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  454:</td><td class="code">	CHECK_FG( _slayer_get_block_list(page, blockSum),list_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  455:</td><td class="code">	Pool.freeMemSize = Pool.freeMemSize + pageSize;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  456:</td><td class="code">	Pool.memSize = Pool.memSize + pageSize;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  457:</td><td class="code">	return page;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  458:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  459:</td><td class="code">	list_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  460:</td><td class="code">		free(page->headAddr);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  461:</td><td class="code">	malloc_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  462:</td><td class="code">		_slayer_return_page(page);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  463:</td><td class="code">		return HALLOC_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  464:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  465:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  466:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  467:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  468:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  469:</td><td class="code">* @brief ²Ã¼ôÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  470:</td><td class="code">* @param [in]  page ´ı²Ã¼ôÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  471:</td><td class="code">* @param [in]  pageSize ÄÚ´æÒ³´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  472:</td><td class="code">* @param [in]  blockSum   ÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  473:</td><td class="code">* @retval »ñµÃ²Ã¼ôºóÄÚ´æÒ³    ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  474:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  475:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  476:</td><td class="code">page_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_cut_page è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  477:</td><td class="code">_slayer_cut_page(page_t * cuted, uint_t pageSize, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  478:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  479:</td><td class="code">	page_t * page = NULL;//ÄÚ´æÒ³Ö¸Õë</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  480:</td><td class="code">	CHECK_NN(page = _slayer_get_page());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  481:</td><td class="code">	//³õÊ¼»¯²Ã¼ôµÄÒ³</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  482:</td><td class="code">	page->headAddr = MEM_OFFSET(cuted->headAddr, pageSize*KB);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  483:</td><td class="code">	page->pageSize   = pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  484:</td><td class="code">	page->unusedSize = pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  485:</td><td class="code">	CHECK_FG(_slayer_get_block_list(page, blockSum) ,list_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  486:</td><td class="code">	//³õÊ¼»¯±»²Ã¼ôµÄÒ³</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  487:</td><td class="code">	cuted->pageSize   = cuted->pageSize - pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  488:</td><td class="code">	cuted->unusedSize = cuted->pageSize - pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  489:</td><td class="code">	cuted->brotherflag =1;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  490:</td><td class="code">	cuted->brother = page;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  491:</td><td class="code">	page->brother = cuted;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  492:</td><td class="code">	CHECK_FG(stack_push(&FreeTable.pagesTable[cuted->pageSize].freePagesList, &cuted->pageNode), push_fail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  493:</td><td class="code">	return page;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  494:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  495:</td><td class="code">	push_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  496:</td><td class="code">		_slayer_return_block_list(page);//¹é»¹blockÁ´±í</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  497:</td><td class="code">	list_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  498:</td><td class="code">		_slayer_return_page(page);//¹é»¹</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  499:</td><td class="code">		return HALLOC_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  500:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  501:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  502:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  503:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  504:</td><td class="code">* @brief ²Ã¼ôÄÚ´æÒ³ºÏ²¢</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  505:</td><td class="code">* @param [in]  page ´ıºÏ²¢ÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  506:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  507:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  508:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  509:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _slayer_combine_page è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  510:</td><td class="code">_slayer_combine_page(page_t * page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  511:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  512:</td><td class="code">	if( 1 != page->brotherflag && 1 != page->brother->brotherflag) RETURN_ERR(ERR_PARA, HALLOC_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  513:</td><td class="code">	page_t * brother = page->brother;//ÄÚ´æÒ³Ö¸Õë</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  514:</td><td class="code">	_slayer_return_block_list(page);//¹é»¹blockÁ´±í</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  515:</td><td class="code">	//½«ĞÖµÜ´ÓÔ­À´Ò³±íÈ¡³ö</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  516:</td><td class="code">	CHECK_FF(list_delete_node(&FreeTable.pagesTable[brother->pageSize].freePagesList, &brother->pageNode));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  517:</td><td class="code">	if(1 == brother->brotherflag) {</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  518:</td><td class="code">		brother->pageSize = brother->pageSize + page->pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  519:</td><td class="code">		brother->brotherflag =0;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  520:</td><td class="code">		CHECK_FF(_slayer_recover_page(brother));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  521:</td><td class="code">		CHECK_FF(_slayer_return_page(page));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  522:</td><td class="code">	}else{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  523:</td><td class="code">		page->pageSize = brother->pageSize + page->pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  524:</td><td class="code">		page->brotherflag =0;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  525:</td><td class="code">		CHECK_FF(_slayer_recover_page(page));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  526:</td><td class="code">		CHECK_FF(_slayer_return_page(brother));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  527:</td><td class="code">	}</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  528:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  529:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  530:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  531:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  532:</td><td class="code">* @brief µ±ĞèÒªÒ»¶¨Ãæ»ıµÄpageÇÒpageĞ¡ÓÚµÈÓÚ14kbÊ±ºò£¬ĞèÒªÑ¡ÔñÒ»ÕÅÖ½²¢½«Ò»ÕÅÖ½ÇĞ·Ö³ÉÁ½¿é£¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  533:</td><td class="code">		 ÎªÁËÊ¹¼õÊ£ÏÂµÄÖ½ÄÜ²»±»ÀË·Ñ£¬ËùÒÔĞèÒª×îÓÅµÄ²Ã¼ô·½Ê½¡£Õâ¸öÑ°ÕÒ×îÓÅµÄÖ½¾ÍÊÇ¼ôÖ½Ëã·¨¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  534:</td><td class="code">		 ¼ôÖ½Ëã·¨Ö÷ÒªÊÇÓÃÓÚ¶ÔÓÚ¿ÕÏĞÒ³±íÒ³µÄ»ØÊÕÔÙÀûÓÃ£¬Ò³µÄ¸ßĞ§»ñÈ¡¶ø´æÔÚ¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  535:</td><td class="code">		 £¨1£©»ñÈ¡Ò»¸öÄÚ´æÒ³Ê±ºò</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  536:</td><td class="code">		 1. µ±»ñÈ¡Ò»¸öÄÚ´æÒ³Ê±ºò£¬µ±Ç°Ò³±íÃ»ÓĞ£¬ÔòĞèÒªÈ¥²é¿´ÆäËüÒ³±íÓĞÃ»ÄÚ´æÒ³¿ÉÒÔ²Ã¼ô£¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  537:</td><td class="code">		 	Ñ¡ÔñÄÄ¸öÄÚ´æÒ³ÄØ£¿¸ù¾İ¼ôÖ½Ëã·¨£¬ĞèÒª»ñµÃ×îÓÅÖ½ÕÅ£¬ĞèÒª²é¿´ freepages_t ½á</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  538:</td><td class="code">			¹¹ÌåÏÂµÄ topMenu ÈÈÃÅ°ñµ¥¿´µ½ÄÄÖÖÖ½ÕÅÊ¹ÓÃ×î¶à¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  539:</td><td class="code">		 2. ÈÈÃÅ°ñµ¥ÄÚÓĞ5¸ö×ùºÅ£¬²é¿´°ñµ¥µÄ×ùÎ»ÊÇ·ñ±»Õ¼ÓÃ£¬Èç¹û±»Õ¼ÓÃ£¬Ôò¼ÆËã»ñµÃ³ö×îºÏ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  540:</td><td class="code">		 	ÊÊ²Ã¼ôµÄÖ½£¬Èç¹û×îÊÊºÏ²Ã¼ôµÄÒ³±íÎª¿Õ£¬ÔòÑ¡ÔñÏÂÒ»¸ö°ñµ¥×ùÎ»¡£±éÀúËùÓĞ°ñµ¥¶¼</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  541:</td><td class="code">			Ã»ÓĞÔòÏòÏµÍ³ÉêÇë¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  542:</td><td class="code">		 3. ²Ã¼ôÒ³±í£¬¸úÏĞÖÃÒ³±í¹ÜÀí½á¹¹ÌåÉêÇëÒ»¸ö page_t ½á¹¹ÌåÓÃÔÚĞÂµÄ²Ã¼ôºóµÄÒ³£¬±»</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  543:</td><td class="code">		 	²Ã¼ôµÄÁ½¸ö²Ã¼ôµÄÒ³ ĞèÒª page_t ÏÂµÄ brother Ïà»¥¹ØÁªÎªĞÖµÜ£¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  544:</td><td class="code">	   	 4. »ñÈ¡ÍêÄÚ´æÒ³£¬È»ºó¸üĞÂ layering_t ½á¹¹ÌåÏÂµÄ popular ²ÎÊı£¬²¢±éÀú freepages_t </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  545:</td><td class="code">			½á¹¹ÌåÏÂµÄ topMenu ÈÈÃÅ°ñµ¥£¬Èç¹û popular ±ÈÄ³¸öÒ³±íµÄ popular ´ó£¬ÔòÕâ¸ö</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  546:</td><td class="code">			°ñµ¥ÏÂµÄ×ùÎ»¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  547:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  548:</td><td class="code">		£¨2£©Ò»¸öÄÚ´æÒ³±»ÊÍ·Å»Øµ½¿ÕÏĞÒ³±íÊ±ºò</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  549:</td><td class="code">		 1. ²é¿´ page_t ½á¹¹ÌåÏÂµÄ brother ÊÇ·ñÓĞĞÖµÜÖ½ÕÅ£¬ÓĞÔò²é¿´Õâ¸öÖ½ÕÅÓĞÃ»±»Ê¹ÓÃ£¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  550:</td><td class="code">			Èç¹ûÓĞÊ¹ÓÃÔòÁ½¸öÖ½ÕÅºÏ³ÉÒ»ÕÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  551:</td><td class="code">		 2. ºÏ³ÉÊ±ºò±È½Ïpage_t½á¹¹ÌåÏÂ brotherflag£¬0ÎªµÜµÜ£¬1Îª¸ç¸ç¡£½«Á½¸öpage_t½á¹¹</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  552:</td><td class="code">		 	ÌåÏÂµÄ pageSize Ò³´óĞ¡Ïà¼Ó»ñµÃºÏ³ÉÖ½ËùÔÚÒ³±í£¬²¢½«Ïà¼Ó½á¹û·ÅÈëµ½¸ç¸çpageSize </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  553:</td><td class="code">			ÖĞ¡£½«µÜµÜµÄ page_t ½á¹¹Ìå·Å»Øµ½ freepageheadList Á´±íÖĞ¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  554:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  555:</td><td class="code">		£¨3£©topMenuÈÈÃÅ°ñµ¥</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  556:</td><td class="code">		 1. °ñµ¥ÊÇ´Ó´óµ½Ğ¡ÅÅĞò£¬Ò²¾ÍËµtopMenu[0]µÄÈÈ¶È´óÓÚtopMenu[1]</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  557:</td><td class="code">		 2. ÔÚËÑË÷×îÊÊºÏ²Ã¼ôÖ½Ê±ºòÊÇÏÈ´Ó×îÈÈÃÅµÄ¿ªÊ¼ÕÒ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  558:</td><td class="code">		 3. ÔÚ¸üĞÂ popular ÊÜ»¶Ó­¶ÈÊ±ºò£¬Í¨¹ıÃ°Åİ·¨¼ìË÷¸üĞÂtopMenuÈÈÃÅ°ñµ¥</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  559:</td><td class="code">* @param [in]  pageSize Ò³´óĞ¡£¨kb£©</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  560:</td><td class="code">* @param [in]  blockSum   ÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  561:</td><td class="code">* @retval »ñµÃÄÚ´æÒ³    ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  562:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  563:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  564:</td><td class="code">page_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_cut_page è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 36%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  565:</td><td class="code">slayer_cut_page(uint_t pageSize, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  566:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  567:</td><td class="code">	page_t *page       = NULL;//ÄÚ´æÒ³Ö¸Õë</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  568:</td><td class="code">	stack_node_t *node = NULL;//ÄÚ´æ¿éÖ¸Õë</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  569:</td><td class="code">	int_t index        = 0;//topMenu Ë÷Òı</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  570:</td><td class="code">	int_t topValue     = -1;//topÖµ³õÊ¼ÖµÎª-1</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  571:</td><td class="code">	int_t insert       = 0;//²åÈëtopMenu°ñµ¥µÄÖµ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  572:</td><td class="code"></td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  573:</td><td class="code">	if( stack_get_current_member(&FreeTable.pagesTable[pageSize].freePagesList) == 0 ){//×ß¼ôÖ½Ëã·¨Á÷³Ì</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">       12:</td>   <td class="line">  574:</td><td class="code">			for( index=0;index<5; index++ ){//Á÷³Ì1-2</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 83%
+ åˆ†æ”¯ 1 é€šè¿‡ 17% (fallthrough)
+</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  575:</td><td class="code">				int_t value = FreeTable.topMenu[index];</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  576:</td><td class="code">				if( (value != -1) && (value+pageSize < PAGE_TABLE_SIZE) </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 10% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 90%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  577:</td><td class="code">					&& (stack_get_current_member(&FreeTable.pagesTable[value+pageSize].freePagesList) != 0) ){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  578:</td><td class="code">					topValue = value+pageSize;//¼ÆËã×îºÏÊÊ²Ã¼ô</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  579:</td><td class="code">				}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  580:</td><td class="code">			}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  581:</td><td class="code">			//±éÀúÍêtopMenu</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  582:</td><td class="code">			if(topValue == -1){//Ã»ÓĞÕÒµ½Ôò½øĞĞÉêÇë</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  583:</td><td class="code">				CHECK_NN(page = _slayer_malloc(pageSize, blockSum));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  584:</td><td class="code">			}else{//ÕÒµ½Ôò½øĞĞ²Ã¼ô</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  585:</td><td class="code">				CHECK_NN(node = stack_pop(&FreeTable.pagesTable[topValue].freePagesList));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  586:</td><td class="code">				page = list_takeout_struct(node, page_t, pageNode);//»ñµÃ´ı²Ã¼ôÒ³</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  587:</td><td class="code">				CHECK_NN(page = _slayer_cut_page(page, pageSize, blockSum));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  588:</td><td class="code">			}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  589:</td><td class="code">	}else{//´æÔÚÔòÖ±½Ó»ñÈ¡</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  590:</td><td class="code">		CHECK_NN(node = stack_pop(&FreeTable.pagesTable[pageSize].freePagesList));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  591:</td><td class="code">		page = list_takeout_struct(node, page_t, pageNode);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  592:</td><td class="code">		CHECK_FG(_slayer_get_block_list(page, blockSum),list_fail);//Ê§°ÜÔògoto list_fail</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  593:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  594:</td><td class="code">	//¸üĞÂpopular</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  595:</td><td class="code">	FreeTable.pagesTable[pageSize].popular++;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  596:</td><td class="code">	insert = pageSize;</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  597:</td><td class="code">	for( index=0;index<5; index++ ) {</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  598:</td><td class="code">		int_t value = FreeTable.topMenu[index];</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  599:</td><td class="code">		if( value == -1 || value == pageSize || FreeTable.pagesTable[value].popular<FreeTable.pagesTable[insert].popular){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 33% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 67%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 5 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  600:</td><td class="code">			FreeTable.topMenu[index] = insert;//Ìæ»»ÈÈÃÅ°ñµ¥</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  601:</td><td class="code">			if( value == -1 || value == pageSize ) break;//ÓÉÓÚ-1±íÊ¾Õâ¸öÎ»ÖÃ»¹ÊÇ¿Õ£¬Ìæ»»ÍêºóÖ±½ÓÍË³öÑ­»·</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  602:</td><td class="code">			insert = value;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  603:</td><td class="code">		}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  604:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  605:</td><td class="code"></td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  606:</td><td class="code">	return page;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  607:</td><td class="code">	list_fail:</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  608:</td><td class="code">		CHECK_FN(stack_push(&FreeTable.pagesTable[pageSize].freePagesList, &page->pageNode));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  609:</td><td class="code">		return HALLOC_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  610:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  611:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  612:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  613:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  614:</td><td class="code">* @brief ËéÖ½Ëã·¨£¬Ö÷ÒªÊÇµ±³¬¹ı14kµÄÄÚ´æÒ³»Øµ½ÏµÍ³²ãºó£¬Õâ¸ö´óÆ¬ÄÚ´æÒ³»á±»ÀË·Ñ£¬ĞèÒª·Ö³É</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  615:</td><td class="code">		 ×îÓÅµÄ´óĞ¡£¬ËùÒÔÒıÈëÁËËéÖ½Ëã·¨£¬À´·Ö¸îÄÚ´æÒ³¡£Ö÷ÒªÊÇ½èÖúÈÈ°ñ£¬¸ßĞ§µÄ½«´óÄÚ´æÒ³·Ö</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  616:</td><td class="code">		 ¸î³ÉËùĞèµÄÄÚ´æÒ³£¬Ôö¼ÓÀûÓÃÂÊ.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  617:</td><td class="code">		Êı×é[4,5,6,7,8] </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  618:</td><td class="code">		ÕâÀïÖ÷ÒªÊÇ¿¼ÂÇÏµÍ³¹ÜÀí²ã³£ÓÃµÄÄÚ´æÒ³´óĞ¡Îª7,5,4,3,2,1,Ïà»¥×éºÏºó½áºÏ²Ö¿âËã·¨ĞèÒª</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  619:</td><td class="code">		µÄ²»Í¬ÄÚ´æÒ³ÊıÁ¿£¬±È½Ï´óµÄ³öÏÖ¸ÅÂÊµÄÊı£¬°´ÕÕÕâ¸öÊı×é³ÉÊı×é·Ö¸îÄ¿µÄÊÇ¸ü¸ßĞ§µÄÀûÓÃ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  620:</td><td class="code">		·Ö¸îºóÄÚ´æ£¬±ÈÈç6£¬ÓĞ£¨1£¬5£©£¨2£¬4£©£¨3£¬3£©×éºÏ£¬µ±ÆäÖĞµÄ£¨1£¬5£©ĞèÇóÁ¿Ğ¡Ê±ºò£¬</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  621:</td><td class="code">		£¨2£¬4£©»òÕß£¨3£¬3£©µÄĞèÇóÁ¿¾Í¼«¿ÉÄÜ¼Ó´ó¡£ËùÒÔÕâÑùµÄÔö¼Ó±»Ê¹ÓÃ¸ÅÂÊ¡£Èç¹ûÖ±½ÓÇĞ¸î</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  622:</td><td class="code">		³É1ºÍ5£¬¿ÉÄÜ¾ÍÃ»ÓĞÄÇ¸öºÃµÄÊ¹ÓÃÂÊ¡£</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  623:</td><td class="code">		ËéÖ½·½Ê½</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  624:</td><td class="code">		ÒòÎª¸ßĞ§ÓÃÖ½£¬ËùÒÔÀûÓÃtopMenuÊı×é×éºÏµÃ³öËéÖ½´óĞ¡¡£ÀıÈçtopMenu = [13,5,7,8,2]</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  625:</td><td class="code">		¸ù¾İÊı×éÎªÁË·ÀÖ¹Ò³±íÒç³ö£¬ËùÒÔÏŞ¶¨Ğ¡ÓÚµÈÓÚ7µÄÖµ²ÎÓë×éºÏ¼ÆËã£¬ÆäËûÔòtatter[13]++</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  626:</td><td class="code">		tatter[8]++£¬È»ºó[5,7,2]×éºÏ¸ù¾İÉÏÃæÊı×é[4,5,6,7,8] Ô­ÀíµÃ³ö£¨5£¬5£©£¬£¨5£¬7£©</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  627:</td><td class="code">		£¨5£¬2£©£¬£¨7£¬7£©£¬£¨7£¬2£©£¬£¨2£¬2£©¼¯ÖĞ×éºÏ£¬²Ã¼ôÒ²°´ÕÕÕâ¸öµÄ´óĞ¡½øĞĞ±éÀú²Ã¼ô</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  628:</td><td class="code">* @param [in]  page    Ò³½á¹¹Ìå</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  629:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  630:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  631:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  632:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_tatter_page è¢«è°ƒç”¨ 0 æ­£å¸¸è¿”å› 0% ä»£ç å— æ‰§è¡Œ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  633:</td><td class="code">slayer_tatter_page(page_t *page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  634:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  635:</td><td class="code">	char_t topGroup[5] = {4,5,6,7,8};//ÊÇÓÉÉÏ²ã²Ö¿âÉêÇëÄÚ´æ¼ÆËã¶øÀ´</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  636:</td><td class="code">	char_t tatter[14]  = {0};//ÇĞËé³¤¶È</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  637:</td><td class="code">	page_t * newPage   = page;//ÄÚ´æÒ³Ö¸Õë</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  638:</td><td class="code">	int_t index,j      = 0; //Ë÷Òı</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  639:</td><td class="code">	void * tatterAddr  = page->headAddr;//ËéÖ½ÄÚ´æÒ³µØÖ·</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  640:</td><td class="code">	int_t tatterSize   = 0;//ËéÖ½ÄÚ´æÒ³´óĞ¡</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  641:</td><td class="code">	int_t pageSize	   = page->pageSize;//ÄÚ´æÒ³´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  642:</td><td class="code"></td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  643:</td><td class="code">	_slayer_return_block_list(page);//¹é»¹blockÁ´±í</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  644:</td><td class="code">	if(-5 == FreeTable.topMenu[0]+FreeTable.topMenu[1]+FreeTable.topMenu[2]+FreeTable.topMenu[3]+FreeTable.topMenu[4] ){//topMenuÎ´Ê¹ÓÃ</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  645:</td><td class="code">		for(index=0; index<5; index){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  646:</td><td class="code">			index = index%5;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  647:</td><td class="code">			//ÇĞ¸îĞÂÒ³</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  648:</td><td class="code">			_slayer_tatter_page(newPage, tatterAddr, topGroup[index], pageSize);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 6 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 9 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 10 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 11 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 12 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 13 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  649:</td><td class="code">		}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  650:</td><td class="code">	}else{//ËéÖ½</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  651:</td><td class="code">		//ËéÖ½¼ÆËã</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  652:</td><td class="code">		for(index=0;index<5;index++) if( FreeTable.topMenu[index]>=8 ) tatter[FreeTable.topMenu[index]]++;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  653:</td><td class="code">		for(index=0;index<5;index++) </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  654:</td><td class="code">			if( FreeTable.topMenu[index]<=7 ) for(j=0;j<index;j++) tatter[FreeTable.topMenu[index]+FreeTable.topMenu[j]]++;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  655:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  656:</td><td class="code">		//¿ªÊ¼ËéÖ½</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  657:</td><td class="code">		for(index=0;index<14;){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  658:</td><td class="code">			index = (++index)%14;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  659:</td><td class="code">			if(tatter[index] == 0 ) continue;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  660:</td><td class="code">			for( j=0; j<tatter[index]; j++) _slayer_tatter_page(newPage, tatterAddr, index, pageSize); //ÇĞ¸îĞÂÒ³</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 6 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 7 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 8 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 9 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 10 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 11 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 12 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 13 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 14 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 15 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  661:</td><td class="code">		}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  662:</td><td class="code">	}</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  663:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  664:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  665:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  666:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  667:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  668:</td><td class="code">* @brief ÏòÏµÍ³²ãÉêÇëÒ»¸öÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  669:</td><td class="code">* @param [in]  pageSize   ÄÚ´æÒ³´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  670:</td><td class="code">* @param [in]  blockSum   ÄÚ´æ¿éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  671:</td><td class="code">* @retval »ñµÃÄÚ´æÒ³    ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  672:</td><td class="code">* @retval HALLOC_NULL ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  673:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  674:</td><td class="code">page_t *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_malloc è¢«è°ƒç”¨ 6 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 95%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  675:</td><td class="code">slayer_malloc(uint_t pageSize, uint_t blockSum)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  676:</td><td class="code">{</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  677:</td><td class="code">	if(INITIALIZED != Pool.slayerInit) RETURN_ERR(ERR_PARA, HALLOC_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 17% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 83%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  678:</td><td class="code">	if((PAGE_MAX_SIZE <= pageSize)||(pageSize == 0 )) RETURN_ERR(ERR_PARA, HALLOC_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 80% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 20%
+ åˆ†æ”¯ 2 é€šè¿‡ 25% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 75%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  679:</td><td class="code">	if((BLOCK_MAX_SIZE < blockSum)) RETURN_ERR(ERR_PARA, HALLOC_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 33% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 67%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  680:</td><td class="code">	page_t *page = NULL;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  681:</td><td class="code">	pthread_mutex_lock(&Pool.poolLock);  </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  682:</td><td class="code">	if(pageSize >= PAGE_TABLE_SIZE){//´óÓÚ»òÔòµÈÓÚÒ³±í´óĞ¡ ÔòÏòÏµÍ³ÉêÇëÄÚ´æ</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  683:</td><td class="code">		page = _slayer_malloc(pageSize, blockSum);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  684:</td><td class="code">	}else if(pageSize < PAGE_TABLE_SIZE){//Ğ¡ÓÚÒ³±í´óĞ¡ ÔòÏòÄÚ´æÒ³ÉêÇë</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  685:</td><td class="code">		page = slayer_cut_page(pageSize, blockSum);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  686:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  687:</td><td class="code">	if(NULL != page) {</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  688:</td><td class="code">		page->usedflag = USED;//ÄÚ´æÒ³½«±»Ê¹ÓÃ</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  689:</td><td class="code">		Pool.freeMemSize = Pool.freeMemSize - pageSize;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  690:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  691:</td><td class="code">    pthread_mutex_unlock(&Pool.poolLock); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  692:</td><td class="code">	return page;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  693:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  694:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  695:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  696:</td><td class="code">* @brief ÏòÏµÍ³²ãÊÍ·ÅÒ»¸öÄÚ´æÒ³</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  697:</td><td class="code">* @param [in]  pageSize   ÄÚ´æÒ³´óĞ¡</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  698:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  699:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  700:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  701:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_free è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 13%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  702:</td><td class="code">slayer_free(page_t *page)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  703:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  704:</td><td class="code">	if(HALLOC_NULL == page) RETURN_ERR(ERR_PARA, HALLOC_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  705:</td><td class="code">	uint_t pageSize = page->pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  706:</td><td class="code">	pthread_mutex_lock(&Pool.poolLock);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  707:</td><td class="code">	if(PAGE_TABLE_SIZE > page->pageSize ){//Ğ¡ÓÚÒ³±í</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  708:</td><td class="code">		if( NULL != page->brother && NON_USED == page->brother->usedflag) {</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  709:</td><td class="code">			CHECK_FF(_slayer_combine_page(page));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  710:</td><td class="code">		}else{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  711:</td><td class="code">			CHECK_FF(_slayer_recover_page(page));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  712:</td><td class="code">		}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  713:</td><td class="code">	}else{//´óÓÚÒ³±íÊ¹ÓÃËéÖ½Ëã·¨</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  714:</td><td class="code">		CHECK_FF(slayer_tatter_page(page));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  715:</td><td class="code">	}</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  716:</td><td class="code">	Pool.freeMemSize = Pool.freeMemSize + pageSize;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  717:</td><td class="code">    pthread_mutex_unlock(&Pool.poolLock); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  718:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  719:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  720:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  721:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  722:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  723:</td><td class="code">* @brief ³õÊ¼»¯ÏµÍ³²ã</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  724:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  725:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  726:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  727:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_init è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  728:</td><td class="code">slayer_init(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  729:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  730:</td><td class="code">	int index; //Ë÷ÒıºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  731:</td><td class="code">	/* ÄÚ´æ³Ø½á¹¹Ìå³õÊ¼»¯ */</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  732:</td><td class="code">	Pool.slayerInit  = INITIALIZED;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  733:</td><td class="code">	Pool.memSize     = 0;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  734:</td><td class="code">	Pool.freeMemSize = 0;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  735:</td><td class="code">	pthread_mutex_init(&Pool.poolLock,NULL); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  736:</td><td class="code">	list_init(&Pool.destroyHeadList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  737:</td><td class="code">	list_init(&Pool.pageAndBlock.PABStackList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  738:</td><td class="code">	stack_init(&Pool.pageAndBlock.freePageStack);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  739:</td><td class="code">	stack_init(&Pool.pageAndBlock.freeBlockStack);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  740:</td><td class="code">	/* ÏĞÖÃÄÚ´æ½á¹¹Ìå³õÊ¼»¯ */</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  741:</td><td class="code">	for(index=0; index<5; index++) FreeTable.topMenu[index] = -1;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 83%
+ åˆ†æ”¯ 1 é€šè¿‡ 17% (fallthrough)
+</td></tr>
+<tr><td class="sum">       32:</td>   <td class="line">  742:</td><td class="code">	for(index=0; index<PAGE_TABLE_SIZE; index++){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 94%
+ åˆ†æ”¯ 1 é€šè¿‡ 6% (fallthrough)
+</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  743:</td><td class="code">		FreeTable.pagesTable[index].pagesNum = 0;</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  744:</td><td class="code">		FreeTable.pagesTable[index].popular  = 0;</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  745:</td><td class="code">		stack_init(&FreeTable.pagesTable[index].freePagesList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  746:</td><td class="code">	}</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  747:</td><td class="code">	Pool.baseMem.used = HALLOC_TOTAL_MEMORY;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  748:</td><td class="code">	Pool.baseMem.headAddr   = malloc(HALLOC_TOTAL_MEMORY);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  749:</td><td class="code">	Pool.baseMem.unusedAddr = Pool.baseMem.headAddr;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  750:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  751:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  752:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  753:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  754:</td><td class="code">* @brief ³õÊ¼»¯halloc</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  755:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  756:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  757:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  758:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° halloc_init è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 40%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  759:</td><td class="code">halloc_init(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  760:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  761:</td><td class="code">	/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  762:</td><td class="code">	*   Name£ºÏµÍ³²ã³õÊ¼»¯</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  763:</td><td class="code">	******************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  764:</td><td class="code">	/* ÄÚ´æ³Ø½á¹¹Ìå³õÊ¼»¯ */</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  765:</td><td class="code">	CHECK_FF(slayer_init());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  766:</td><td class="code">	/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  767:</td><td class="code">	*   Name£ºÄÚ´æ¹ÜÀí²ã³õÊ¼»¯</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  768:</td><td class="code">	******************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  769:</td><td class="code">	/* ÄÚ´æ¹ÜÀí²ã³õÊ¼»¯ */</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  770:</td><td class="code">	CHECK_FF(mlayer_init());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  771:</td><td class="code">	/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  772:</td><td class="code">	*   Name£ºÄÚ´æ·ÖÅä²ã³õÊ¼»¯</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  773:</td><td class="code">	******************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  774:</td><td class="code">	/* ÄÚ´æ·ÖÅä²ã³õÊ¼»¯ */</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  775:</td><td class="code">	CHECK_FF(alayer_init());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  776:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  777:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  778:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  779:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  780:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  781:</td><td class="code">* @brief ´İ»ÙÏµÍ³²ã</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  782:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  783:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  784:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  785:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° slayer_destroy è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  786:</td><td class="code">slayer_destroy(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  787:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  788:</td><td class="code">	int index, delSum; //Ë÷ÒıºÅ, É¾³ıÊıÁ¿</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  789:</td><td class="code">	list_node_t *tmp   = NULL; //ÄÚ´æ¿éÁ´±íµÄ½Úµã</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  790:</td><td class="code">	pabStack_t *stack  = NULL; //»ñÈ¡Õ»Ö¸Õë</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  791:</td><td class="code">	page_t *page       = NULL; //ÄÚ´æ¿éÖ¸Õë</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  792:</td><td class="code">	pthread_mutex_lock(&Pool.poolLock); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  793:</td><td class="code">    //Ë³Ê±ÕëÉ¾³ı½Úµã</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  794:</td><td class="code">	delSum = list_get_current_member(&Pool.destroyHeadList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  795:</td><td class="code">    for(index=0; index<delSum; index++){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50%
+ åˆ†æ”¯ 1 é€šè¿‡ 50% (fallthrough)
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  796:</td><td class="code">        tmp = list_get_head_node(&Pool.destroyHeadList);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  797:</td><td class="code">        list_delete_node(&Pool.destroyHeadList, tmp);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  798:</td><td class="code">        page = list_takeout_struct(tmp, page_t, destroyNode);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  799:</td><td class="code">        //free(page->headAddr);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  800:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  801:</td><td class="code">    //Ë³Ê±ÕëÉ¾³ı½Úµã</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  802:</td><td class="code">	delSum = stack_get_current_member(&Pool.pageAndBlock.PABStackList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  803:</td><td class="code">    for(index=0; index<delSum; index++){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50%
+ åˆ†æ”¯ 1 é€šè¿‡ 50% (fallthrough)
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  804:</td><td class="code">        tmp = list_get_head_node(&Pool.pageAndBlock.PABStackList);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  805:</td><td class="code">        list_delete_node(&Pool.pageAndBlock.PABStackList, tmp);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  806:</td><td class="code">        stack = list_takeout_struct(tmp, pabStack_t, PABnode);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  807:</td><td class="code">        //free(stack);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  808:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  809:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  810:</td><td class="code">	//free(Pool.baseMem.headAddr);</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  811:</td><td class="code">	for(index=0; index<5; index++) FreeTable.topMenu[index] = -1;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 83%
+ åˆ†æ”¯ 1 é€šè¿‡ 17% (fallthrough)
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  812:</td><td class="code">    pthread_mutex_unlock(&Pool.poolLock); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  813:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  814:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  815:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  816:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  817:</td><td class="code">* @brief ´İ»Ùhalloc</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  818:</td><td class="code">* @retval HALLOC_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  819:</td><td class="code">* @retval HALLOC_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  820:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  821:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° halloc_destroy è¢«è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 40%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  822:</td><td class="code">halloc_destroy(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  823:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  824:</td><td class="code">	/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  825:</td><td class="code">	*   Name£ºÄÚ´æ·ÖÅä²ãÊÍ·Å</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  826:</td><td class="code">	******************************************************************/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  827:</td><td class="code">	CHECK_FF(alayer_destroy());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  828:</td><td class="code">	/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  829:</td><td class="code">	*   Name£ºÄÚ´æ¹ÜÀí²ãÊÍ·Å</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  830:</td><td class="code">	******************************************************************/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  831:</td><td class="code">	CHECK_FF(mlayer_destroy());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  832:</td><td class="code">	/******************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  833:</td><td class="code">	*   Name£ºÏµÍ³²ãÊÍ·Å</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  834:</td><td class="code">	******************************************************************/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  835:</td><td class="code">	CHECK_FF(slayer_destroy());</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+ è°ƒç”¨ 3 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 4 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  836:</td><td class="code">	return HALLOC_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  837:</td><td class="code">}</td></tr>
+</table>
+</body>
+
+   <script type="text/javascript" src="../../TEST/html/js/buildCoverage.js"></script>
+</html>

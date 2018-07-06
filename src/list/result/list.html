@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>代码覆盖率报告</title>
+   <link rel="stylesheet" href="../../TEST/html/css/coverage.css">
+</head>
+
+<body class="coverage-page">
+<h1>TEST.C 覆盖率</h1>
+<table rules="cols" >
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Source:../list/list.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Graph:list.gcno</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Data:list.gcda</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Runs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Programs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    1:</td><td class="code">/******************************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    2:</td><td class="code">        (c) COPYRIGHT 2017-  by D.C.P  Co.,Ltd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    3:</td><td class="code">                          All rights reserved.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    4:</td><td class="code">@file: list.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    5:</td><td class="code">@brief:  链表模块 一个循环双向链表，这个模块框架只是实现简单的删除和添加，由于查询和遍历由于key的</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    6:</td><td class="code">        不一样，为了链表的灵活性所以不加入查询和遍历的功能，如有需要可以使用list_get_head_node </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    7:</td><td class="code">        list_get_next_node等函数实现查询和遍历的功能，</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    8:</td><td class="code">        功能：</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    9:</td><td class="code">        1.统计链表当前节点数，总结点数 删除节点数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   10:</td><td class="code">        图解</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   11:</td><td class="code">            （首部）--next--> <--prev--(A)--next--> <--prev--(尾部)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   12:</td><td class="code">                    （首部）--prev--> <--next--(尾部)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   13:</td><td class="code">@attention： 本模块关联外部文件和模块 util/utildef.h,utilinc.h err模块</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   14:</td><td class="code">@author   D.C.P 			                                                 </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   15:</td><td class="code">@version  0.0.0.1                                                               </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   16:</td><td class="code">@date     2017/03/02</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   17:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   18:</td><td class="code">  Change History :                                                              </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   19:</td><td class="code">                 | <Date>      | <Version> | <Author> | <Description>                     </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   20:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   21:</td><td class="code">  @todo          | 2017/03/07  | 0.0.0.1   | D.C.P    | 创建文件            </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   22:</td><td class="code">******************************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   23:</td><td class="code">#include ".././util/util_inc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   24:</td><td class="code">#include "list.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   25:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   26:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   27:</td><td class="code">* @brief 初始化链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   28:</td><td class="code">* @param [in] list   需要初始化的链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   29:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   30:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   31:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   32:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_init 被调用 15 正常返回 100% 代码块 执行 60%
+</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   33:</td><td class="code">list_init( ListHead *list )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   34:</td><td class="code">{</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   35:</td><td class="code">    if(NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   36:</td><td class="code">    list->Head      = NULL;</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   37:</td><td class="code">    list->Tail      = NULL;</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   38:</td><td class="code">    list->CurMember = 0;</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   39:</td><td class="code">    list->SumMember = 0;</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   40:</td><td class="code">    list->DelMember = 0;</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   41:</td><td class="code">    return LIST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   42:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   43:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   44:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   45:</td><td class="code">* @brief 获得当前成员数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   46:</td><td class="code">* @param [in] list   需要链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   47:</td><td class="code">* @retval 当前成员数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   48:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   49:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   50:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_get_current_member 被调用 23 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">       23:</td>   <td class="line">   51:</td><td class="code">list_get_current_member( ListHead *list )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   52:</td><td class="code">{</td></tr>
+<tr><td class="sum">       23:</td>   <td class="line">   53:</td><td class="code">    if(NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 4% (fallthrough)
+ 分支 1 通过 96%
+ 调用 2 正常返回 100%
+</td></tr>
+<tr><td class="sum">       22:</td>   <td class="line">   54:</td><td class="code">    return list->CurMember;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   55:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   56:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   57:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   58:</td><td class="code">* @brief 获得所有的成员数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   59:</td><td class="code">* @param [in] list   需要链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   60:</td><td class="code">* @retval 所有的成员数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   61:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   62:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   63:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_get_sum_member 被调用 3 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">   64:</td><td class="code">list_get_sum_member( ListHead *list )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   65:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">   66:</td><td class="code">    if(NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 33% (fallthrough)
+ 分支 1 通过 67%
+ 调用 2 正常返回 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   67:</td><td class="code">    return list->SumMember;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   68:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   69:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   70:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   71:</td><td class="code">* @brief 获得当前被删除成员数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   72:</td><td class="code">* @param [in] list   需要的链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   73:</td><td class="code">* @retval 当前被删除成员数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   74:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   75:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   76:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_get_delete_member 被调用 3 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">   77:</td><td class="code">list_get_delete_member( ListHead *list )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   78:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">   79:</td><td class="code">    if(NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 33% (fallthrough)
+ 分支 1 通过 67%
+ 调用 2 正常返回 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">   80:</td><td class="code">    return list->DelMember;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   81:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   82:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   83:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   84:</td><td class="code">* @brief 链表删除节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   85:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   86:</td><td class="code">* @param [in] node   需要删除的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   87:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   88:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   89:</td><td class="code">* @attention 删除，如需释放内存需自行释放</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   90:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   91:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_delete_node 被调用 3095 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">     3095:</td>   <td class="line">   92:</td><td class="code">list_delete_node( ListHead *list , ListNode *node )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   93:</td><td class="code">{</td></tr>
+<tr><td class="sum">     3095:</td>   <td class="line">   94:</td><td class="code">    if( NODEISNULL(node) || NODEISNULL(list) || NODEISNOEXIST(node) || LISTISNULL(list) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 99% (fallthrough)
+ 分支 1 通过 1%
+ 分支 2 通过 99% (fallthrough)
+ 分支 3 通过 1%
+ 分支 4 通过 1% (fallthrough)
+ 分支 5 通过 99%
+ 分支 6 通过 0% (fallthrough)
+ 分支 7 通过 100%
+ 分支 8 通过 0% (fallthrough)
+ 分支 9 通过 100%
+ 调用 10 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   95:</td><td class="code"></td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">   96:</td><td class="code">    if( list->Head == node && list->Tail == node )//被删除节点为最后一个节点</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 67% (fallthrough)
+ 分支 1 通过 33%
+ 分支 2 通过 1% (fallthrough)
+ 分支 3 通过 99%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   97:</td><td class="code">    {</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   98:</td><td class="code">        list->Head = NULL;</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">   99:</td><td class="code">        list->Tail = NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  100:</td><td class="code">    }</td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  101:</td><td class="code">    if( list->Head == node ) list->Head = node->Next;//被删除节点为头部时候</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 67% (fallthrough)
+ 分支 1 通过 33%
+</td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  102:</td><td class="code">    if( list->Tail == node ) list->Tail = node->Prev;//被删除节点为尾部时候</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 33% (fallthrough)
+ 分支 1 通过 67%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  103:</td><td class="code"></td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  104:</td><td class="code">    _list_del(node->Prev, node->Next);</td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  105:</td><td class="code">    node->Next = NULL;</td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  106:</td><td class="code">    node->Prev = NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  107:</td><td class="code"></td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  108:</td><td class="code">    list->CurMember--;</td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  109:</td><td class="code">    list->DelMember++;</td></tr>
+<tr><td class="sum">     3091:</td>   <td class="line">  110:</td><td class="code">    return LIST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  111:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  112:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  113:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  114:</td><td class="code">* @brief 链表添加节点到尾部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  115:</td><td class="code">* @param [in] pattern 添加节点位置</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  116:</td><td class="code">  - INSERT_TO_HEAD        添加节点到首部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  117:</td><td class="code">  - INSERT_TO_TAIL        添加节点到尾部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  118:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  119:</td><td class="code">* @param [in] node   需要添加的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  120:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  121:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  122:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  123:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_insert_node 被调用 3087 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">     3087:</td>   <td class="line">  124:</td><td class="code">list_insert_node(u32_t pattern,  ListHead *list , ListNode *node )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  125:</td><td class="code">{</td></tr>
+<tr><td class="sum">     3087:</td>   <td class="line">  126:</td><td class="code">    if( NODEISNULL(node) || NODEISNULL(list) || NODEISEXIST(node) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 99% (fallthrough)
+ 分支 1 通过 1%
+ 分支 2 通过 99% (fallthrough)
+ 分支 3 通过 1%
+ 分支 4 通过 99% (fallthrough)
+ 分支 5 通过 1%
+ 分支 6 通过 0% (fallthrough)
+ 分支 7 通过 100%
+ 调用 8 正常返回 100%
+</td></tr>
+<tr><td class="sum">     3084:</td>   <td class="line">  127:</td><td class="code">    if( INSERT_TO_TAIL != pattern && INSERT_TO_HEAD != pattern ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 67% (fallthrough)
+ 分支 1 通过 33%
+ 分支 2 通过 1% (fallthrough)
+ 分支 3 通过 99%
+ 调用 4 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  128:</td><td class="code"></td></tr>
+<tr><td class="sum">     3083:</td>   <td class="line">  129:</td><td class="code">    _list_init_node(node);//初始化节点，使节点前后指针都指向自己</td></tr>
+<tr><td class="sum">     3083:</td>   <td class="line">  130:</td><td class="code">    if( NULL == list->Head && NULL == list->Tail)//第一次加入节点</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 1% (fallthrough)
+ 分支 1 通过 99%
+ 分支 2 通过 100% (fallthrough)
+ 分支 3 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  131:</td><td class="code">    {</td></tr>
+<tr><td class="sum">       18:</td>   <td class="line">  132:</td><td class="code">        list->Head = node;</td></tr>
+<tr><td class="sum">       18:</td>   <td class="line">  133:</td><td class="code">        list->Tail = node;</td></tr>
+<tr><td class="sum">       18:</td>   <td class="line">  134:</td><td class="code">        goto success;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  135:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  136:</td><td class="code"></td></tr>
+<tr><td class="sum">     3065:</td>   <td class="line">  137:</td><td class="code">    _list_add(node, list->Tail, list->Head);</td></tr>
+<tr><td class="sum">     3065:</td>   <td class="line">  138:</td><td class="code">    switch(pattern)</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 67%
+ 分支 1 通过 33%
+ 分支 2 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  139:</td><td class="code">    {</td></tr>
+<tr><td class="sum">     2048:</td>   <td class="line">  140:</td><td class="code">        case INSERT_TO_HEAD: list->Head = node; break;</td></tr>
+<tr><td class="sum">     1017:</td>   <td class="line">  141:</td><td class="code">        case INSERT_TO_TAIL: list->Tail = node; break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  142:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  143:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  144:</td><td class="code">    success:</td></tr>
+<tr><td class="sum">     3083:</td>   <td class="line">  145:</td><td class="code">    list->CurMember++;</td></tr>
+<tr><td class="sum">     3083:</td>   <td class="line">  146:</td><td class="code">    list->SumMember++;</td></tr>
+<tr><td class="sum">     3083:</td>   <td class="line">  147:</td><td class="code">    return LIST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  148:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  149:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  150:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  151:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  152:</td><td class="code">* @brief 嵌入节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  153:</td><td class="code">* @param [in] pattern 嵌入节点位置</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  154:</td><td class="code">  - INSERT_TO_HEAD        嵌入节点的首部(前面)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  155:</td><td class="code">  - INSERT_TO_TAIL        嵌入节点的尾部(后面)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  156:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  157:</td><td class="code">* @param [in] node   节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  158:</td><td class="code">* @param [in] insert 需要嵌入的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  159:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  160:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  161:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  162:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_embed_node 被调用 9 正常返回 100% 代码块 执行 81%
+</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  163:</td><td class="code">list_embed_node(u32_t pattern, ListHead *list, ListNode *node, ListNode *embed)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  164:</td><td class="code">{</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  165:</td><td class="code">    if( NODEISNULL(node)||NODEISNULL(list)||LISTISNULL(list)||NODEISNULL(embed)||NODEISEXIST(embed) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 100% (fallthrough)
+ 分支 3 通过 0%
+ 分支 4 通过 100% (fallthrough)
+ 分支 5 通过 0%
+ 分支 6 通过 100% (fallthrough)
+ 分支 7 通过 0%
+ 分支 8 通过 100% (fallthrough)
+ 分支 9 通过 0%
+ 分支 10 通过 0% (fallthrough)
+ 分支 11 通过 100%
+ 调用 12 从未 执行
+</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  166:</td><td class="code">    if( INSERT_TO_TAIL != pattern && INSERT_TO_HEAD != pattern ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 56% (fallthrough)
+ 分支 1 通过 44%
+ 分支 2 通过 0% (fallthrough)
+ 分支 3 通过 100%
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  167:</td><td class="code">    list_node_t *next, *prev;</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  168:</td><td class="code">    _list_init_node(embed);//初始化节点，使节点前后指针都指向自己</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  169:</td><td class="code">    switch(pattern)</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 56%
+ 分支 1 通过 44%
+ 分支 2 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  170:</td><td class="code">    {</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  171:</td><td class="code">        case INSERT_TO_HEAD:next = node;prev = node->Prev;if( node == list->Head) list->Head = embed;break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 20% (fallthrough)
+ 分支 1 通过 80%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  172:</td><td class="code">        case INSERT_TO_TAIL:next = node->Next;prev = node;if( node == list->Tail) list->Tail = embed;break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 25% (fallthrough)
+ 分支 1 通过 75%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  173:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  174:</td><td class="code">    _list_add(embed, prev, next); </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  175:</td><td class="code">    success:</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  176:</td><td class="code">    list->CurMember++;</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  177:</td><td class="code">    list->SumMember++;</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  178:</td><td class="code">    return LIST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  179:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  180:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  181:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  182:</td><td class="code">* @brief 链表追加</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  183:</td><td class="code">* @param [in] pattern 添加主链表位置</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  184:</td><td class="code">  - INSERT_TO_HEAD     添加主链表到首部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  185:</td><td class="code">  - INSERT_TO_TAIL     添加主链表到尾部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  186:</td><td class="code">* @param [in] main     主链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  187:</td><td class="code">* @param [in] children 子链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  188:</td><td class="code">* @param [in] sum 切割节点数量</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  189:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  190:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  191:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  192:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_add_list 被调用 10 正常返回 100% 代码块 执行 95%
+</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  193:</td><td class="code">list_add_list(u32_t pattern, ListHead *main, ListHead *children, uint_t sum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  194:</td><td class="code">{</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  195:</td><td class="code">    if( NODEISNULL(main) || NODEISNULL(children) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 90% (fallthrough)
+ 分支 1 通过 10%
+ 分支 2 通过 11% (fallthrough)
+ 分支 3 通过 89%
+ 调用 4 正常返回 100%
+</td></tr>
+<tr><td class="sum">        8:</td>   <td class="line">  196:</td><td class="code">    if( INSERT_TO_TAIL != pattern && INSERT_TO_HEAD != pattern ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 75% (fallthrough)
+ 分支 1 通过 25%
+ 分支 2 通过 17% (fallthrough)
+ 分支 3 通过 83%
+ 调用 4 正常返回 100%
+</td></tr>
+<tr><td class="sum">        7:</td>   <td class="line">  197:</td><td class="code">    if( children->CurMember < sum || 0 == sum ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 14% (fallthrough)
+ 分支 3 通过 86%
+ 调用 4 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  198:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  199:</td><td class="code">    //头<---子--->尾 头<---主--->尾  或者   头<---主--->尾 头<---子--->尾 </td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  200:</td><td class="code">    if( children->CurMember == sum ){//切割刚好等于子链表全部长度</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 67% (fallthrough)
+ 分支 1 通过 33%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  201:</td><td class="code">        _list_combine(main->Head, main->Tail, children->Head, children->Tail, pattern);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 50% (fallthrough)
+ 分支 1 通过 50%
+ 分支 2 通过 100% (fallthrough)
+ 分支 3 通过 0%
+ 分支 4 通过 50%
+ 分支 5 通过 50%
+ 分支 6 通过 0%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  202:</td><td class="code">        children->Head = NULL;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  203:</td><td class="code">        children->Tail = NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  204:</td><td class="code">    }else{//切割小于子链表全部长度</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  205:</td><td class="code">        ListNode *tmpHead = children->Head;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  206:</td><td class="code">        ListNode *tmpTail = children->Tail;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  207:</td><td class="code">        switch(pattern)</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 50%
+ 分支 1 通过 50%
+ 分支 2 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  208:</td><td class="code">        {</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  209:</td><td class="code">            case INSERT_TO_HEAD: _list_node_offset(children->Head,Next); tmpTail=(children->Head)->Prev; break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 80%
+ 分支 1 通过 20% (fallthrough)
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  210:</td><td class="code">            case INSERT_TO_TAIL: _list_node_offset(children->Tail,Prev); tmpHead=(children->Tail)->Next; break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 80%
+ 分支 1 通过 20% (fallthrough)
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  211:</td><td class="code">        }</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  212:</td><td class="code">        (children->Head)->Prev = children->Tail;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  213:</td><td class="code">        (children->Tail)->Next = children->Head;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  214:</td><td class="code">        tmpHead->Prev = tmpTail;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  215:</td><td class="code">        tmpTail->Next = tmpHead;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  216:</td><td class="code">         _list_combine(main->Head, main->Tail, tmpHead, tmpTail, pattern);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 分支 2 从未 执行
+ 分支 3 从未 执行
+ 分支 4 通过 50%
+ 分支 5 通过 50%
+ 分支 6 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  217:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  218:</td><td class="code"></td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  219:</td><td class="code">    main->CurMember = main->CurMember + sum;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  220:</td><td class="code">    main->SumMember = main->SumMember + sum;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  221:</td><td class="code">    children->CurMember = children->CurMember - sum;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  222:</td><td class="code">    children->DelMember = children->DelMember + sum;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  223:</td><td class="code">    return LIST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  224:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  225:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  226:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  227:</td><td class="code">* @brief 打印整个链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  228:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  229:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  230:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  231:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  232:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 list_printf 被调用 0 正常返回 0% 代码块 执行 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  233:</td><td class="code">list_printf(ListHead *list)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  234:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  235:</td><td class="code">    if( NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  236:</td><td class="code">    list_node_t * tmp;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  237:</td><td class="code">    LIST_PRINTF("head=%p\n", list->Head);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  238:</td><td class="code">    tmp = list_get_head_node(list); </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  239:</td><td class="code">    do{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  240:</td><td class="code">        LIST_PRINTF("(next:%p<--node:%p-->prev:%p)\n", tmp->Next, tmp, tmp->Prev);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  241:</td><td class="code">        tmp = list_get_next_node(tmp);</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  242:</td><td class="code">    }while(tmp != list_get_head_node(list));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  243:</td><td class="code">    LIST_PRINTF("tail=%p\n", list->Tail);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  244:</td><td class="code">    return LIST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  245:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  246:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  247:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  248:</td><td class="code">* @brief 队列添加节点到尾部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  249:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  250:</td><td class="code">* @param [in] node   需要添加的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  251:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  252:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  253:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  254:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 queue_add_node 被调用 1010 正常返回 100% 代码块 执行 71%
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  255:</td><td class="code">queue_add_node( ListHead *list , ListNode *node )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  256:</td><td class="code">{</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  257:</td><td class="code">    if( NODEISNULL(list)||NODEISNULL(node) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 0% (fallthrough)
+ 分支 3 通过 100%
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  258:</td><td class="code">    return list_insert_node(INSERT_TO_TAIL, list, node );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  259:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  260:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  261:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  262:</td><td class="code">* @brief 从队列取出节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  263:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  264:</td><td class="code">* @param [in] node   需要取出的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  265:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  266:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  267:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  268:</td><td class="code">ListNode *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 queue_remove_node 被调用 1010 正常返回 100% 代码块 执行 63%
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  269:</td><td class="code">queue_remove_node( ListHead *list )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  270:</td><td class="code">{</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  271:</td><td class="code">    if( NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  272:</td><td class="code">    if( LISTISNULL(list) ) return NULL;//队列为空</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  273:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  274:</td><td class="code">    ListNode *temp;</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  275:</td><td class="code">    temp = list->Head;</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  276:</td><td class="code">    list_delete_node(list, temp);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  277:</td><td class="code">    return temp;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  278:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  279:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  280:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  281:</td><td class="code">* @brief 队列添加链表到尾部</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  282:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  283:</td><td class="code">* @param [in] add   需要入队的链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  284:</td><td class="code">* @param [in] sum    入队的链表节点数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  285:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  286:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  287:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  288:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 queue_add_list 被调用 0 正常返回 0% 代码块 执行 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  289:</td><td class="code">queue_add_list(ListHead *list, ListHead *add, uint_t sum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  290:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  291:</td><td class="code">    if( NODEISNULL(list)||NODEISNULL(add) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 分支 2 从未 执行
+ 分支 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  292:</td><td class="code">    if( add->CurMember<sum ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  293:</td><td class="code">    return list_add_list(INSERT_TO_TAIL, list, add, sum );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  294:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  295:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  296:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  297:</td><td class="code">* @brief 从队列取出链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  298:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  299:</td><td class="code">* @param [in] move   需要出队的链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  300:</td><td class="code">* @param [in] sum    出队的链表节点数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  301:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  302:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  303:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  304:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 queue_remove_list 被调用 0 正常返回 0% 代码块 执行 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  305:</td><td class="code">queue_remove_list(ListHead *list, ListHead *move, uint_t sum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  306:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  307:</td><td class="code">    if( NODEISNULL(list)) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  308:</td><td class="code">    if( LISTISNULL(list) || list->CurMember<sum ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 分支 2 从未 执行
+ 分支 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  309:</td><td class="code">    return list_add_list(INSERT_TO_HEAD, move, list, sum );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  310:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  311:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  312:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  313:</td><td class="code">* @brief 节点入栈</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  314:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  315:</td><td class="code">* @param [in] node   需要入栈的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  316:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  317:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  318:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  319:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 stack_push 被调用 1010 正常返回 100% 代码块 执行 71%
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  320:</td><td class="code">stack_push( ListHead *list , ListNode *node )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  321:</td><td class="code">{</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  322:</td><td class="code">    if( NODEISNULL(list)||NODEISNULL(node) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 0% (fallthrough)
+ 分支 3 通过 100%
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  323:</td><td class="code">    return list_insert_node(INSERT_TO_HEAD, list, node );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  324:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  325:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  326:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  327:</td><td class="code">* @brief 节点出栈</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  328:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  329:</td><td class="code">* @param [in] node   需要出栈的节点</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  330:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  331:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  332:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  333:</td><td class="code">ListNode *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 stack_pop 被调用 1010 正常返回 100% 代码块 执行 63%
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  334:</td><td class="code">stack_pop( ListHead *list )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  335:</td><td class="code">{</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  336:</td><td class="code">    if( NODEISNULL(list) ) RETURN_ERR( ERR_PARA ,LIST_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  337:</td><td class="code">    if( LISTISNULL(list) ) return NULL;//栈为空</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  338:</td><td class="code">    ListNode *temp;</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  339:</td><td class="code">    temp = list->Tail;</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  340:</td><td class="code">    list_delete_node(list, temp);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">     1010:</td>   <td class="line">  341:</td><td class="code">    return temp;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  342:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  343:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  344:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  345:</td><td class="code">* @brief 链表入栈</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  346:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  347:</td><td class="code">* @param [in] push   需要入栈的链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  348:</td><td class="code">* @param [in] sum    入栈的链表节点数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  349:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  350:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  351:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  352:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 stack_push_list 被调用 0 正常返回 0% 代码块 执行 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  353:</td><td class="code">stack_push_list(ListHead *list, ListHead *push, uint_t sum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  354:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  355:</td><td class="code">    if( NODEISNULL(list)||NODEISNULL(push) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 分支 2 从未 执行
+ 分支 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  356:</td><td class="code">    if( push->CurMember<sum ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  357:</td><td class="code">    return list_add_list(INSERT_TO_HEAD, list, push, sum );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  358:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  359:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  360:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  361:</td><td class="code">* @brief 链表出栈</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  362:</td><td class="code">* @param [in] list   链表头</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  363:</td><td class="code">* @param [in] pop   需要出栈的链表</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  364:</td><td class="code">* @param [in] sum    出栈的链表节点数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  365:</td><td class="code">* @retval LIST_SUCC  表示成功</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  366:</td><td class="code">* @retval LIST_FAIL  表示失败</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  367:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  368:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 stack_pop_list 被调用 0 正常返回 0% 代码块 执行 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  369:</td><td class="code">stack_pop_list( ListHead *list, ListHead *pop, uint_t sum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  370:</td><td class="code">{</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  371:</td><td class="code">    if( NODEISNULL(list)||NODEISNULL(pop) ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 分支 2 从未 执行
+ 分支 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  372:</td><td class="code">    if( LISTISNULL(list) || list->CurMember<sum ) RETURN_ERR( ERR_PARA ,LIST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 从未 执行
+ 分支 1 从未 执行
+ 分支 2 从未 执行
+ 分支 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  373:</td><td class="code">    return list_add_list(INSERT_TO_HEAD, pop, list, sum );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  374:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  375:</td><td class="code"></td></tr>
+</table>
+</body>
+
+   <script type="text/javascript" src="../../TEST/html/js/buildCoverage.js"></script>
+</html>

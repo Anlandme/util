@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>单元测试报告</title>
+    <link rel="stylesheet" href="../../TEST/html/css/style.css">
+</head>
+
+<body class="body">
+    <div id="page" class="page">
+        <div id="panels" class="panels">
+            <span class="panel color0" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h2>单</h2>
+                    <h2>元</h2>
+                    <h2>测</h2>
+                    <h2>试</h2>
+                    <h2>报</h2>
+                    <h2>告</h2>
+                    <a class="file" href="./performance.html">性能</br>报告</a>
+                </div>
+                <div class="panel-text">
+                    <h1>测试的结果</h1>
+                    <h4>suite展示</h4>
+                        <ul>测试的case数量</ul>
+                        <ul>测试的case出错数量</ul>
+                        <ul>一个suite测试时长</ul>
+                        <ul>内存泄漏展示内存泄漏位置大小</ul>
+                    <h4>case展示</h4>
+                        <ul>case的成功结果</ul>
+                        <ul>case失败结果，失败位置失败内容</ul>
+                        <ul>case内打印结果</ul>
+                    <h4>性能展示</h4>
+                        <ul>函数运行时间</ul>
+                        <ul>函数调用次数</ul>
+                        <ul>函数调用关系</ul>
+                    <h4>覆盖率展示</h4>
+                        <ul>文件和文件内函数的语句覆盖率</ul>
+                        <ul>文件和文件内函数的分支覆盖率</ul>
+                        <ul>文件和文件内函数的条件覆盖率</ul>
+                        <ul>文件和文件内函数的函数覆盖率</ul>
+                </div>
+            </span>
+          <span class="panel color1" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试函数错误函数</h1>
+                    <h5>-测试case数:1 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.00033 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: 函数运行失败测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试失败的操作</br>
+                       <b>[ OK     ]</b>函数运行失败测试: test sucess!! 测试通过</br>
+                  </p>
+              </div>
+          </span>
+          <span class="panel color2" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试线程正常使用接口</h1>
+                    <h5>-测试case数:3 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.00133 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: 非初始化线程属性功能测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>非初始化线程属性操作</br>
+                       <b>[ OK     ]</b>非初始化线程属性功能测试: test sucess!! 测试通过</br>
+                  </p>
+                  <li>CASE: 初始化线程属性功能测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>初始化线程属性操作</br>
+                       <b>[ OK     ]</b>初始化线程属性功能测试: test sucess!! 测试通过</br>
+                  </p>
+                  <li>CASE: 多线程功能测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>多线程操作</br>
+                       <b>[ OK     ]</b>多线程功能测试: test sucess!! 测试通过</br>
+                  </p>
+              </div>
+          </span>
+          <span class="panel color3" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试线程局部数据功能接口</h1>
+                    <h5>-测试case数:1 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.00040 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: 局部数据功能测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>局部数据操作</br>
+                       <b>[ OK     ]</b>局部数据功能测试: test sucess!! 测试通过</br>
+                  </p>
+              </div>
+          </span>
+          <span class="panel color4" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试线程其他功能接口</h1>
+                    <h5>-测试case数:2 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.00100 seconds</h5>
+                    <h5>-测试的内存泄漏数：5</h5>
+                    <table rules="rows">
+                        <tr><th>泄漏地址</th><th>泄漏大小</th></tr>
+                    <tr><td>0x1db0410</td><td>0x15</td></tr>
+                    <tr><td>0x1db0430</td><td>0x496</td></tr>
+                    <tr><td>0x1db08d0</td><td>0x15</td></tr>
+                    <tr><td>0x1db08f0</td><td>0x38</td></tr>
+                    <tr><td>0x1db0930</td><td>0x138</td></tr>
+                    </table>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: 线程取消功能测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>官方取消操作 引起一定量泄漏</br>
+                       <b>[ OK     ]</b>线程取消功能测试: test sucess!! 测试通过</br>
+                  </p>
+                  <li>CASE: 线程退出功能测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>官方pthread_exit退出操作 引起一定量泄漏</br>
+                       <b>[ OK     ]</b>线程退出功能测试: test sucess!! 测试通过</br>
+                  </p>
+              </div>
+          </span>
+           <span class="panel color9" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+               <div class="panel-coverage">
+              <h1>thread.c 覆盖率</h1>
+              <h5>语句覆盖率:</h5>
+              <canvas class="ring-line"  percent='120/80.00%'></canvas>
+              <h5>分支覆盖率:</h5>
+              <canvas class="ring-branch" percent='94/91.49%'></canvas>
+              <h5>条件覆盖率:</h5>
+              <canvas class="ring-condition" percent='94/56.38%'></canvas>
+              <h5>函数覆盖率:</h5>
+              <canvas class="ring-function" percent='117/39.32%'></canvas>
+               <a class="file" href="./thread.html">进入</br>文件</a>
+               </div>
+               <div class="panel-text">
+              <a>函数:thread_signal</a></br>
+              <p>
+                  <b>语句覆盖率(66.67%):</b>3</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(50.00%):</b>2</br>
+              </p>
+              <a>函数:thread_delete_localdata</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>2</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:thread_set_localdata</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>2</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:thread_once</a></br>
+              <p>
+                  <b>语句覆盖率(66.67%):</b>3</br>
+                  <b>分支覆盖率(50.00%):</b>4</br>
+                  <b>条件覆盖率(25.00%):</b>4</br>
+                  <b>函数覆盖率(50.00%):</b>2</br>
+              </p>
+              <a>函数:thread_detach</a></br>
+              <p>
+                  <b>语句覆盖率(50.00%):</b>4</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(50.00%):</b>2</br>
+              </p>
+              <a>函数:thread_cancel_point</a></br>
+              <p>
+                  <b>语句覆盖率(66.67%):</b>3</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:thread_equal</a></br>
+              <p>
+                  <b>语句覆盖率(50.00%):</b>4</br>
+                  <b>分支覆盖率(66.67%):</b>6</br>
+                  <b>条件覆盖率(50.00%):</b>6</br>
+                  <b>函数覆盖率(50.00%):</b>2</br>
+              </p>
+              <a>函数:_thread_find_node</a></br>
+              <p>
+                  <b>语句覆盖率(88.89%):</b>9</br>
+                  <b>分支覆盖率(100.00%):</b>6</br>
+                  <b>条件覆盖率(66.67%):</b>6</br>
+                  <b>函数覆盖率(100.00%):</b>1</br>
+              </p>
+              <a>函数:thread_self</a></br>
+              <p>
+                  <b>语句覆盖率(0.00%):</b>6</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:thread_join</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>5</br>
+                  <b>分支覆盖率(100.00%):</b>4</br>
+                  <b>条件覆盖率(75.00%):</b>4</br>
+                  <b>函数覆盖率(37.50%):</b>8</br>
+              </p>
+              <a>函数:thread_exit_self</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>7</br>
+                  <b>分支覆盖率(100.00%):</b>4</br>
+                  <b>条件覆盖率(50.00%):</b>4</br>
+                  <b>函数覆盖率(83.33%):</b>6</br>
+              </p>
+              <a>函数:thread_cancel_some</a></br>
+              <p>
+                  <b>语句覆盖率(83.33%):</b>6</br>
+                  <b>分支覆盖率(100.00%):</b>6</br>
+                  <b>条件覆盖率(66.67%):</b>6</br>
+                  <b>函数覆盖率(66.67%):</b>3</br>
+              </p>
+              <a>函数:_thread_add_node</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>6</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(37.50%):</b>8</br>
+              </p>
+              <a>函数:_thread_default_set_attr</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>6</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(16.67%):</b>6</br>
+              </p>
+              <a>函数:_thread_set_attr</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>9</br>
+                  <b>分支覆盖率(100.00%):</b>28</br>
+                  <b>条件覆盖率(50.00%):</b>28</br>
+                  <b>函数覆盖率(16.67%):</b>42</br>
+              </p>
+              <a>函数:thread_create</a></br>
+              <p>
+                  <b>语句覆盖率(81.48%):</b>27</br>
+                  <b>分支覆盖率(100.00%):</b>14</br>
+                  <b>条件覆盖率(71.43%):</b>14</br>
+                  <b>函数覆盖率(76.92%):</b>13</br>
+              </p>
+               </div>
+           </span>
+</div>
+</div>
+
+</body>
+    <script type="text/javascript" src="../../TEST/html/js/buildBase.js"></script>
+    <script type="text/javascript" src="../../TEST/html/js/buildScroll.js"></script>
+    <script type="text/javascript" src="../../TEST/html/js/buildText.js"></script>
+    <script type="text/javascript" src="../../TEST/html/js/buildCanvas.js"></script>
+</html>

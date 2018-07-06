@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>代码覆盖率报告</title>
+   <link rel="stylesheet" href="../html/css/coverage.css">
+</head>
+
+<body class="coverage-page">
+<h1>TEST.C 覆盖率</h1>
+<table rules="cols" >
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Source:./TEST.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Graph:TEST.gcno</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Data:TEST.gcda</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Runs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Programs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    1:</td><td class="code">/******************************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    2:</td><td class="code">        (c) COPYRIGHT 2017-  by D.C.P  Co.,Ltd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    3:</td><td class="code">                          All rights reserved.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    4:</td><td class="code">@file: TEST.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    5:</td><td class="code">@brief: 这是一个单元测试模块，进行程序的函数，模块的测试</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    6:</td><td class="code">@attention： 本模块关联外部文件和模块 util/utildef.h,utilinc.h err模块</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    7:</td><td class="code">@author   D.C.P</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    8:</td><td class="code">@version  0.0.0.1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    9:</td><td class="code">@date     2017/03/02</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   10:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   11:</td><td class="code">  Change History :</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   12:</td><td class="code">                 | <Date>      | <Version> | <Author> | <Description></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   13:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   14:</td><td class="code">  @todo          | 2017/04/06  | 0.0.0.1   | D.C.P    | 创建文件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   15:</td><td class="code">******************************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   16:</td><td class="code">#include ".././util/util_inc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   17:</td><td class="code">#include "TEST.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   18:</td><td class="code">#define TEST_FILE "./test.tmp"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   19:</td><td class="code">/**  @brief 打印框架 */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   20:</td><td class="code">#define SUITE_LINE "======================================"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   21:</td><td class="code">#define CASE_LINE  "==>==>==>=>==>==>==>==>==>==>==>=>==>==>==>==>"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   22:</td><td class="code">#define PRINT_LINE1 "****************************************自定义输出内容****************************************"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   23:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   24:</td><td class="code">/**  @brief 内存泄漏表单框架 */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   25:</td><td class="code">#define LEAK_SIZE 5000</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   26:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   27:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   28:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   29:</td><td class="code">* @brief 段错误处理函数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   30:</td><td class="code">*/</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_unit_test_handler 被调用 0 正常返回 0% 代码块 执行 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   31:</td><td class="code">void _test_unit_test_handler(int signal)   </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   32:</td><td class="code">{  </td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   33:</td><td class="code">    EXCEPTION(ERR_ENOSPC, "发生段错误");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 从未 执行
+ 调用 1 从未 执行
+ 调用 2 从未 执行
+ 调用 3 从未 执行
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">   34:</td><td class="code">}   </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   35:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   36:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   37:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   38:</td><td class="code">* @brief 单元测试初始化</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   39:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   40:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_start_unit_test 被调用 1 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   41:</td><td class="code">_test_start_unit_test(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   42:</td><td class="code">{</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   43:</td><td class="code">    printf("开始初始化单元测试\n");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   44:</td><td class="code">    signal(SIGSEGV,_test_unit_test_handler);//段错误信号</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   45:</td><td class="code">    printf("欢迎进行单元测试\n");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">   46:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   47:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   48:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   49:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   50:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   51:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   52:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   53:</td><td class="code">* @brief 计算时间差</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   54:</td><td class="code">* @param [in] start    开始时间</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   55:</td><td class="code">* @param [in] end      结束时间</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   56:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   57:</td><td class="code">struct timespec</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_gettime 被调用 6 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   58:</td><td class="code">_test_gettime(struct timespec start, struct timespec end)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   59:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   60:</td><td class="code">    struct timespec tmp;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   61:</td><td class="code">    tmp.tv_sec = end.tv_sec - start.tv_sec;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   62:</td><td class="code">    tmp.tv_nsec = end.tv_nsec - start.tv_nsec;</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   63:</td><td class="code">    return tmp;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   64:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   65:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   66:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   67:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   68:</td><td class="code">* @brief 计算时间</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   69:</td><td class="code">* @param [in] testTime    时间</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   70:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   71:</td><td class="code">double</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_showtime 被调用 6 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   72:</td><td class="code">_test_showtime(struct timespec testTime)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   73:</td><td class="code">{</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   74:</td><td class="code">    double tmp = testTime.tv_sec + (double)testTime.tv_nsec/1000000000;//1秒 = 1 000 000 000 纳秒</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">   75:</td><td class="code">    return tmp;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   76:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   77:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   78:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   79:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   80:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   81:</td><td class="code">* @brief 测试内容写入文件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   82:</td><td class="code">* @param [in] filePath    文件路径</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   83:</td><td class="code">* @param [in] text        写入内容</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   84:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   85:</td><td class="code">static int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_file 被调用 28 正常返回 100% 代码块 执行 57%
+</td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   86:</td><td class="code">_test_file(string_t filePath, string_t text)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   87:</td><td class="code">{</td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   88:</td><td class="code">    if (NULL == filePath || NULL == text) RETURN_ERR(ERR_PARA, TEST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 0% (fallthrough)
+ 分支 3 通过 100%
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   89:</td><td class="code"></td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   90:</td><td class="code">    FILE *fp = NULL;</td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   91:</td><td class="code">    fp = fopen(filePath, "a");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   92:</td><td class="code">    if (fp == NULL) RETURN_ERRDESC("文件打开错误(open file was fault)", THE_ERRNO, TEST_FAIL );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+ 调用 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   93:</td><td class="code"></td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   94:</td><td class="code">    fwrite(text, 1, strlen(text), fp); /* 写入文件*/</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   95:</td><td class="code"></td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   96:</td><td class="code">    fclose(fp);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   97:</td><td class="code">    fp = NULL; //需要指向空，否则会指向原打开文件地址</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   98:</td><td class="code"></td></tr>
+<tr><td class="sum">       28:</td>   <td class="line">   99:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  100:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  101:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  102:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  103:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  104:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  105:</td><td class="code">* @brief memResult上清楚数据</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  106:</td><td class="code">* @param [in] clearMem   被清除的内容</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  107:</td><td class="code">* @param [in] memResult   存储被清除内容的空间</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  108:</td><td class="code">* @param [in] leakCount   存储被清除内容的数量</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  109:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  110:</td><td class="code">static int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_clear_memResult 被调用 29 正常返回 100% 代码块 执行 71%
+</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  111:</td><td class="code">_test_clear_memResult( char * clearMem, char_t memResult[LEAK_SIZE][20], u16_t * leakCount )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  112:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  113:</td><td class="code">    u32_t count;                  //循环计数</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  114:</td><td class="code">    char_t freeMem[20] = {'\0'}; //被释放的内存</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  115:</td><td class="code">    strcpy(freeMem, clearMem);</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  116:</td><td class="code">    freeMem[strlen(freeMem)-1] = '\0';</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  117:</td><td class="code"></td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  118:</td><td class="code">    for (count = 0; count < LEAK_SIZE; count++)</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100%
+ 分支 1 通过 0% (fallthrough)
+</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  119:</td><td class="code">        if (NULL != strstr(memResult[count], freeMem))</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  120:</td><td class="code">        {</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  121:</td><td class="code">            (*leakCount)--;</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  122:</td><td class="code">            memset(memResult[count],'\0',20);//清除</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  123:</td><td class="code">            return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  124:</td><td class="code">        }</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  125:</td><td class="code">    return TEST_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  126:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  127:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  128:</td><td class="code">* @brief memResult上填充数据</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  129:</td><td class="code">* @param [in] fillMem   被填充的内容</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  130:</td><td class="code">* @param [in] memResult   存储填充内容的空间</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  131:</td><td class="code">* @param [in] leakCount   存储填充内容的数量</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  132:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  133:</td><td class="code">static int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_fill_memResult 被调用 30 正常返回 100% 代码块 执行 86%
+</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  134:</td><td class="code">_test_fill_memResult( char * fillMem, char_t memResult[LEAK_SIZE][20], u16_t * leakCount )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  135:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  136:</td><td class="code">    u32_t count;                  //循环计数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  137:</td><td class="code"></td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  138:</td><td class="code">    (*leakCount)++;</td></tr>
+<tr><td class="sum">       31:</td>   <td class="line">  139:</td><td class="code">    for (count = 0; count < LEAK_SIZE; count++)</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100%
+ 分支 1 通过 0% (fallthrough)
+</td></tr>
+<tr><td class="sum">       31:</td>   <td class="line">  140:</td><td class="code">        if( '\0' ==  memResult[count][0] ) </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 97% (fallthrough)
+ 分支 1 通过 3%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  141:</td><td class="code">        {</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  142:</td><td class="code">            strcpy(memResult[count], fillMem);</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  143:</td><td class="code">            return TEST_SUCC; </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  144:</td><td class="code">        }</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  145:</td><td class="code">    return TEST_FAIL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  146:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  147:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  148:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  149:</td><td class="code">* @brief 输出memResult内容</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  150:</td><td class="code">* @param [in] memResult   需要输出的内容</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  151:</td><td class="code">* @param [in] leakCount   内容的数量</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  152:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  153:</td><td class="code">static int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_print_report 被调用 5 正常返回 100% 代码块 执行 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  154:</td><td class="code">_test_print_report( char_t memResult[50][20], u16_t leakCount )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  155:</td><td class="code">{</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  156:</td><td class="code">    u32_t count;                     //循环计数</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  157:</td><td class="code">    char_t leakList[LEAK_SIZE*20] = {'\0'}; //内存泄漏表单</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  158:</td><td class="code">    u16_t listLen = 0;              //内容长度</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  159:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  160:</td><td class="code">    if( leakCount == 0 )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 80% (fallthrough)
+ 分支 1 通过 20%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  161:</td><td class="code">        listLen += snprintf(leakList+listLen, LEAK_SIZE*20-listLen,"-测试的内存泄漏数：%d\n\n", leakCount);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  162:</td><td class="code">    else</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  163:</td><td class="code">    {</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  164:</td><td class="code">        listLen += snprintf(leakList+listLen, LEAK_SIZE*20-listLen,"-测试的内存泄漏数：%d", leakCount);</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  165:</td><td class="code">        listLen += snprintf(leakList+listLen, LEAK_SIZE*20-listLen,  "\n@@@@@@@@@@@@@@@@@@@@@@@");</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  166:</td><td class="code">        listLen += snprintf(leakList+listLen, LEAK_SIZE*20-listLen,  "\n@     泄漏地址  泄漏大小 \n");</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  167:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  168:</td><td class="code"></td></tr>
+<tr><td class="sum">        7:</td>   <td class="line">  169:</td><td class="code">    for( count=0; (count <LEAK_SIZE)&&(leakCount>0); count++ )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 29%
+ 分支 3 通过 71% (fallthrough)
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  170:</td><td class="code">        if( '\0' != memResult[count][0] ) </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 50% (fallthrough)
+ 分支 1 通过 50%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  171:</td><td class="code">        {</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  172:</td><td class="code">            listLen += snprintf(leakList+listLen, LEAK_SIZE*20-listLen,"@(%d)  %s", count, memResult[count]);</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  173:</td><td class="code">            leakCount--;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  174:</td><td class="code">        }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  175:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  176:</td><td class="code">    listLen += snprintf(leakList+listLen, LEAK_SIZE*20-listLen,"\n");</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  177:</td><td class="code">#ifdef PRINT_OUT</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  178:</td><td class="code">    printf("%s", leakList);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  179:</td><td class="code">#endif</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  180:</td><td class="code">    _test_file(TEST_FILE, leakList);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  181:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  182:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  183:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  184:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  185:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  186:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  187:</td><td class="code">* @brief 打印内存监控报告</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  188:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  189:</td><td class="code">static int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_malloc_monitor_report 被调用 5 正常返回 100% 代码块 执行 80%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  190:</td><td class="code">_test_malloc_monitor_report( void )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  191:</td><td class="code">{</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  192:</td><td class="code">    FILE *fp = NULL;                 //读取的监控内存文件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  193:</td><td class="code">    char_t line[100];                //逐行读取text并保存的缓冲区</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  194:</td><td class="code">    char_t *offset = NULL;           //缓冲区内的内存位移</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  195:</td><td class="code">    char_t memResult[LEAK_SIZE][20]; //存储申请内存结果</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  196:</td><td class="code">    u16_t leakCount = 0;             //申请内存计数</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  197:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  198:</td><td class="code">    memset(memResult,'\0',sizeof(memResult));//初始化memResult</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  199:</td><td class="code">    fp=fopen(MONITOR_MALLOC_FILE,"r");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  200:</td><td class="code">    if( NULL == fp ) RETURN_ERRDESC("文件打开错误(open file was fault)", THE_ERRNO, TEST_FAIL );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+ 调用 3 从未 执行
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  201:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  202:</td><td class="code">    fseek(fp,0,SEEK_SET);//位移到文件头部</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  203:</td><td class="code">    /** 输出的模板</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  204:</td><td class="code">      *  = Start</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  205:</td><td class="code">      *  @ ./test:[0x804936a] + 0x8c5d830 0x190 </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  206:</td><td class="code">      *  @ ./test:[0x8049387] - 0x8c5d830</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  207:</td><td class="code">      *  = End</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  208:</td><td class="code">      **/</td></tr>
+<tr><td class="sum">       79:</td>   <td class="line">  209:</td><td class="code">    while( NULL != fgets(line, 100, fp) )//逐行读取</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+ 分支 1 通过 93%
+ 分支 2 通过 7% (fallthrough)
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  210:</td><td class="code">    {</td></tr>
+<tr><td class="sum">       69:</td>   <td class="line">  211:</td><td class="code">        if( '=' == line[0] ) continue;//当为首行(= Start)或者尾行(= End)时候抛弃本条内容</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 14% (fallthrough)
+ 分支 1 通过 86%
+</td></tr>
+<tr><td class="sum">       59:</td>   <td class="line">  212:</td><td class="code">        offset = strchr(line+3, ' ');//位置到空格位置</td></tr>
+<tr><td class="sum">       59:</td>   <td class="line">  213:</td><td class="code">        switch(*(offset+1))//判断+ 或者 -</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 51%
+ 分支 1 通过 49%
+ 分支 2 通过 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  214:</td><td class="code">        {</td></tr>
+<tr><td class="sum">       30:</td>   <td class="line">  215:</td><td class="code">            case '+': _test_fill_memResult(offset+3, memResult, &leakCount);  break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">       29:</td>   <td class="line">  216:</td><td class="code">            case '-': _test_clear_memResult(offset+3, memResult, &leakCount); break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  217:</td><td class="code">        }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  218:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  219:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  220:</td><td class="code">    fclose(fp);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  221:</td><td class="code">    remove(MONITOR_MALLOC_FILE);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  222:</td><td class="code">    _test_print_report( memResult, leakCount );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  223:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  224:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  225:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  226:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  227:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  228:</td><td class="code">* @brief 初始化测试套件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  229:</td><td class="code">* @param [in] testSuite   测试套件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  230:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  231:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_init_suite 被调用 5 正常返回 100% 代码块 执行 60%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  232:</td><td class="code">_test_init_suite(struct suite *testSuite)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  233:</td><td class="code">{</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  234:</td><td class="code">    if (NULL == testSuite) RETURN_ERR(ERR_PARA, TEST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  235:</td><td class="code">    testSuite->SuiteName = NULL;      //套件名</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  236:</td><td class="code">    testSuite->SuiteSum = 0;          //测试实例数</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  237:</td><td class="code">    testSuite->SuiteErrSum = 0;       //测试实例出错数</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  238:</td><td class="code">    testSuite->SuiteTime.tv_sec = 0;  //套件时间 秒</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  239:</td><td class="code">    testSuite->SuiteTime.tv_nsec = 0; //套件时间 纳秒</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  240:</td><td class="code">    testSuite->SuiteSetup = NULL;     //case装载函数</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  241:</td><td class="code">    testSuite->SuiteTeardown = NULL;  //case 卸载函数</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  242:</td><td class="code">    testSuite->TestGroupFree = NULL;  //测试组结构体释放函数</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  243:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  244:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  245:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  246:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  247:</td><td class="code">* @brief 开始一个套件测试</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  248:</td><td class="code">* @param [in] testSuite 套件结构体</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  249:</td><td class="code">* @attention 当定义了TEST_FILE,就将测试内容写入文件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  250:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  251:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_suite_start 被调用 5 正常返回 100% 代码块 执行 75%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  252:</td><td class="code">_test_suite_start(struct suite *testSuite)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  253:</td><td class="code">{</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  254:</td><td class="code">    if (NULL == testSuite) RETURN_ERR(ERR_PARA, TEST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  255:</td><td class="code">    char_t text[120] = {'\0'};;</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  256:</td><td class="code">    setenv("MALLOC_TRACE", MONITOR_MALLOC_FILE, 1);//设定内存监控的全局变量</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  257:</td><td class="code">#if !defined( OS_MAC)</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  258:</td><td class="code">    mtrace();//启动内存监控</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  259:</td><td class="code">#endif</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  260:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  261:</td><td class="code">    snprintf(text, 120, "\n%sTEST %s GROUP START%s\n", SUITE_LINE ,testSuite->SuiteName ,SUITE_LINE);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  262:</td><td class="code">    </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  263:</td><td class="code">#ifdef PRINT_OUT</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  264:</td><td class="code">    printf("%s", text);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  265:</td><td class="code">#endif</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  266:</td><td class="code">    _test_file(TEST_FILE, text);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  267:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  268:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  269:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  270:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  271:</td><td class="code">* @brief 结束一个套件测试</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  272:</td><td class="code">* @param [in] testSuite 套件结构体</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  273:</td><td class="code">* @attention 当定义了TEST_FILE,就将测试内容写入文件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  274:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  275:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_suite_end 被调用 5 正常返回 100% 代码块 执行 80%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  276:</td><td class="code">_test_suite_end(struct suite *testSuite)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  277:</td><td class="code">{</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  278:</td><td class="code">    if (NULL == testSuite) RETURN_ERR(ERR_PARA, TEST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  279:</td><td class="code">    char_t text[250] = {'\0'};</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  280:</td><td class="code">    u32_t textLen = 0; //内容长度</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  281:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  282:</td><td class="code">    textLen += snprintf(text+textLen, 250, "\n%sTEST %s GROUP  END %s\n", SUITE_LINE ,testSuite->SuiteName ,SUITE_LINE);</td></tr>
+<tr><td class="sum">       15:</td>   <td class="line">  283:</td><td class="code">    textLen += snprintf(text+textLen, 250-textLen, "-测试case数:%d \n-测试case出错数:%d \n-测试时长:%.5lf seconds\n", </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">       10:</td>   <td class="line">  284:</td><td class="code">                                testSuite->SuiteSum, testSuite->SuiteErrSum, _test_showtime(testSuite->SuiteTime) );</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  285:</td><td class="code">    </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  286:</td><td class="code">#ifdef PRINT_OUT</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  287:</td><td class="code">    printf("%s", text);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  288:</td><td class="code">#endif</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  289:</td><td class="code">    _test_file(TEST_FILE, text);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  290:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  291:</td><td class="code">#if !defined( OS_MAC)</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  292:</td><td class="code">    muntrace();//结束内存监控</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  293:</td><td class="code">    _test_malloc_monitor_report();</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  294:</td><td class="code">#else</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  295:</td><td class="code">    _test_file(TEST_FILE, "\n");</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  296:</td><td class="code">#endif</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  297:</td><td class="code">    printf("%s suite [Finish]\n", testSuite->SuiteName);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  298:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  299:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  300:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  301:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  302:</td><td class="code">* @brief 初始化套件的测试实例</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  303:</td><td class="code">* @param [in] testCase   实例</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  304:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  305:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_init_case 被调用 13 正常返回 100% 代码块 执行 60%
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  306:</td><td class="code">_test_init_case(struct Case *testCase)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  307:</td><td class="code">{</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  308:</td><td class="code">    if (NULL == testCase) RETURN_ERR(ERR_PARA, TEST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 0% (fallthrough)
+ 分支 1 通过 100%
+ 调用 2 从未 执行
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  309:</td><td class="code">    testCase->MySuite          = NULL;                   //我的套件初始化</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  310:</td><td class="code">    testCase->Line             = 0;                      //实例出错所在行</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  311:</td><td class="code">    testCase->Function         = NULL;                   //实例出错所在函数</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  312:</td><td class="code">    testCase->File             = NULL;                   //实例出错所在文件</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  313:</td><td class="code">    testCase->CaseName         = NULL;                   //实例名</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  314:</td><td class="code">    testCase->CaseTime.tv_sec  = 0;                      //计数器 秒</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  315:</td><td class="code">    testCase->CaseTime.tv_nsec = 0;                      //计数器 纳秒</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  316:</td><td class="code">    testCase->ErrText[0]       = '\0';                   //出错描述打印</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  317:</td><td class="code">    testCase->PrintLen         = 0;                      //需要打印的内容的长度</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  318:</td><td class="code">    testCase->PrintText[0]     = '\0';                   //需要打印的内容</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  319:</td><td class="code">    testCase->TESTGroupSP      = CLOSE_TESTGROUP;        //测试组的参数栈指针</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  320:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  321:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  322:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  323:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  324:</td><td class="code">* @brief 处理测试的实例结果</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  325:</td><td class="code">* @param [in] testCase  实例结构体</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  326:</td><td class="code">* @param [in] desc      实例描述</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  327:</td><td class="code">* @param [in] result    实例测试结果</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  328:</td><td class="code">* @attention 当定义了TEST_FILE,就将测试内容写入文件</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  329:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  330:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 函数 _test_show_case_result 被调用 13 正常返回 100% 代码块 执行 92%
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  331:</td><td class="code">_test_show_case_result(struct suite *testSuite, struct Case *testCase, string_t desc, u32_t result)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  332:</td><td class="code">{</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  333:</td><td class="code">    if (NULL == testCase  || NULL == testSuite) RETURN_ERR(ERR_PARA, TEST_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 0% (fallthrough)
+ 分支 3 通过 100%
+ 调用 4 从未 执行
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  334:</td><td class="code">    char_t printText[2048] = {'\0'}; //打印的内容</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  335:</td><td class="code">    u32_t textLen = 0;               //内容长度</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  336:</td><td class="code"></td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  337:</td><td class="code">    testSuite->SuiteSum++;//测试实例计数</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  338:</td><td class="code">        if( NULL != testCase->CaseName )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  339:</td><td class="code">            textLen += snprintf( printText+textLen, 1024, "\n%s CASE %s\n",CASE_LINE, testCase->CaseName);</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  340:</td><td class="code">        if( NULL != desc )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  341:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "[ Desc   ]%s\n",desc);</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  342:</td><td class="code">    switch (result)</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 62%
+ 分支 1 通过 31%
+ 分支 2 通过 8%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  343:</td><td class="code">    {</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  344:</td><td class="code">    case TEST_SUCC:</td></tr>
+<tr><td class="sum">        8:</td>   <td class="line">  345:</td><td class="code">        if( NULL != testCase->CaseName )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+</td></tr>
+<tr><td class="sum">        8:</td>   <td class="line">  346:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "[ OK     ]%s: test sucess!! 测试通过\n",testCase->CaseName);</td></tr>
+<tr><td class="sum">        8:</td>   <td class="line">  347:</td><td class="code">        if( 0 != testCase->CaseTime.tv_sec || 0 != testCase->CaseTime.tv_nsec )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+ 分支 2 通过 13% (fallthrough)
+ 分支 3 通过 88%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  348:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "[ Time   ]计时的代码段时间: %.5lf seconds\n",_test_showtime(testCase->CaseTime));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">        8:</td>   <td class="line">  349:</td><td class="code">        break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  350:</td><td class="code">    case TEST_FAIL:</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  351:</td><td class="code">    testSuite->SuiteErrSum++;//测试出错实例计数</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  352:</td><td class="code">        if( NULL != testCase->CaseName )</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 100% (fallthrough)
+ 分支 1 通过 0%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  353:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "[ ERR    ]%s: test was fault！！ 测试出错\n",testCase->CaseName);</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  354:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "[ ERR    ]出错位置: file(%s) function(%s) line(%d)\n",testCase->File,testCase->Function,testCase->Line);</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  355:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "%s\n", testCase->ErrText );                                                        </td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  356:</td><td class="code">        break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  357:</td><td class="code">    default:</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  358:</td><td class="code">            testSuite->SuiteErrSum++;//测试出错实例计数</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  359:</td><td class="code">            textLen += snprintf( printText+textLen, 1024-textLen, "[ Emer   ]返回结果是错误的，无法处理\n");</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  360:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  361:</td><td class="code"></td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  362:</td><td class="code">    if( '\0' != testCase->PrintText[0])//打印自定义输出内容</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 分支 0 通过 23% (fallthrough)
+ 分支 1 通过 77%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  363:</td><td class="code">        textLen += snprintf( printText+textLen, 1024-textLen, "%s\n\n%s\n%s\n",PRINT_LINE1, testCase->PrintText,PRINT_LINE1); </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  364:</td><td class="code">    </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  365:</td><td class="code">#ifdef PRINT_OUT</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  366:</td><td class="code">    printf("%s",printText);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  367:</td><td class="code">#endif</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  368:</td><td class="code">    _test_file(TEST_FILE, printText);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> 调用 0 正常返回 100%
+</td></tr>
+<tr><td class="sum">       13:</td>   <td class="line">  369:</td><td class="code">    return TEST_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  370:</td><td class="code">}</td></tr>
+</table>
+</body>
+
+   <script type="text/javascript" src="../html/js/buildCoverage.js"></script>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>ä»£ç è¦†ç›–ç‡æŠ¥å‘Š</title>
+   <link rel="stylesheet" href="../../TEST/html/css/coverage.css">
+</head>
+
+<body class="coverage-page">
+<h1>TEST.C è¦†ç›–ç‡</h1>
+<table rules="cols" >
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Source:../log/log.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Graph:log.gcno</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Data:log.gcda</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Runs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    0:</td><td class="code">Programs:1</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    1:</td><td class="code">/******************************************************************************</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    2:</td><td class="code">        (c) COPYRIGHT 2017-  by D.C.P  Co.,Ltd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    3:</td><td class="code">                          All rights reserved.</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    4:</td><td class="code">@file: log.c</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    5:</td><td class="code">@brief:  logÄ£¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    6:</td><td class="code">        Ö÷ÒªÊÇ½«ĞèÒªµÄlogĞÅÏ¢¸ù¾İ²»Í¬µÈ¼¶£¬²»Í¬ĞèÇó½øĞĞ´òÓ¡£¬¿ÉÒÔµ÷ÓÃlog_config_rsyslogd</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    7:</td><td class="code">        ÅäÖÃrsyslogdÑ¡ÔñËùĞèÒªµÄÑ¡Ïî£¬µ÷ÓÃlog_config_logrotate¶ÔlogµÄÂÖ×ª·½Ê½Ñ¹ËõµÈ½øĞĞÅäÖÃ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    8:</td><td class="code">            Í¬Ê±logÓĞÁ½¸ö¹ıÂËº¯Êılog_set_filterºÍlog_set_modules£¬log_set_filterÊÇÒ»¸ö´ÖÂÔ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">    9:</td><td class="code">        µÄ¹ıÂË£¬µ«ÊÇÆäÓÅÏÈ¼¶¸ßÓÚlog_set_modules£¬ÒâË¼ÊÇÔÚÁ½¸öº¯ÊıÄÚÉèÖÃ²»Í¬Ğ´ÈëlogµÈ¼¶£¬×îºó</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   10:</td><td class="code">        ÊÇ·ñĞ´ÈëlogÈ¡¾öÓÚlog_set_filter</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   11:</td><td class="code">            log_set_modulesÊÇÒ»ÖÖ¾«Ï¸µÄ¹ıÂË£¬µ¥¶À¶ÔÄ³¸öÄ£¿éÉèÖÃĞ´ÈëlogµÈ¼¶£¬Í¬Ê±Ò²Ö§³Ö´òÓ¡µ½</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   12:</td><td class="code">        ÖÕ¶ËÒ³Ãæ¡£ÔÚµ÷ÊÔÊ±ºò¿ÉÒÔ¸ü¼ÓÁé»î¸üÓĞÕë¶ÔĞÔµÄ½øĞĞ´¦Àílog</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   13:</td><td class="code">@attention£º ±¾Ä£¿é¹ØÁªÍâ²¿ÎÄ¼şºÍÄ£¿é util/utildef.h,utilinc.h errÄ£¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   14:</td><td class="code">@attention£º ĞèÒªÏµÍ³Ö§³Örsyslog ºÍlogrotateÁ½¸öÓ¦ÓÃ£¬²»¹ıÒ»°ãcenOS ubuntuµÈÄ¬ÈÏ¶¼Ö§³ÖÁ½¸öÓ¦ÓÃ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   15:</td><td class="code">@author   D.C.P 			                                                 </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   16:</td><td class="code">@version  0.0.0.1                                                               </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   17:</td><td class="code">@date     2017/03/02</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   18:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   19:</td><td class="code">  Change History :                                                              </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   20:</td><td class="code">                 | <Date>      | <Version> | <Author> | <Description>                     </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   21:</td><td class="code">-------------------------------------------------------------------------------</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   22:</td><td class="code">  @todo          | 2017/08/07  | 0.0.0.1   | D.C.P    | ´´½¨ÎÄ¼ş            </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   23:</td><td class="code">******************************************************************************/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   24:</td><td class="code">#include ".././util/util_inc.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   25:</td><td class="code">#include "log.h"</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   26:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   27:</td><td class="code">/**  @brief log ¹ÜÀí½á¹¹Ìå */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   28:</td><td class="code">log Logger;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   29:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   30:</td><td class="code">/**  @brief logrotate×Ö·û´®±í*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   31:</td><td class="code">string_t logrotateTable[] = {</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   32:</td><td class="code">    "compress",        /* ÆôÓÃÑ¹Ëõ£¬Ö¸µÄÊÇÂÖÌæºóµÄ¾ÉÈÕÖ¾£¬ÕâÀïÄ¬ÈÏÓÃµÄÊÇgzipÑ¹ËõµÄ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   33:</td><td class="code">    "compressoptions", /* ÒÔgzip -9µÄÄ£Ê½Ñ¹Ëõ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   34:</td><td class="code">    "uncompresscmd",   /* ½âÑ¹ÈÕÖ¾£¬Ä¬ÈÏÊÇgunzip*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   35:</td><td class="code">    "dateext",         /* ÂÖÌæµÄÈÕÖ¾ÎÄ¼ş»á¸½¼ÓÉÏÒ»¸ö¶ÌºáÏßºÍYYYYMMDD¸ñÊ½µÄÊ±¼ä´Á*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   36:</td><td class="code">    "delaycompress",   /* ½«ÒÔÇ°µÄÈÕÖ¾ÎÄ¼şÑ¹ËõÍÆ³Ùµ½ÏÂÒ»´ÎÂÖÌæ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   37:</td><td class="code">    "ifempty",         /* ¼´Ê¹ÈÕÖ¾ÎÄ¼şÊÇ¿ÕµÄÒ²ÂÖÌæ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   38:</td><td class="code">    "mail",            /* ½«ÂÖÌæºóµÄÎÄ¼ş·¢ËÍµ½Ö¸¶¨E-mailµØÖ·*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   39:</td><td class="code">    "copytruncate",    /* ÓÃÓÚ»¹ÔÚ´ò¿ªÖĞµÄÈÕÖ¾ÎÄ¼ş£¬°Ñµ±Ç°ÈÕÖ¾±¸·İ²¢½Ø¶Ï£¬¿ªÊ¼ÂÖÌæ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   40:</td><td class="code">    "mailfirst",       /* ÏòÓÊ¼ş·¢ËÍÂÖÌæÎÄ¼ş*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   41:</td><td class="code">    "maillast",        /* ÂÖÌæºóÀúÊ·ÎÄ¼ş£¨Ä¬ÈÏ£©*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   42:</td><td class="code">    "nocompress",      /* Èç¹ûÔÚlogrotate.confÖĞÆôÓÃÁËÑ¹Ëõ£¬ÕâÀïÊÇ×ö²»ÓÃÑ¹ËõµÄ²ÎÊı*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   43:</td><td class="code">    "nomail",          /* ²»·¢ËÍÓÊ¼şµ½ÈÎºÎµØÖ·*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   44:</td><td class="code">    "olddir",          /* ÂÖÌæºóÈÕÖ¾ÎÄ¼ş·ÅÈëÖ¸¶¨µÄÄ¿Â¼£¬±ØĞëºÍµ±Ç°ÈÕÖ¾ÎÄ¼şÔÚÍ¬Ò»¸öÎÄ¼şÏµÍ³*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   45:</td><td class="code">    "postrotate",      /* postrotate/endscript ÔÚ×öÍêÂÖÌæºóµÄÃüÁî£¬Á½¸ö¹Ø¼ü×Ö±ØĞëµ¥¶À³ÉĞĞ£¬Ê¹ÓÃµÄ²Ù×÷ÔÚ2ÕßÖ®¼äÏàµ±ÓÚ·Ö×é¡°{}¡±£¬×¢ÒâµÄÊ¹ÓÃÍâ²¿Ö¸ÁîÊ±ÒªÓÃ¾ø¶ÔÂ·¾¶*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   46:</td><td class="code">    "prerotate",       /* prerotate/endscript	ÔÚ×öÂÖÌæÇ°µÄÃüÁî,Á½¸ö¹Ø¼ü×Ö±ØĞëµ¥¶À³ÉĞĞ£¬Ê¹ÓÃµÄ²Ù×÷ÔÚ2ÕßÖ®¼äÏàµ±ÓÚ·Ö×é¡°{}¡±£¬×¢ÒâµÄÊ¹ÓÃÍâ²¿Ö¸ÁîÊ±ÒªÓÃ¾ø¶ÔÂ·¾¶*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   47:</td><td class="code">    "rotate",          /* ÂÖÌæ×î¶à±£ÁôÖ®Ç°µÄÊı¾İ¼¸´Î£¬³¬³öµÄ½«±»É¾³ı»òÓÊ¼ş½ÓÊÕ£¬ÉèÎª0Ôò²»±£´æ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   48:</td><td class="code">    "size",            /* µ±ÈÕÖ¾Ôö³¤µ½Ö¸¶¨´óĞ¡µÄÊ±ºò¿ªÊ¼ÂÖÌæ£¬Ëü²»»á¿¼ÂÇ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   49:</td><td class="code">    "start",           /* ÂÖÌæÎÄ¼şÃû»ùÓÚÕâ¸öÊı×Ö¡£ÀıÈç£¬Ö¸¶¨0Ê±£¬Ô­ÈÕÖ¾ÎÄ¼şÂÖÌæµÄ±¸·İÎÄ¼şÒÔ.0ÎªÀ©Õ¹Ãû£¬Èç¹ûÖ¸¶¨9£¬¾ÍÖ±½Ó´Ó.9¿ªÊ¼Ìø¹ı0-8È»ºóÔÙ¼ÌĞøÏòºóÂÖÌærotateÖ¸¶¨µÄ´ÎÊı¡£*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   50:</td><td class="code">    "daily",           /* Ã¿ÌìÂÖÌæÑ¡Ïî*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   51:</td><td class="code">    "monthly",         /* Ò»¸öÔÂÂÖÌæÒ»´Î*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   52:</td><td class="code">    "weekly",          /* Èç¹ûµ±Ç°µÄĞÇÆÚ¼¸±ÈÉÏ´ÎÂÖÌæµÄĞÇÆÚ¼¸ÉÙ£¬»òÕß¹ıÁËÒ»¸ö¶àĞÇÆÚ£¬¾Í»á·¢ÉúÂÖÌæÍ¨³£ÊÇÔÚÃ¿ÖÜµÄµÚÒ»ÌìÂÖÌæ£¬Èç¹ûlogrotate²»ÊÇÃ¿ÌìÔËĞĞµÄ£¬»áÔÚµÚÒ»´ÎÓĞ»ú»áÊ±½øĞĞÂÖÌæ¡£*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   53:</td><td class="code">    "yearly",          /* Èç¹ûµ±Ç°Äê·İ²»Í¬ÓÚÉÏ´ÎÂÖÌæµÄÄê·İ£¬Ôò½øĞĞÈÕÖ¾ÂÖÌæ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   54:</td><td class="code">};</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   55:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   56:</td><td class="code">/**  @brief LOGÏûÏ¢µÈ¼¶×Ö·û´®±í*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   57:</td><td class="code">string_t levelTable[] = {</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   58:</td><td class="code">    "none",    /*¨CÊ²Ã´¶¼²»¼ÇÂ¼*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   59:</td><td class="code">    "emerg",   /*¨CÄÚºË±ÀÀ£µÈÑÏÖØĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   60:</td><td class="code">    "alert",   /*¨CĞèÒªÁ¢¿ÌĞŞ¸ÄµÄĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   61:</td><td class="code">    "crit",    /*¨CÑÏÖØ¼¶±ğ£¬×èÖ¹Õû¸öÏµÍ³»òÕßÕû¸öÈí¼ş²»ÄÜÕı³£¹¤×÷µÄĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   62:</td><td class="code">    "err",     /*¨C´íÎó¼¶±ğ£¬×èÖ¹Ä³¸ö¹¦ÄÜ»òÕßÄ£¿é²»ÄÜÕı³£¹¤×÷µÄĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   63:</td><td class="code">    "warning", /*¨C¾¯¸æ¼¶±ğ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   64:</td><td class="code">    "notice",  /*¨C×î¾ßÓĞÖØÒªĞÔµÄÆÕÍ¨Ìõ¼şµÄĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   65:</td><td class="code">    "info",    /*¨CÒ»°ãĞÅÏ¢µÄÈÕÖ¾£¬×î³£ÓÃ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   66:</td><td class="code">    "debug",   /*¨CÓĞµ÷Ê½ĞÅÏ¢µÄ£¬ÈÕÖ¾ĞÅÏ¢×î¶à*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   67:</td><td class="code">};</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   68:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   69:</td><td class="code">/**  @brief LOGÏûÏ¢ÀàĞÍ×Ö·û´®±í*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   70:</td><td class="code">string_t logTypeTable[] = {</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   71:</td><td class="code">    "kern",     /*  kern     ÄÚºË²úÉúµÄÏûÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   72:</td><td class="code">    "user",     /*  user     ÓÃ»§³ÌĞò²úÉúµÄÏà¹ØĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   73:</td><td class="code">    "mail",     /*  mail     ÓÊ¼ş*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   74:</td><td class="code">    "daemon",   /*  daemon   ÆäËûÏµÍ³ÊØ»¤½ø³Ì£¬Èçrouted */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   75:</td><td class="code">    "auth",     /*  auth     ÈÏÖ¤ÏµÍ³£ºlogin¡¢su¡¢gettyµÈ*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   76:</td><td class="code">    "syslog",   /*  syslog   rsyslog·şÎñÄÚ²¿µÄĞÅÏ¢,Ê±¼ä±êÊ¶*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   77:</td><td class="code">    "lpr",      /*  lpr      ÏµÍ³´òÓ¡»ú»º³å³Ø£ºlpr¡¢lpd */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   78:</td><td class="code">    "news",     /*  news     ĞÂÎÅ×é*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   79:</td><td class="code">    "uucp",     /*  uucp     unix to unix copy, unixÖ÷»úÖ®¼äÏà¹ØµÄÍ¨Ñ¶*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   80:</td><td class="code">    "cron",     /*  cron     cronÊØ»¤½ø³Ì*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   81:</td><td class="code">    "authpriv", /*  authpriv ssh,ftpµÈµÇÂ¼ĞÅÏ¢µÄÑéÖ¤ĞÅÏ¢*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   82:</td><td class="code">    "ftp",      /*  ftp      ÎÄ¼ş´«ÊäĞ­Òé£ºftpd¡¢tftpd */</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   83:</td><td class="code">    "local0",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local0*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   84:</td><td class="code">    "local1",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local1*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   85:</td><td class="code">    "local2",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local2*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   86:</td><td class="code">    "local3",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local3*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   87:</td><td class="code">    "local4",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local4*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   88:</td><td class="code">    "local5",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local5*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   89:</td><td class="code">    "local6",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local6*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   90:</td><td class="code">    "local7",   /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local7*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   91:</td><td class="code">};</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   92:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   93:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   94:</td><td class="code">* @brief ÍùsyslogdµÄÅäÖÃÎÄ¼şÄÚ¼ÓÈë×Ô¼ºµÄÅäÖÃÏûÏ¢ÀàĞÍ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   95:</td><td class="code">* @param [in] logType    ÏûÏ¢ÀàĞÍ£¨syslogdÖ§³ÖµÄÀàĞÍ£©@see log_type</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   96:</td><td class="code">* @param [in] logName  logÃû×Ö</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   97:</td><td class="code">* @param [in] logPath  logÎÄ¼şÂ·¾¶</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   98:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">   99:</td><td class="code">* @retval LOG_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  100:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  101:</td><td class="code">static log * </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _log_init è¢«è°ƒç”¨ 5 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  102:</td><td class="code">_log_init(int_t logType, string_t logName, string_t logPath)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  103:</td><td class="code">{</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  104:</td><td class="code">    if(Logger.InitFlag == LOG_IS_INITIALIZED) return &Logger;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 80% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 20%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  105:</td><td class="code">    int_t index;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  106:</td><td class="code"></td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  107:</td><td class="code">    if(!STRINGISNULL(logPath))  strncpy(Logger.logPath, logPath, strlen(logPath));</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  108:</td><td class="code">    strncpy(Logger.logName, logName, strlen(logName));</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  109:</td><td class="code">    Logger.logType   = logType;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  110:</td><td class="code">    Logger.logOption = 0;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  111:</td><td class="code">    Logger.InitFlag  = LOG_IS_INITIALIZED;</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  112:</td><td class="code">    for(index=0; index<MOD_BUTT; index++){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 67%
+ åˆ†æ”¯ 1 é€šè¿‡ 33% (fallthrough)
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  113:</td><td class="code">        Logger.module[index].bitLevel=0xff;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  114:</td><td class="code">        Logger.module[index].print=0;</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  115:</td><td class="code">        memset(Logger.module[index].logNumber, 0, sizeof(Logger.module[index].logNumber));</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  116:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  117:</td><td class="code">    return &Logger;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  118:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  119:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  120:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  121:</td><td class="code">* @brief »ñµÃlogÀàĞÍ×Ö·û´®</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  122:</td><td class="code">* @param [in] logType  ÏûÏ¢ÀàĞÍ£¨syslogdÖ§³ÖµÄÀàĞÍ£©@see log_type</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  123:</td><td class="code">* @retval ÀàĞÍ×Ö·û´®  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  124:</td><td class="code">* @retval LOG_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  125:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  126:</td><td class="code">static string_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _log_getLogType è¢«è°ƒç”¨ 6 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 13%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  127:</td><td class="code">_log_getLogType(int_t logType)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  128:</td><td class="code">{</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  129:</td><td class="code">    switch(logType){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0%
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 0%
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 0%
+ åˆ†æ”¯ 5 é€šè¿‡ 0%
+ åˆ†æ”¯ 6 é€šè¿‡ 0%
+ åˆ†æ”¯ 7 é€šè¿‡ 0%
+ åˆ†æ”¯ 8 é€šè¿‡ 0%
+ åˆ†æ”¯ 9 é€šè¿‡ 0%
+ åˆ†æ”¯ 10 é€šè¿‡ 0%
+ åˆ†æ”¯ 11 é€šè¿‡ 0%
+ åˆ†æ”¯ 12 é€šè¿‡ 100%
+ åˆ†æ”¯ 13 é€šè¿‡ 0%
+ åˆ†æ”¯ 14 é€šè¿‡ 0%
+ åˆ†æ”¯ 15 é€šè¿‡ 0%
+ åˆ†æ”¯ 16 é€šè¿‡ 0%
+ åˆ†æ”¯ 17 é€šè¿‡ 0%
+ åˆ†æ”¯ 18 é€šè¿‡ 0%
+ åˆ†æ”¯ 19 é€šè¿‡ 0%
+ åˆ†æ”¯ 20 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  130:</td><td class="code">        case KERN     : return logTypeTable[0];  /*  kern     ÄÚºË²úÉúµÄÏûÏ¢*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  131:</td><td class="code">        case USER     : return logTypeTable[1];  /*  user     ÓÃ»§³ÌĞò²úÉúµÄÏà¹ØĞÅÏ¢*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  132:</td><td class="code">        case MAIL     : return logTypeTable[2];  /*  mail     ÓÊ¼ş*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  133:</td><td class="code">        case DAEMON   : return logTypeTable[3];  /*  daemon   ÆäËûÏµÍ³ÊØ»¤½ø³Ì£¬Èçrouted  */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  134:</td><td class="code">        case AUTH     : return logTypeTable[4];  /*  auth     ÈÏÖ¤ÏµÍ³£ºlogin¡¢su¡¢gettyµÈ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  135:</td><td class="code">        case SYSLOG   : return logTypeTable[5];  /*  syslog   rsyslog·şÎñÄÚ²¿µÄĞÅÏ¢,Ê±¼ä±êÊ¶*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  136:</td><td class="code">        case LPR      : return logTypeTable[6];  /*  lpr      ÏµÍ³´òÓ¡»ú»º³å³Ø£ºlpr¡¢lpd  */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  137:</td><td class="code">        case NEWS     : return logTypeTable[7];  /*  news     ĞÂÎÅ×é*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  138:</td><td class="code">        case UUCP     : return logTypeTable[8];  /*  uucp     unix              to unix copy, unixÖ÷»úÖ®¼äÏà¹ØµÄÍ¨Ñ¶*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  139:</td><td class="code">        case CRON     : return logTypeTable[9];  /*  cron     cronÊØ»¤½ø³Ì*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  140:</td><td class="code">        case AUTHPRIV : return logTypeTable[10]; /*  authpriv ssh,ftpµÈµÇÂ¼ĞÅÏ¢µÄÑéÖ¤ĞÅÏ¢*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  141:</td><td class="code">        case FTP      : return logTypeTable[11]; /*  ftp      ÎÄ¼ş´«ÊäĞ­Òé£ºftpd¡¢tftpd */</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  142:</td><td class="code">        case LOCAL0   : return logTypeTable[12]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local0*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  143:</td><td class="code">        case LOCAL1   : return logTypeTable[13]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local1*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  144:</td><td class="code">        case LOCAL2   : return logTypeTable[14]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local2*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  145:</td><td class="code">        case LOCAL3   : return logTypeTable[15]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local3*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  146:</td><td class="code">        case LOCAL4   : return logTypeTable[16]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local4*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  147:</td><td class="code">        case LOCAL5   : return logTypeTable[17]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local5*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  148:</td><td class="code">        case LOCAL6   : return logTypeTable[18]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local6*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  149:</td><td class="code">        case LOCAL7   : return logTypeTable[19]; /*  ×Ô¶¨ÒåµÄÈÕÖ¾Éè±¸ local7*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  150:</td><td class="code">        default: return LOG_NULL;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  151:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  152:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  153:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  154:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  155:</td><td class="code">* @brief »ñµÃlogµÈ¼¶×Ö·û´®</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  156:</td><td class="code">* @param [in] logLevel ÏûÏ¢µÈ¼¶£¨syslogdÖ§³ÖµÄµÈ¼¶£©@see log_level</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  157:</td><td class="code">* @retval ÀàĞÍ×Ö·û´®  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  158:</td><td class="code">* @retval LOG_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  159:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  160:</td><td class="code">static string_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _log_getLogLevel è¢«è°ƒç”¨ 6 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 25%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  161:</td><td class="code">_log_getLogLevel(int_t logLevel)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  162:</td><td class="code">{</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  163:</td><td class="code">    switch(logLevel){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0%
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 0%
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 0%
+ åˆ†æ”¯ 5 é€šè¿‡ 0%
+ åˆ†æ”¯ 6 é€šè¿‡ 0%
+ åˆ†æ”¯ 7 é€šè¿‡ 0%
+ åˆ†æ”¯ 8 é€šè¿‡ 100%
+ åˆ†æ”¯ 9 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  164:</td><td class="code">        case NONE    : return levelTable[0]; /** ¹Ø±ÕËùÓĞ´òÓ¡                     */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  165:</td><td class="code">        case EMERG   : return levelTable[1]; /** ÄÚºË±ÀÀ£µÈÑÏÖØĞÅÏ¢                  */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  166:</td><td class="code">        case ALERT   : return levelTable[2]; /** ĞèÒªÁ¢¿ÌĞŞ¸ÄµÄĞÅÏ¢                  */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  167:</td><td class="code">        case CRIT    : return levelTable[3]; /** ÑÏÖØ¼¶±ğ£¬×èÖ¹Õû¸öÏµÍ³»òÕßÕû¸öÈí¼ş²»ÄÜÕı³£¹¤×÷µÄĞÅÏ¢ */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  168:</td><td class="code">        case ERR     : return levelTable[4]; /** ´íÎó¼¶±ğ£¬×èÖ¹Ä³¸ö¹¦ÄÜ»òÕßÄ£¿é²»ÄÜÕı³£¹¤×÷µÄĞÅÏ¢   */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  169:</td><td class="code">        case WARNING : return levelTable[5]; /** ¾¯¸æ¼¶±ğµÄÏûÏ¢                    */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  170:</td><td class="code">        case NOTICE  : return levelTable[6]; /** ×î¾ßÓĞÖØÒªĞÔµÄÆÕÍ¨Ìõ¼şµÄĞÅÏ¢             */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  171:</td><td class="code">        case INFO    : return levelTable[7]; /** Ò»°ãĞÅÏ¢µÄÈÕÖ¾£¬×î³£ÓÃ                */</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  172:</td><td class="code">        case DEBUG   : return levelTable[8]; /** ÓĞµ÷Ê½ĞÅÏ¢µÄ£¬ÈÕÖ¾ĞÅÏ¢×î¶à */</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  173:</td><td class="code">        default: return LOG_NULL;  </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  174:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  175:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  176:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  177:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  178:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  179:</td><td class="code">* @brief ÍùsyslogdµÄÅäÖÃÎÄ¼şÄÚ¼ÓÈë×Ô¼ºµÄÅäÖÃÏûÏ¢ÀàĞÍ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  180:</td><td class="code">* @note  logType.msgLevel  logPath --->   Àı£ºmail.info      /flash/var/maillog_info</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  181:</td><td class="code">* @param [in] logType    ÏûÏ¢ÀàĞÍ£¨syslogdÖ§³ÖµÄÀàĞÍ£©@see log_type</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  182:</td><td class="code">* @param [in] logLevel   ÏûÏ¢µÈ¼¶£¨syslogdÖ§³ÖµÄµÈ¼¶£©@see log_level</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  183:</td><td class="code">* @param [in] logName    logÃû×Ö</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  184:</td><td class="code">* @param [in] logPath    logÎÄ¼şÂ·¾¶</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  185:</td><td class="code">* @param [in] logRemote  logÔ¶¶ËÂ·¾¶</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  186:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  187:</td><td class="code">* @retval LOG_NULL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  188:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  189:</td><td class="code">log *</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° log_config_rsyslogd è¢«è°ƒç”¨ 9 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 85%
+</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  190:</td><td class="code">log_config_rsyslogd(int_t logType, int_t logLevel,  string_t logName, string_t logPath, string_t logRemote)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  191:</td><td class="code">{</td></tr>
+<tr><td class="sum">        9:</td>   <td class="line">  192:</td><td class="code">	if(STRINGISNULL(logName))  RETURN_ERR(ERR_PARA, LOG_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 11% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 89%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        8:</td>   <td class="line">  193:</td><td class="code">	if(LOG_LEVEL_IS_INVALID(logLevel))  RETURN_ERR(ERR_PARA, LOG_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 88% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 13%
+ åˆ†æ”¯ 2 é€šè¿‡ 14% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 86%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  194:</td><td class="code">    if(STRINGISNULL(logPath) && STRINGISNULL(logRemote))  RETURN_ERR(ERR_PARA, LOG_NULL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 17% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 83%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  195:</td><td class="code">    FILE   *file       = NULL;//ÎÄ¼şÖ¸Õë</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  196:</td><td class="code">    char_t cmd[100]    = {'\0'};//²åÈëÅäÖÃÎÄ¼şµÄÄÚÈİ</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  197:</td><td class="code">    char_t rsyslogd[100] = {'\0'};//ÅäÖÃÎÄ¼ş</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  198:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  199:</td><td class="code">    if(0 != access("/etc/rsyslog.d", F_OK) ) //ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ ²»´æÔÚ´´½¨Ä¿Â¼</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  200:</td><td class="code">        mkdir("/etc/rsyslog.d", S_IRWXU|S_IRGRP|S_IXGRP|S_IROTH);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  201:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  202:</td><td class="code">    snprintf(rsyslogd, sizeof(rsyslogd), "/etc/rsyslog.d/%s.conf", logName);</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  203:</td><td class="code">    if(NULL == (file = fopen(rsyslogd, "w+")))//´´½¨ĞÂµÄÅäÖÃÎÄ¼ş</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  204:</td><td class="code">		RETURN_ERRDESC( "can not open the rsyslog.d config file\n", THE_ERRNO, LOG_NULL );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 1 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  205:</td><td class="code"></td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  206:</td><td class="code">    if(!STRINGISNULL(logPath)){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  207:</td><td class="code">        snprintf(cmd, sizeof(cmd), "%s.%s %s\n", _log_getLogType(logType), _log_getLogLevel(logLevel), logPath);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  208:</td><td class="code">        fwrite(cmd, strlen(cmd), 1, file);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  209:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  210:</td><td class="code">    if(!STRINGISNULL(logRemote)){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 20% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 80%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  211:</td><td class="code">        snprintf(cmd, sizeof(cmd), "%s.%s @%s\n", _log_getLogType(logType), _log_getLogLevel(logLevel), logRemote);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ è°ƒç”¨ 1 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  212:</td><td class="code">        fwrite(cmd, strlen(cmd), 1, file);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  213:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  214:</td><td class="code">    fclose(file);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  215:</td><td class="code">	system("service rsyslog restart");</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  216:</td><td class="code">    </td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  217:</td><td class="code">    return _log_init(logType, logName, logPath);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  218:</td><td class="code">} </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  219:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  220:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  221:</td><td class="code">* @brief ½âÎöÈÕÖ¾ÂÖ×ª²ÎÊı</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  222:</td><td class="code">* @param [in] paraitem ²ÎÊıÊı×é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  223:</td><td class="code">* @param [out] cmd »ñµÃ½âÎöºóÃüÁî</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  224:</td><td class="code">* @param [out] cmdLen ÃüÁî³¤¶È</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  225:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  226:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  227:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  228:</td><td class="code">static int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _log_parse_logratate è¢«è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 28%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  229:</td><td class="code">_log_parse_logratate(logrotate_t paraItem, char_t *cmd, u16_t *cmdLen)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  230:</td><td class="code">{</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  231:</td><td class="code">    u16_t lenght =*cmdLen;</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  232:</td><td class="code">    switch(paraItem.paraName){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0%
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 0%
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 0%
+ åˆ†æ”¯ 5 é€šè¿‡ 0%
+ åˆ†æ”¯ 6 é€šè¿‡ 0%
+ åˆ†æ”¯ 7 é€šè¿‡ 0%
+ åˆ†æ”¯ 8 é€šè¿‡ 0%
+ åˆ†æ”¯ 9 é€šè¿‡ 0%
+ åˆ†æ”¯ 10 é€šè¿‡ 0%
+ åˆ†æ”¯ 11 é€šè¿‡ 0%
+ åˆ†æ”¯ 12 é€šè¿‡ 0%
+ åˆ†æ”¯ 13 é€šè¿‡ 0%
+ åˆ†æ”¯ 14 é€šè¿‡ 25%
+ åˆ†æ”¯ 15 é€šè¿‡ 25%
+ åˆ†æ”¯ 16 é€šè¿‡ 25%
+ åˆ†æ”¯ 17 é€šè¿‡ 0%
+ åˆ†æ”¯ 18 é€šè¿‡ 0%
+ åˆ†æ”¯ 19 é€šè¿‡ 0%
+ åˆ†æ”¯ 20 é€šè¿‡ 25%
+ åˆ†æ”¯ 21 é€šè¿‡ 0%
+ åˆ†æ”¯ 22 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  233:</td><td class="code">        /* ÆôÓÃÑ¹Ëõ£¬Ö¸µÄÊÇÂÖÌæºóµÄ¾ÉÈÕÖ¾£¬ÕâÀïÄ¬ÈÏÓÃµÄÊÇgzipÑ¹ËõµÄ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  234:</td><td class="code">        case LOGROTATE_COMPRESS:       lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  235:</td><td class="code">        /* ÒÔgzip -9µÄÄ£Ê½Ñ¹Ëõ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  236:</td><td class="code">        case LOGROTATE_COMPRESSOPTION: lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  237:</td><td class="code">        /* ½âÑ¹ÈÕÖ¾£¬Ä¬ÈÏÊÇgunzip*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  238:</td><td class="code">        case LOGROTATE_UNCOMPRESS:     lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  239:</td><td class="code">        /* ÂÖÌæµÄÈÕÖ¾ÎÄ¼ş»á¸½¼ÓÉÏÒ»¸ö¶ÌºáÏßºÍYYYYMMDD¸ñÊ½µÄÊ±¼ä´Á*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  240:</td><td class="code">        case LOGROTATE_DATEEXT:        lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  241:</td><td class="code">        /* ½«ÒÔÇ°µÄÈÕÖ¾ÎÄ¼şÑ¹ËõÍÆ³Ùµ½ÏÂÒ»´ÎÂÖÌæ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  242:</td><td class="code">        case LOGROTATE_DELAYCOMPRESS:  lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  243:</td><td class="code">        /* ¼´Ê¹ÈÕÖ¾ÎÄ¼şÊÇ¿ÕµÄÒ²ÂÖÌæ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  244:</td><td class="code">        case LOGROTATE_IFEMPTY:        lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  245:</td><td class="code">        /* ½«ÂÖÌæºóµÄÎÄ¼ş·¢ËÍµ½Ö¸¶¨E-mailµØÖ·*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  246:</td><td class="code">        case LOGROTATE_MAIL:           _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 4 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  247:</td><td class="code">        /* ÓÃÓÚ»¹ÔÚ´ò¿ªÖĞµÄÈÕÖ¾ÎÄ¼ş£¬°Ñµ±Ç°ÈÕÖ¾±¸·İ²¢½Ø¶Ï£¬¿ªÊ¼ÂÖÌæ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  248:</td><td class="code">        case LOGROTATE_COPYTRUNCATE:   lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  249:</td><td class="code">        /* ÏòÓÊ¼ş·¢ËÍÂÖÌæÎÄ¼ş*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  250:</td><td class="code">        case LOGROTATE_MAILFIRST:      lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  251:</td><td class="code">        /* ÂÖÌæºóÀúÊ·ÎÄ¼ş£¨Ä¬ÈÏ£©*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  252:</td><td class="code">        case LOGROTATE_MAILLAST:       lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  253:</td><td class="code">        /* Èç¹ûÔÚlogrotate.confÖĞÆôÓÃÁËÑ¹Ëõ£¬ÕâÀïÊÇ×ö²»ÓÃÑ¹ËõµÄ²ÎÊı*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  254:</td><td class="code">        case LOGROTATE_NOCOMPRESS:     lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  255:</td><td class="code">        /* ²»·¢ËÍÓÊ¼şµ½ÈÎºÎµØÖ·*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  256:</td><td class="code">        case LOGROTATE_NOMAIL:         lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  257:</td><td class="code">        /* ÂÖÌæºóÈÕÖ¾ÎÄ¼ş·ÅÈëÖ¸¶¨µÄÄ¿Â¼£¬±ØĞëºÍµ±Ç°ÈÕÖ¾ÎÄ¼şÔÚÍ¬Ò»¸öÎÄ¼şÏµÍ³*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  258:</td><td class="code">        case LOGROTATE_OLDDIR:         _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 4 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  259:</td><td class="code">        /* prostrotate/endscript ÔÚ×öÍêÂÖÌæºóµÄÃüÁî£¬Á½¸ö¹Ø¼ü×Ö±ØĞëµ¥¶À³ÉĞĞ£¬Ê¹ÓÃµÄ²Ù×÷ÔÚ2ÕßÖ®¼äÏàµ±ÓÚ·Ö×é¡°{}¡±£¬×¢ÒâµÄÊ¹ÓÃÍâ²¿Ö¸ÁîÊ±ÒªÓÃ¾ø¶ÔÂ·¾¶*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  260:</td><td class="code">        case LOGROTATE_PROSTROTATE:    _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 4 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  261:</td><td class="code">        /* prerotate/endscript	 ÔÚ×öÂÖÌæÇ°µÄÃüÁî:Á½¸ö¹Ø¼ü×Ö±ØĞëµ¥¶À³ÉĞĞ£¬Ê¹ÓÃµÄ²Ù×÷ÔÚ2ÕßÖ®¼äÏàµ±ÓÚ·Ö×é¡°{}¡±£¬×¢ÒâµÄÊ¹ÓÃÍâ²¿Ö¸ÁîÊ±ÒªÓÃ¾ø¶ÔÂ·¾¶*/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  262:</td><td class="code">        case LOGROTATE_PREROTATE:      _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 5 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  263:</td><td class="code">        /* ÂÖÌæ×î¶à±£ÁôÖ®Ç°µÄÊı¾İ¼¸´Î£¬³¬³öµÄ½«±»É¾³ı»òÓÊ¼ş½ÓÊÕ£¬ÉèÎª0Ôò²»±£´æ*/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  264:</td><td class="code">        case LOGROTATE_ROTATE:         _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 5 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  265:</td><td class="code">        /* µ±ÈÕÖ¾Ôö³¤µ½Ö¸¶¨´óĞ¡µÄÊ±ºò¿ªÊ¼ÂÖÌæ£¬Ëü²»»á¿¼ÂÇ*/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  266:</td><td class="code">        case LOGROTATE_SIZE:           _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 0%
+ åˆ†æ”¯ 4 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 5 é€šè¿‡ 0%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  267:</td><td class="code">        /* ÂÖÌæÎÄ¼şÃû»ùÓÚÕâ¸öÊı×Ö¡£ÀıÈç£¬Ö¸¶¨0Ê±£¬Ô­ÈÕÖ¾ÎÄ¼şÂÖÌæµÄ±¸·İÎÄ¼şÒÔ.0ÎªÀ©Õ¹Ãû£¬Èç¹ûÖ¸¶¨9£¬¾ÍÖ±½Ó´Ó.9¿ªÊ¼Ìø¹ı0-8È»ºóÔÙ¼ÌĞøÏòºóÂÖÌærotateÖ¸¶¨µÄ´ÎÊı¡£*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  268:</td><td class="code">        case LOGROTATE_START:          _PARSE_LOGROTATE(cmd, lenght, paraItem);break;</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 1 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 2 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 3 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 4 ä»æœª æ‰§è¡Œ
+ åˆ†æ”¯ 5 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  269:</td><td class="code">        /* Ã¿ÌìÂÖÌæÑ¡Ïî*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  270:</td><td class="code">        case LOGROTATE_DAILY:          lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  271:</td><td class="code">        /* Ò»¸öÔÂÂÖÌæÒ»´Î*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  272:</td><td class="code">        case LOGROTATE_MONTHLY:        lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  273:</td><td class="code">        /* Èç¹ûµ±Ç°µÄĞÇÆÚ¼¸±ÈÉÏ´ÎÂÖÌæµÄĞÇÆÚ¼¸ÉÙ£¬»òÕß¹ıÁËÒ»¸ö¶àĞÇÆÚ£¬¾Í»á·¢ÉúÂÖÌæÍ¨³£ÊÇÔÚÃ¿ÖÜµÄµÚÒ»ÌìÂÖÌæ£¬Èç¹ûlogrotate²»ÊÇÃ¿ÌìÔËĞĞµÄ£¬»áÔÚµÚÒ»´ÎÓĞ»ú»áÊ±½øĞĞÂÖÌæ¡£*/</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  274:</td><td class="code">        case LOGROTATE_WEEKLY:         lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  275:</td><td class="code">        /* Èç¹ûµ±Ç°Äê·İ²»Í¬ÓÚÉÏ´ÎÂÖÌæµÄÄê·İ£¬Ôò½øĞĞÈÕÖ¾ÂÖÌæ*/</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  276:</td><td class="code">        case LOGROTATE_YEARLY:         lenght += snprintf(cmd+lenght, 500-lenght, "%s\n", logrotateTable[paraItem.paraName]); break;</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  277:</td><td class="code">        default: return LOG_FAIL; </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  278:</td><td class="code">    } </td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  279:</td><td class="code">        *cmdLen = lenght;      </td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  280:</td><td class="code">        return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  281:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  282:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  283:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  284:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  285:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  286:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  287:</td><td class="code">* @brief ¼ÓÈëÈÕÖ¾ÂÖ×ªÅäÖÃ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  288:</td><td class="code">* @param [in] logger     log´¦ÀíÆ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  289:</td><td class="code">* @param [in] paraitem ²ÎÊıÊı×é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  290:</td><td class="code">* @param [in] paraNum  ²ÎÊıÊı×éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  291:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  292:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  293:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  294:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° log_config_logrotate è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 71%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  295:</td><td class="code">log_config_logrotate(log * logger, logrotate_t * paraItem, int_t itemNum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  296:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  297:</td><td class="code">    if(PARAMISNULL(logger))  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 33% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 67%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  298:</td><td class="code">    if(PARAMISNULL(paraItem)) RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  299:</td><td class="code"></td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  300:</td><td class="code">    FILE   *file          = NULL;//ÎÄ¼şÖ¸Õë</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  301:</td><td class="code">    char_t cmd[500]       = {'\0'};//²åÈëÅäÖÃÎÄ¼şµÄÄÚÈİ</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  302:</td><td class="code">    char_t logrotate[100] = {'\0'};//ÅäÖÃÎÄ¼ş</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  303:</td><td class="code">    u16_t  cmdLen         = 0;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  304:</td><td class="code">    u16_t  index          = 0;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  305:</td><td class="code"></td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  306:</td><td class="code">    if(0 != access("/etc/logrotate.d", F_OK) ) //ÅĞ¶ÏÄ¿Â¼ÊÇ·ñ´æÔÚ ²»´æÔÚ´´½¨Ä¿Â¼</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  307:</td><td class="code">        mkdir("/etc/logrotate.d", S_IRWXU|S_IRGRP|S_IXGRP|S_IROTH);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  308:</td><td class="code"></td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  309:</td><td class="code">    snprintf(logrotate, sizeof(logrotate), "/etc/logrotate.d/%s", logger->logName);</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  310:</td><td class="code">    if(NULL == (file = fopen(logrotate, "w+")))//´´½¨ĞÂµÄÅäÖÃÎÄ¼ş</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  311:</td><td class="code">		RETURN_ERRDESC( "can not open the logrotate.d config file\n", THE_ERRNO, LOG_FAIL );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 1 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  312:</td><td class="code"></td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  313:</td><td class="code">    cmdLen += snprintf(cmd+cmdLen, 500-cmdLen, "%s {\n", logger->logPath);</td></tr>
+<tr><td class="sum">        5:</td>   <td class="line">  314:</td><td class="code">    for(index =0; index < itemNum; index++){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 80%
+ åˆ†æ”¯ 1 é€šè¿‡ 20% (fallthrough)
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  315:</td><td class="code">        if(LOG_FAIL == _log_parse_logratate(paraItem[index], cmd, &cmdLen)){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+ åˆ†æ”¯ 1 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 2 é€šè¿‡ 100%
+</td></tr>
+<tr><td class="sum">    #####:</td>   <td class="line">  316:</td><td class="code">            RETURN_ERRDESC( "logrotate_t member's paraName was worng \n", ERR_USER, LOG_FAIL );</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 ä»æœª æ‰§è¡Œ
+ è°ƒç”¨ 1 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  317:</td><td class="code">            fclose(file);</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  318:</td><td class="code">        }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  319:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  320:</td><td class="code">    cmdLen += snprintf(cmd+cmdLen, 500-cmdLen, "}\n");</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  321:</td><td class="code">    fwrite(cmd, strlen(cmd), 1, file);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  322:</td><td class="code">    fclose(file);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  323:</td><td class="code">    snprintf(cmd, 500, "logrotate %s\n", logrotate);</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  324:</td><td class="code">    system(cmd);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  325:</td><td class="code">	return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  326:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  327:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  328:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  329:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  330:</td><td class="code">* @brief ´ò¿ªlog</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  331:</td><td class="code">* @param [in] logger     log´¦ÀíÆ÷</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  332:</td><td class="code">* @param [in] option     logÑ¡Ïî</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  333:</td><td class="code">	- CONS_OPTION   Èç¹û½«ĞÅÏ¢·¢ËÍ¸øsyslogdÊØ»¤½ø³ÌÊ±·¢Éú´íÎó£¬Ö±½Ó½«Ïà¹ØĞÅÏ¢Êä³öµ½ÖÕ¶Ë</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  334:</td><td class="code">	- NDELAY_OPTION Á¢¼´´ò¿ªÓëÏµÍ³ÈÕÖ¾µÄÁ¬½Ó£¨Í¨³£Çé¿öÏÂ£¬Ö»ÓĞÔÚ²úÉúµÚÒ»ÌõÈÕÖ¾ĞÅÏ¢µÄÇé¿öÏÂ²Å»á´ò¿ªÓëÈÕÖ¾ÏµÍ³µÄÁ¬½Ó£©</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  335:</td><td class="code">	- NOWAIT_OPTION ÔÚ¼ÇÂ¼ÈÕÖ¾ĞÅÏ¢Ê±£¬²»µÈ´ı¿ÉÄÜµÄ×Ó½ø³ÌµÄ´´½¨</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  336:</td><td class="code">	- ODELAY_OPTION ÀàËÆÓÚNDELAY_OPTION²ÎÊı£¬ÓëÏµÍ³ÈÕÖ¾µÄÁ¬½ÓÖ»ÓĞÔÚsyslogº¯Êıµ÷ÓÃÊ±²Å»á´´½¨</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  337:</td><td class="code">	- PERROR_OPTION ÔÚ½«ĞÅÏ¢Ğ´ÈëÈÕÖ¾µÄÍ¬Ê±£¬½«ĞÅÏ¢·¢ËÍµ½±ê×¼´íÎóÊä³ö£¨POSIX.1-2001²»Ö§³Ö¸Ã²ÎÊı£©</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  338:</td><td class="code">	- PID_OPTION    Ã¿ÌõÈÕÖ¾ĞÅÏ¢ÖĞ¶¼°üÀ¨½ø³ÌºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  339:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  340:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  341:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  342:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° log_open è¢«è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  343:</td><td class="code">log_open(log * logger, int_t option)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  344:</td><td class="code">{</td></tr>
+<tr><td class="sum">        4:</td>   <td class="line">  345:</td><td class="code">	if(PARAMISNULL(logger))  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 25% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 75%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  346:</td><td class="code">    openlog(logger->logName, option ,logger->logType);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  347:</td><td class="code">    logger->logOption = option;</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  348:</td><td class="code">    return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  349:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  350:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  351:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  352:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  353:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  354:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  355:</td><td class="code">* @brief ¹Ø±Õlog</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  356:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  357:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  358:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  359:</td><td class="code">int_t </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° log_close è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  360:</td><td class="code">log_close(void)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  361:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  362:</td><td class="code">    closelog();</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  363:</td><td class="code">	return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  364:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  365:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  366:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  367:</td><td class="code">* @brief logÏûÏ¢¹ıÂË</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  368:</td><td class="code">* @param [in] bitLevel ¹ıÂË³öĞèÒªµÄ µÈ¼¶ BITºê½«level×ª³Ébit level È»ºó¸³Öµ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  369:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  370:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  371:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  372:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° log_set_filter è¢«è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  373:</td><td class="code">log_set_filter(u8_t bitLevel)</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  374:</td><td class="code">{</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  375:</td><td class="code">    setlogmask(bitLevel);//ĞèÒªµÄÏûÏ¢±»¹ıÂË</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  376:</td><td class="code">	return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  377:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  378:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  379:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  380:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  381:</td><td class="code">* @brief ÉèÖÃmodule´òÓ¡log¿ª¹Ø</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  382:</td><td class="code">* @param [in] modules   ÅäÖÃµÄÄ£¿éÊı×é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  383:</td><td class="code">* @param [in] sum       Êı×éÊıÁ¿</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  384:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  385:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  386:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  387:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° log_set_modules è¢«è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 86%
+</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  388:</td><td class="code">log_set_modules(logMod_t *modules, int_t sum )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  389:</td><td class="code">{</td></tr>
+<tr><td class="sum">        3:</td>   <td class="line">  390:</td><td class="code">	if(STRINGISNULL(modules))  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 33% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 67%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  391:</td><td class="code">    if(sum > MOD_BUTT)  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 50%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  392:</td><td class="code">    int index;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  393:</td><td class="code"></td></tr>
+<tr><td class="sum">        2:</td>   <td class="line">  394:</td><td class="code">    for( index =0; index<sum; index++ ){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 50%
+ åˆ†æ”¯ 1 é€šè¿‡ 50% (fallthrough)
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  395:</td><td class="code">        if(modules[index].module > MOD_BUTT)  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 0% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 100%
+ è°ƒç”¨ 2 ä»æœª æ‰§è¡Œ
+</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  396:</td><td class="code">        Logger.module[modules[index].module].print  = modules[index].print;</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  397:</td><td class="code">        Logger.module[modules[index].module].bitLevel  = modules[index].bitLevel;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  398:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        1:</td>   <td class="line">  399:</td><td class="code">	return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  400:</td><td class="code">}</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  401:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  402:</td><td class="code"></td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  403:</td><td class="code">/**</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  404:</td><td class="code">* @brief ·¢ËÍlog</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  405:</td><td class="code">* @param [in] file     ÎÄ¼şÃû</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  406:</td><td class="code">* @param [in] func     º¯ÊıÃû</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  407:</td><td class="code">* @param [in] line     ĞĞºÅ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  408:</td><td class="code">* @param [in] module   Ê¹ÓÃµÄÄ£¿é</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  409:</td><td class="code">* @param [in] level    logµÈ¼¶</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  410:</td><td class="code"> - EMERG   ÄÚºË±ÀÀ£µÈÑÏÖØĞÅÏ¢</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  411:</td><td class="code"> - ALERT   ĞèÒªÁ¢¿ÌĞŞ¸ÄµÄĞÅÏ¢ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  412:</td><td class="code"> - CRIT    ÑÏÖØ¼¶±ğ£¬×èÖ¹Õû¸öÏµÍ³»òÕßÕû¸öÈí¼ş²»ÄÜÕı³£¹¤×÷µÄĞÅÏ¢ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  413:</td><td class="code"> - ERR     ´íÎó¼¶±ğ£¬×èÖ¹Ä³¸ö¹¦ÄÜ»òÕßÄ£¿é²»ÄÜÕı³£¹¤×÷µÄĞÅÏ¢ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  414:</td><td class="code"> - WARNING ¾¯¸æ¼¶±ğµÄÏûÏ¢ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  415:</td><td class="code"> - NOTICE  ×î¾ßÓĞÖØÒªĞÔµÄÆÕÍ¨Ìõ¼şµÄĞÅÏ¢ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  416:</td><td class="code"> - INFO    Ò»°ãĞÅÏ¢µÄÈÕÖ¾£¬×î³£ÓÃ </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  417:</td><td class="code"> - DEBUG   ÓĞµ÷Ê½ĞÅÏ¢µÄ£¬ÈÕÖ¾ĞÅÏ¢×î¶à </td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  418:</td><td class="code">* @param [in] format ¸ñÊ½»¯ÏûÏ¢</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  419:</td><td class="code">* @param [in] ...    logÏûÏ¢ÄÚÈİ</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  420:</td><td class="code">* @retval LOG_SUCC  ±íÊ¾³É¹¦</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  421:</td><td class="code">* @retval LOG_FAIL  ±íÊ¾Ê§°Ü</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  422:</td><td class="code">*/</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  423:</td><td class="code">int_t</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> å‡½æ•° _log è¢«è°ƒç”¨ 21 æ­£å¸¸è¿”å› 100% ä»£ç å— æ‰§è¡Œ 100%
+</td></tr>
+<tr><td class="sum">       21:</td>   <td class="line">  424:</td><td class="code">_log(string_t file, string_t func, int_t line, int_t module, int_t level, char* format, ... )</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  425:</td><td class="code">{</td></tr>
+<tr><td class="sum">       21:</td>   <td class="line">  426:</td><td class="code">    if(module > MOD_BUTT)  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 5% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 95%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       20:</td>   <td class="line">  427:</td><td class="code">	if(LOG_LEVEL_IS_INVALID(level))  RETURN_ERR(ERR_PARA, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 100% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 0%
+ åˆ†æ”¯ 2 é€šè¿‡ 5% (fallthrough)
+ åˆ†æ”¯ 3 é€šè¿‡ 95%
+ è°ƒç”¨ 4 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       19:</td>   <td class="line">  428:</td><td class="code">	if(LOG_IS_INITIALIZED != Logger.InitFlag) RETURN_ERRDESC("The log does not initialization!",ERR_USER, LOG_FAIL);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 11% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 89%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+ è°ƒç”¨ 3 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  429:</td><td class="code">    char_t logMsg[MSG_SIZE];</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  430:</td><td class="code">    va_list vArgList; //¶¨ÒåÒ»¸öva_listĞÍµÄ±äÁ¿,Õâ¸ö±äÁ¿ÊÇÖ¸Ïò²ÎÊıµÄÖ¸Õë</td></tr>
+<tr><td class="sum">       17:</td>   <td class="line">  431:</td><td class="code">    if(_LEVEL_TO_BIT(level) & Logger.module[module].bitLevel){</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 65% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 35%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  432:</td><td class="code">        va_start (vArgList, format);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  433:</td><td class="code">        vsnprintf(logMsg, MSG_SIZE, format, vArgList);</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  434:</td><td class="code">        va_end(vArgList); </td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  435:</td><td class="code">        syslog(level, "[ --file:%s --function:%s --line:%d] %s\n",file, func, line, logMsg);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> è°ƒç”¨ 0 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  436:</td><td class="code">        if(Logger.module[module].print) printf("[--file:%s --function:%s --line:%d] %s\n",file, func, line, logMsg);</td></tr>
+<tr class="comment" ><td></td><td></td><td class="detail"> åˆ†æ”¯ 0 é€šè¿‡ 18% (fallthrough)
+ åˆ†æ”¯ 1 é€šè¿‡ 82%
+ è°ƒç”¨ 2 æ­£å¸¸è¿”å› 100%
+</td></tr>
+<tr><td class="sum">       11:</td>   <td class="line">  437:</td><td class="code">        return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  438:</td><td class="code">    }</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  439:</td><td class="code">        </td></tr>
+<tr><td class="sum">        6:</td>   <td class="line">  440:</td><td class="code">	return LOG_SUCC;</td></tr>
+<tr><td class="sum">        -:</td>   <td class="line">  441:</td><td class="code"></td></tr>
+</table>
+</body>
+
+   <script type="text/javascript" src="../../TEST/html/js/buildCoverage.js"></script>
+</html>

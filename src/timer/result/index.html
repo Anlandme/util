@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>单元测试报告</title>
+    <link rel="stylesheet" href="../../TEST/html/css/style.css">
+</head>
+
+<body class="body">
+    <div id="page" class="page">
+        <div id="panels" class="panels">
+            <span class="panel color0" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h2>单</h2>
+                    <h2>元</h2>
+                    <h2>测</h2>
+                    <h2>试</h2>
+                    <h2>报</h2>
+                    <h2>告</h2>
+                    <a class="file" href="./performance.html">性能</br>报告</a>
+                </div>
+                <div class="panel-text">
+                    <h1>测试的结果</h1>
+                    <h4>suite展示</h4>
+                        <ul>测试的case数量</ul>
+                        <ul>测试的case出错数量</ul>
+                        <ul>一个suite测试时长</ul>
+                        <ul>内存泄漏展示内存泄漏位置大小</ul>
+                    <h4>case展示</h4>
+                        <ul>case的成功结果</ul>
+                        <ul>case失败结果，失败位置失败内容</ul>
+                        <ul>case内打印结果</ul>
+                    <h4>性能展示</h4>
+                        <ul>函数运行时间</ul>
+                        <ul>函数调用次数</ul>
+                        <ul>函数调用关系</ul>
+                    <h4>覆盖率展示</h4>
+                        <ul>文件和文件内函数的语句覆盖率</ul>
+                        <ul>文件和文件内函数的分支覆盖率</ul>
+                        <ul>文件和文件内函数的条件覆盖率</ul>
+                        <ul>文件和文件内函数的函数覆盖率</ul>
+                </div>
+            </span>
+           <span class="panel color9" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+               <div class="panel-coverage">
+              <h1>timer.c 覆盖率</h1>
+              <h5>语句覆盖率:</h5>
+              <canvas class="ring-line"  percent='48/91.67%'></canvas>
+              <h5>分支覆盖率:</h5>
+              <canvas class="ring-branch" percent='34/100.00%'></canvas>
+              <h5>条件覆盖率:</h5>
+              <canvas class="ring-condition" percent='34/82.35%'></canvas>
+              <h5>函数覆盖率:</h5>
+              <canvas class="ring-function" percent='16/93.75%'></canvas>
+               <a class="file" href="./timer.html">进入</br>文件</a>
+               </div>
+               <div class="panel-text">
+              <a>函数:timer_overrun</a></br>
+              <p>
+                  <b>语句覆盖率(80.00%):</b>5</br>
+                  <b>分支覆盖率(100.00%):</b>4</br>
+                  <b>条件覆盖率(75.00%):</b>4</br>
+                  <b>函数覆盖率(100.00%):</b>2</br>
+              </p>
+              <a>函数:timer_get_time</a></br>
+              <p>
+                  <b>语句覆盖率(88.89%):</b>9</br>
+                  <b>分支覆盖率(100.00%):</b>6</br>
+                  <b>条件覆盖率(83.33%):</b>6</br>
+                  <b>函数覆盖率(100.00%):</b>2</br>
+              </p>
+              <a>函数:timer_close</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>4</br>
+                  <b>分支覆盖率(100.00%):</b>4</br>
+                  <b>条件覆盖率(75.00%):</b>4</br>
+                  <b>函数覆盖率(50.00%):</b>2</br>
+              </p>
+              <a>函数:timer_stop</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>5</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:timer_open</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>14</br>
+                  <b>分支覆盖率(100.00%):</b>6</br>
+                  <b>条件覆盖率(100.00%):</b>6</br>
+                  <b>函数覆盖率(100.00%):</b>5</br>
+              </p>
+               </div>
+           </span>
+</div>
+</div>
+
+</body>
+    <script type="text/javascript" src="../../TEST/html/js/buildBase.js"></script>
+    <script type="text/javascript" src="../../TEST/html/js/buildScroll.js"></script>
+    <script type="text/javascript" src="../../TEST/html/js/buildText.js"></script>
+    <script type="text/javascript" src="../../TEST/html/js/buildCanvas.js"></script>
+</html>

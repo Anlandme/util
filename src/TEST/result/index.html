@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>单元测试报告</title>
+    <link rel="stylesheet" href="../html/css/style.css">
+</head>
+
+<body class="body">
+    <div id="page" class="page">
+        <div id="panels" class="panels">
+            <span class="panel color0" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h2>单</h2>
+                    <h2>元</h2>
+                    <h2>测</h2>
+                    <h2>试</h2>
+                    <h2>报</h2>
+                    <h2>告</h2>
+                    <a class="file" href="./performance.html">性能</br>报告</a>
+                </div>
+                <div class="panel-text">
+                    <h1>测试的结果</h1>
+                    <h4>suite展示</h4>
+                        <ul>测试的case数量</ul>
+                        <ul>测试的case出错数量</ul>
+                        <ul>一个suite测试时长</ul>
+                        <ul>内存泄漏展示内存泄漏位置大小</ul>
+                    <h4>case展示</h4>
+                        <ul>case的成功结果</ul>
+                        <ul>case失败结果，失败位置失败内容</ul>
+                        <ul>case内打印结果</ul>
+                    <h4>性能展示</h4>
+                        <ul>函数运行时间</ul>
+                        <ul>函数调用次数</ul>
+                        <ul>函数调用关系</ul>
+                    <h4>覆盖率展示</h4>
+                        <ul>文件和文件内函数的语句覆盖率</ul>
+                        <ul>文件和文件内函数的分支覆盖率</ul>
+                        <ul>文件和文件内函数的条件覆盖率</ul>
+                        <ul>文件和文件内函数的函数覆盖率</ul>
+                </div>
+            </span>
+          <span class="panel color1" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试suite接口正常使用</h1>
+                    <h5>-测试case数:0 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.01706 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+              </div>
+          </span>
+          <span class="panel color2" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试case接口正常使用</h1>
+                    <h5>-测试case数:8 </h5>
+                    <h5>-测试case出错数:4 </h5>
+                    <h5>-测试时长:0.02125 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: case成功测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case成功的情况</br>
+                       <b>[ OK     ]</b>case成功测试: test sucess!! 测试通过</br>
+                  </p>
+                  <li>CASE: case失败测试 X</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case失败的情况</br>
+                       <b>[ ERR    ]</b>case失败测试: test was fault！！ 测试出错</br>
+                       <b>[ ERR    ]</b>出错位置: file(./test_TEST.c) function(test_false_case) line(22)</br>
+                       <b>[ ERR    ]</b>错误码(err number)：Success </br>
+                  </p>
+                  <li>CASE: case定时器测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case定时器的情况</br>
+                       <b>[ OK     ]</b>case定时器测试: test sucess!! 测试通过</br>
+                       <b>[ Time   ]</b>计时的代码段时间: 0.01824 seconds</br>
+                  </p>
+                  <li>CASE: case未知失败测试 X</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case未知失败的情况</br>
+                       <b>[ Emer   ]</b>返回结果是错误的，无法处理</br>
+                  </p>
+                  <li>CASE: case条件判断正常测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case条件判断正常的情况</br>
+                       <b>[ OK     ]</b>case条件判断正常测试: test sucess!! 测试通过</br>
+                  </p>
+                  <li>CASE: case值条件判断错误测试 X</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case值条件判断错误的情况</br>
+                       <b>[ ERR    ]</b>case值条件判断错误测试: test was fault！！ 测试出错</br>
+                       <b>[ ERR    ]</b>出错位置: file(./test_TEST.c) function(test_value_false_case) line(67)</br>
+                       <b>[ ERR    ]</b>错误码(err number)：Success </br>
+                  </p>
+                  <li>CASE: case字符串条件判断错误测试 X</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case字符串条件判断错误的情况</br>
+                       <b>[ ERR    ]</b>case字符串条件判断错误测试: test was fault！！ 测试出错</br>
+                       <b>[ ERR    ]</b>出错位置: file(./test_TEST.c) function(test_string_false_case) line(72)</br>
+                       <b>[ ERR    ]</b>错误码(err number)：Success </br>
+                  </p>
+                  <li>CASE: case打印测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case打印的情况</br>
+                       <b>[ OK     ]</b>case打印测试: test sucess!! 测试通过</br>
+                       <b>[ Print  ]</b>test printf</br>
+                       <b>[ Print  ]</b>printf test string</br>
+                  </p>
+              </div>
+          </span>
+          <span class="panel color3" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试suite接口检查内存泄漏</h1>
+                    <h5>-测试case数:0 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.00001 seconds</h5>
+                    <h5>-测试的内存泄漏数：1</h5>
+                    <table rules="rows">
+                        <tr><th>泄漏地址</th><th>泄漏大小</th></tr>
+                    <tr><td>0xf1f5f0</td><td>0x4</td></tr>
+                    </table>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+              </div>
+          </span>
+          <span class="panel color4" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试装载卸载函数使用</h1>
+                    <h5>-测试case数:1 </h5>
+                    <h5>-测试case出错数:0 </h5>
+                    <h5>-测试时长:0.00031 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: case装载卸载测试 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试当case装载卸载情况</br>
+                       <b>[ OK     ]</b>case装载卸载测试: test sucess!! 测试通过</br>
+                  </p>
+              </div>
+          </span>
+          <span class="panel color5" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+                <div class="panel-content">
+                    <h1>测试组使用</h1>
+                    <h5>-测试case数:4 </h5>
+                    <h5>-测试case出错数:1 </h5>
+                    <h5>-测试时长:0.00155 seconds</h5>
+                    <h5>-测试的内存泄漏数：0</h5>
+              </div>
+              <div class="panel-text">
+                  <h1>测试的case项</h1>
+                  <li>CASE: case测试组参数栈出错 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试case测试组参数栈出错情况</br>
+                       <b>[ OK     ]</b>case测试组参数栈出错: test sucess!! 测试通过</br>
+                  </p>
+                  <li>CASE: case测试组出错 X</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试case测试组出错情况</br>
+                       <b>[ ERR    ]</b>case测试组出错: test was fault！！ 测试出错</br>
+                       <b>[ ERR    ]</b>出错位置: file(./test_TEST.c) function(test_group_false) line(114)</br>
+                       <b>[ ERR    ]</b>出错测试组所在栈位置(expected value)：8</br>
+                  </p>
+                  <li>CASE: case一个参数测试组使用 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试case一个参数测试组使用情况</br>
+                       <b>[ OK     ]</b>case一个参数测试组使用: test sucess!! 测试通过</br>
+                       <b>[ Print  ]</b>group test value=0</br>
+                       <b>[ Print  ]</b>group test value=1</br>
+                       <b>[ Print  ]</b>group test value=2</br>
+                       <b>[ Print  ]</b>group test value=3</br>
+                       <b>[ Print  ]</b>group test value=4</br>
+                       <b>[ Print  ]</b>group test value=5</br>
+                       <b>[ Print  ]</b>group test value=6</br>
+                       <b>[ Print  ]</b>group test value=7</br>
+                       <b>[ Print  ]</b>group test value=8</br>
+                       <b>[ Print  ]</b>group test value=9</br>
+                  </p>
+                  <li>CASE: case多个参数测试组使用 √</li>
+                  <p>
+                       <b>[ Desc   ]</b>测试case多个参数测试组使用情况</br>
+                       <b>[ OK     ]</b>case多个参数测试组使用: test sucess!! 测试通过</br>
+                       <b>[ Print  ]</b>first value:1</br>
+                       <b>[ Print  ]</b>second value:10</br>
+                       <b>[ Print  ]</b>third value:test first</br>
+                       <b>[ Print  ]</b>fourth value:a</br>
+                       <b>[ Print  ]</b>first value:2</br>
+                       <b>[ Print  ]</b>second value:10</br>
+                       <b>[ Print  ]</b>third value:test second</br>
+                       <b>[ Print  ]</b>fourth value:b</br>
+                  </p>
+              </div>
+          </span>
+           <span class="panel color9" onmousemove="MouseArrive(this)" onmouseout="MouseLeave(this)">
+               <div class="panel-coverage">
+              <h1>TEST.c 覆盖率</h1>
+              <h5>语句覆盖率:</h5>
+              <canvas class="ring-line"  percent='146/96.58%'></canvas>
+              <h5>分支覆盖率:</h5>
+              <canvas class="ring-branch" percent='60/100.00%'></canvas>
+              <h5>条件覆盖率:</h5>
+              <canvas class="ring-condition" percent='60/66.67%'></canvas>
+              <h5>函数覆盖率:</h5>
+              <canvas class="ring-function" percent='41/60.98%'></canvas>
+               <a class="file" href="./TEST.html">进入</br>文件</a>
+               </div>
+               <div class="panel-text">
+              <a>函数:_test_gettime</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>4</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:_test_init_case</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>14</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(0.00%):</b>1</br>
+              </p>
+              <a>函数:_test_init_suite</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>11</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(0.00%):</b>1</br>
+              </p>
+              <a>函数:_test_fill_memResult</a></br>
+              <p>
+                  <b>语句覆盖率(85.71%):</b>7</br>
+                  <b>分支覆盖率(100.00%):</b>4</br>
+                  <b>条件覆盖率(75.00%):</b>4</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:_test_clear_memResult</a></br>
+              <p>
+                  <b>语句覆盖率(90.00%):</b>10</br>
+                  <b>分支覆盖率(100.00%):</b>4</br>
+                  <b>条件覆盖率(50.00%):</b>4</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+              <a>函数:_test_file</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>9</br>
+                  <b>分支覆盖率(100.00%):</b>6</br>
+                  <b>条件覆盖率(50.00%):</b>6</br>
+                  <b>函数覆盖率(42.86%):</b>7</br>
+              </p>
+              <a>函数:_test_show_case_result</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>27</br>
+                  <b>分支覆盖率(100.00%):</b>21</br>
+                  <b>条件覆盖率(66.67%):</b>21</br>
+                  <b>函数覆盖率(66.67%):</b>3</br>
+              </p>
+              <a>函数:_test_suite_start</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>8</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(75.00%):</b>4</br>
+              </p>
+              <a>函数:_test_print_report</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>15</br>
+                  <b>分支覆盖率(100.00%):</b>8</br>
+                  <b>条件覆盖率(87.50%):</b>8</br>
+                  <b>函数覆盖率(100.00%):</b>1</br>
+              </p>
+              <a>函数:_test_malloc_monitor_report</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>18</br>
+                  <b>分支覆盖率(100.00%):</b>9</br>
+                  <b>条件覆盖率(77.78%):</b>9</br>
+                  <b>函数覆盖率(72.73%):</b>11</br>
+              </p>
+              <a>函数:_test_suite_end</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>12</br>
+                  <b>分支覆盖率(100.00%):</b>2</br>
+                  <b>条件覆盖率(50.00%):</b>2</br>
+                  <b>函数覆盖率(83.33%):</b>6</br>
+              </p>
+              <a>函数:_test_start_unit_test</a></br>
+              <p>
+                  <b>语句覆盖率(100.00%):</b>5</br>
+                  <b>分支覆盖率(0):</b>None</br>
+                  <b>条件覆盖率(0):</b>None</br>
+                  <b>函数覆盖率(0):</b>None</br>
+              </p>
+               </div>
+           </span>
+</div>
+</div>
+
+</body>
+    <script type="text/javascript" src="../html/js/buildBase.js"></script>
+    <script type="text/javascript" src="../html/js/buildScroll.js"></script>
+    <script type="text/javascript" src="../html/js/buildText.js"></script>
+    <script type="text/javascript" src="../html/js/buildCanvas.js"></script>
+</html>

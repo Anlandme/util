@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>性能报告</title>
+   <link rel="stylesheet" href="../../TEST/html/css/performance.css">
+</head>
+
+<body class="performance">
+<h1>性能报告</h1>
+<span>
+    <input class='buttom' id='tag' type='checkbox'>
+   <label class='content' pageA='函数性能表' pageB='函数关系表' for='tag'></label>
+</span>
+<div id='fun-performance' >
+   <table rules="rows">
+   <tr>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>程序累积执行时间</th>
+       <th>函数所有被调用次数的合共时间</th> 
+       <th>函数被调用次数</th>
+       <th>函数单次执行时间(不包括被调用时间)</th> 
+       <th>函数单次执行时间(包括被调用时间)</th> 
+       <th>函数名</th>
+   </tr>
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>24</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_fill_memResult</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>22</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_clear_memResult</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>14</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_file</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>7</td>  <td>0.00</td>  <td>0.00</td>  <td>timer_open</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>7</td>  <td>0.00</td>  <td>0.00</td>  <td>timer_start</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>5</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_init_case</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>5</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_show_case_result</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>4</td>  <td>0.00</td>  <td>0.00</td>  <td>timer_close</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_gettime</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_init_suite</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_malloc_monitor_report</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_print_report</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_showtime</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_suite_end</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>_test_suite_start</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>0.00</td>  <td>0.00</td>  <td>timer_get_time</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>2</td>  <td>0.00</td>  <td>0.00</td>  <td>timer_overrun</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>0.00</td>  <td>0.00</td>  <td>test_get_timer_value</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>0.00</td>  <td>0.00</td>  <td>test_timer_false</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>0.00</td>  <td>0.00</td>  <td>test_timer_non_thread</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>0.00</td>  <td>0.00</td>  <td>test_timer_stop</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>0.00</td>  <td>0.00</td>  <td>test_timer_thread</td></tr> 
+   <tr><td>0.00</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>0.00</td>  <td>0.00</td>  <td>timer_stop</td></tr> 
+   </table>
+</div>
+<div id='fun-relation'>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td>index</td>  <td>%</td>  <td>time</td>  <td>self</td>  <td>children</td>  <td>called called</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_timer_non_thread [8]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_timer_thread [10]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_timer_stop [9]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_get_timer_value [6]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/7</td>  <td>test_timer_false [7]</td> </tr>
+<tr><td>[1]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>7</td>  <td>timer_open timer_open</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_timer_non_thread [8]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_timer_thread [10]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_timer_stop [9]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>test_get_timer_value [6]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/7</td>  <td>test_timer_false [7]</td> </tr>
+<tr><td>[2]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>7</td>  <td>timer_start timer_start</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>test_timer_non_thread [8]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>test_timer_thread [10]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>test_timer_stop [9]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>test_get_timer_value [6]</td> </tr>
+<tr><td>[3]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>4</td>  <td>timer_close timer_close</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/3</td>  <td>test_get_timer_value [6]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>2/3</td>  <td>test_timer_false [7]</td> </tr>
+<tr><td>[4]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>timer_get_time timer_get_time</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/2</td>  <td>test_timer_false [7]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/2</td>  <td>test_get_timer_value [6]</td> </tr>
+<tr><td>[5]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>2</td>  <td>timer_overrun timer_overrun</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>main [24]</td> </tr>
+<tr><td>[6]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>test_get_timer_value test_get_timer_value</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_open [1]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_start [2]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/2</td>  <td>timer_overrun [5]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/3</td>  <td>timer_get_time [4]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>timer_close [3]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>main [24]</td> </tr>
+<tr><td>[7]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>test_timer_false test_timer_false</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/7</td>  <td>timer_open [1]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/7</td>  <td>timer_start [2]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>2/3</td>  <td>timer_get_time [4]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/2</td>  <td>timer_overrun [5]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>main [24]</td> </tr>
+<tr><td>[8]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>test_timer_non_thread test_timer_non_thread</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_open [1]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_start [2]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>timer_close [3]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>main [24]</td> </tr>
+<tr><td>[9]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>test_timer_stop test_timer_stop</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_open [1]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_start [2]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>timer_stop [11]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>timer_close [3]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>main [24]</td> </tr>
+<tr><td>[10]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>test_timer_thread test_timer_thread</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_open [1]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/7</td>  <td>timer_start [2]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/4</td>  <td>timer_close [3]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>1/1</td>  <td>test_timer_stop [9]</td> </tr>
+<tr><td>[11]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>1</td>  <td>timer_stop timer_stop</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>24/24</td>  <td>_test_malloc_monitor_report [34]</td> </tr>
+<tr><td>[27]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>24</td>  <td>_test_fill_memResult _test_fill_memResult</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>22/22</td>  <td>_test_malloc_monitor_report [34]</td> </tr>
+<tr><td>[28]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>22</td>  <td>_test_clear_memResult _test_clear_memResult</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/14</td>  <td>_test_print_report [35]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/14</td>  <td>_test_suite_start [38]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/14</td>  <td>_test_suite_end [37]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>5/14</td>  <td>_test_show_case_result [31]</td> </tr>
+<tr><td>[29]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>14</td>  <td>_test_file _test_file</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>5/5</td>  <td>main [24]</td> </tr>
+<tr><td>[30]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>5</td>  <td>_test_init_case _test_init_case</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>5/5</td>  <td>main [24]</td> </tr>
+<tr><td>[31]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>5</td>  <td>_test_show_case_result _test_show_case_result</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>5/14</td>  <td>_test_file [29]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>main [24]</td> </tr>
+<tr><td>[32]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_gettime _test_gettime</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>main [24]</td> </tr>
+<tr><td>[33]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_init_suite _test_init_suite</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>_test_suite_end [37]</td> </tr>
+<tr><td>[34]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_malloc_monitor_report _test_malloc_monitor_report</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>24/24</td>  <td>_test_fill_memResult [27]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>22/22</td>  <td>_test_clear_memResult [28]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>_test_print_report [35]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>_test_malloc_monitor_report [34]</td> </tr>
+<tr><td>[35]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_print_report _test_print_report</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/14</td>  <td>_test_file [29]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>_test_suite_end [37]</td> </tr>
+<tr><td>[36]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_showtime _test_showtime</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>main [24]</td> </tr>
+<tr><td>[37]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_suite_end _test_suite_end</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>_test_showtime [36]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/14</td>  <td>_test_file [29]</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>_test_malloc_monitor_report [34]</td> </tr>
+</table>
+
+<table rules="rows">
+   <tr>
+       <th>索引值</th>
+       <th>函数消耗时间占程序所有时间百分比</th>
+       <th>函数本身执行时间</th>
+       <th>执行子函数所用时间</th>
+       <th>函数被调用次数</th>
+       <th>函数名</th>
+   </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/3</td>  <td>main [24]</td> </tr>
+<tr><td>[38]</td>  <td>0.0</td>  <td>0.00</td>  <td>0.00</td>  <td>3</td>  <td>_test_suite_start _test_suite_start</td> </tr>
+<tr><td></td>  <td></td>  <td>0.00</td>  <td>0.00</td>  <td>3/14</td>  <td>_test_file [29]</td> </tr>
+</table>
+
+   </tr>
+</div>
+
+</body>
+
+   <script type="text/javascript" src="../../TEST/html/js/buildPerformance.js"></script>
+</html>
